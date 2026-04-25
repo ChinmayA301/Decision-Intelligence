@@ -4,6 +4,49 @@
 
 ---
 
+## Local launch
+
+Prerequisites: Docker, Python 3.11+, `uv`, Node.js, and API keys for Groq and Jina AI.
+
+1. Create your local environment file:
+
+```bash
+cp .env.example .env
+```
+
+Then fill in `GROQ_API_KEY` and `JINA_API_KEY`.
+
+2. Start Postgres with pgvector:
+
+```bash
+docker compose up -d postgres
+```
+
+3. Install/sync Python dependencies and load the seed cases:
+
+```bash
+uv sync --extra dev
+uv run python scripts/load_cases.py --force-status reviewed
+```
+
+4. Start the FastAPI backend:
+
+```bash
+uv run uvicorn src.api:app --reload --port 8000
+```
+
+5. Start the web app in a second terminal:
+
+```bash
+cd web
+npm install
+npm run dev
+```
+
+Open `http://localhost:3000`. The web app proxies `/api/*` requests to `http://localhost:8000` by default.
+
+---
+
 ## 0. Read this first — what changed from the original KT brief
 
 The original brief was philosophically interesting but technically over-promised. Before any code is written, the following corrections are baked into this plan:

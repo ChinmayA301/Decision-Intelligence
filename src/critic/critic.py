@@ -3,15 +3,13 @@ from __future__ import annotations
 
 import asyncio
 import json
-import os
 from pathlib import Path
 
-import anthropic
 from pydantic import ValidationError
 
 from src.contracts import FramedDecision, LensCritique, LensVerdict, ReferenceClass
+from src.llm.client import LLMClient, Message, get_llm_client
 
-_MODEL = "claude-sonnet-4-6"
 _PROMPTS_DIR = Path(__file__).parent.parent.parent / "prompts"
 
 LENS_IDS = ["margin_of_safety", "reversibility", "concentration", "optionality"]
@@ -22,15 +20,17 @@ _LENS_PROMPT_PATHS = {
     "optionality": _PROMPTS_DIR / "lens_optionality.md",
 }
 _LENS_TEMPLATES: dict[str, str] = {
-    lens_id: path.read_text()
-    for lens_id, path in _LENS_PROMPT_PATHS.items()
+    lid: path.read_text() for lid, path in _LENS_PROMPT_PATHS.items()
+}
+_LENS_DISPLAY_NAMES = {
+    "margin_of_safety": "Margin-of-Safety Lens",
+    "reversibility": "Reversibility Lens",
+    "concentration": "Concentration Lens",
+    "optionality": "Optionality Lens",
 }
 
 
-def _build_critic_user_message(
-    decision: FramedDecision,
-    refs: ReferenceClass,
-) -> str:
+def _build_critic_user_message(decision: FramedDecision, refs: ReferenceClass) -> str:
     cases_text = "\n".join(
         f"- [{c.case_id}] {c.title} ({c.year}): {c.outcome_label.value}. {c.snippet[:300]}"
         for c in refs.cases
@@ -42,10 +42,8 @@ def _build_critic_user_message(
         f"Domain: {decision.domain.value}\n"
         f"Decision type: {decision.decision_type.value}\n"
         f"Time horizon: {decision.time_horizon_months} months\n"
-        f"Alternatives:\n"
-        + "\n".join(f"  - {a}" for a in decision.alternatives)
-        + f"\nKey uncertainties:\n"
-        + "\n".join(f"  - {u}" for u in decision.key_uncertainties)
+        f"Alternatives:\n" + "\n".join(f"  - {a}" for a in decision.alternatives)
+        + f"\nKey uncertainties:\n" + "\n".join(f"  - {u}" for u in decision.key_uncertainties)
         + (f"\nUser's apparent leaning: {decision.user_apparent_leaning}" if decision.user_apparent_leaning else "")
         + f"\nConstraints: {', '.join(decision.constraints) if decision.constraints else 'none stated'}"
         + f"\n\n## Reference Class\n\n"
@@ -55,38 +53,33 @@ def _build_critic_user_message(
     )
 
 
-def _parse_lens_response(text: str, expected_lens_id: str) -> LensCritique:
+def _parse_lens_response(text: str, lens_id: str) -> LensCritique:
     content = text.strip()
     if content.startswith("```"):
         lines = content.split("\n")
         content = "\n".join(lines[1:-1]) if lines[-1].startswith("```") else "\n".join(lines[1:])
-
     data = json.loads(content)
-    # Ensure lens_id matches what we expected
-    data["lens_id"] = expected_lens_id
+    data["lens_id"] = lens_id
     return LensCritique.model_validate(data)
 
 
 async def _run_single_lens(
-    client: anthropic.AsyncAnthropic,
+    llm: LLMClient,
     lens_id: str,
     decision: FramedDecision,
     refs: ReferenceClass,
 ) -> LensCritique:
     system_prompt = _LENS_TEMPLATES[lens_id]
-    user_message = _build_critic_user_message(decision, refs)
+    user_msg = _build_critic_user_message(decision, refs)
 
     for attempt in range(2):
-        response = await client.messages.create(
-            model=_MODEL,
-            max_tokens=1024,
+        raw_text = await llm.complete(
             system=system_prompt,
-            messages=[{"role": "user", "content": user_message}],
+            messages=[Message(role="user", content=user_msg)],
+            max_tokens=1024,
         )
-        raw_text = response.content[0].text
         try:
             critique = _parse_lens_response(raw_text, lens_id)
-            # Validate that all cited case_ids exist in the reference class
             valid_ids = {c.case_id for c in refs.cases}
             critique.most_relevant_case_ids = [
                 cid for cid in critique.most_relevant_case_ids if cid in valid_ids
@@ -94,49 +87,28 @@ async def _run_single_lens(
             return critique
         except (json.JSONDecodeError, ValidationError, KeyError) as exc:
             if attempt == 0:
-                # One retry with error feedback
-                user_message = (
-                    user_message
-                    + f"\n\nYour previous response was invalid: {exc}\n"
-                    "Return corrected JSON only."
-                )
+                user_msg = user_msg + f"\n\nYour previous response was invalid: {exc}\nReturn corrected JSON only."
             else:
-                # Fallback: return abstains critique
                 return LensCritique(
                     lens_id=lens_id,
-                    lens_display_name=_lens_display_name(lens_id),
+                    lens_display_name=_LENS_DISPLAY_NAMES[lens_id],
                     verdict=LensVerdict.ABSTAINS,
-                    reasoning=f"Lens could not produce valid output after retries ({exc}).",
-                    key_questions=["Please retry your analysis with a more specific decision framing."],
+                    reasoning=f"Lens could not produce valid output after retries.",
+                    key_questions=["Please retry with a more specific decision framing."],
                     most_relevant_case_ids=[],
                     confidence="low",
                 )
 
-    # Should be unreachable
     raise RuntimeError(f"Lens {lens_id} failed unexpectedly")
 
 
-def _lens_display_name(lens_id: str) -> str:
-    names = {
-        "margin_of_safety": "Margin-of-Safety Lens",
-        "reversibility": "Reversibility Lens",
-        "concentration": "Concentration Lens",
-        "optionality": "Optionality Lens",
-    }
-    return names.get(lens_id, lens_id)
-
-
 class Critic:
-    def __init__(self, client: anthropic.AsyncAnthropic | None = None) -> None:
-        self._client = client or anthropic.AsyncAnthropic(
-            api_key=os.environ["ANTHROPIC_API_KEY"]
-        )
+    def __init__(self, llm: LLMClient | None = None) -> None:
+        self._llm = llm or get_llm_client()
 
-    async def critique(
-        self, decision: FramedDecision, refs: ReferenceClass
-    ) -> list[LensCritique]:
+    async def critique(self, decision: FramedDecision, refs: ReferenceClass) -> list[LensCritique]:
         tasks = [
-            _run_single_lens(self._client, lens_id, decision, refs)
+            _run_single_lens(self._llm, lens_id, decision, refs)
             for lens_id in LENS_IDS
         ]
         return list(await asyncio.gather(*tasks))

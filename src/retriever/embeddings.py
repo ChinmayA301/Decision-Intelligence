@@ -1,4 +1,4 @@
-"""Embedding provider abstraction — Voyage (preferred) or OpenAI fallback."""
+"""Embedding provider abstraction for Voyage, Jina AI, or OpenAI."""
 from __future__ import annotations
 
 import os
@@ -40,11 +40,52 @@ class OpenAIEmbedder:
         return embeddings[0]
 
 
+class JinaEmbedder:
+    """
+    Jina AI free embeddings — sign up at jina.ai.
+    Default model emits 1024 dimensions, matching the current vector schema.
+    """
+
+    def __init__(self, api_key: str | None = None, model: str | None = None) -> None:
+        import httpx
+
+        self._client = httpx.AsyncClient(
+            base_url="https://api.jina.ai/v1",
+            headers={"Authorization": f"Bearer {api_key or os.environ['JINA_API_KEY']}"},
+            timeout=30.0,
+        )
+        self._model = model or os.environ.get("JINA_MODEL", "jina-embeddings-v3")
+        self._task = os.environ.get("JINA_TASK", "text-matching")
+
+    async def embed(self, texts: list[str]) -> list[list[float]]:
+        response = await self._client.post(
+            "/embeddings",
+            json={
+                "model": self._model,
+                "task": self._task,
+                "dimensions": 1024,
+                "embedding_type": "float",
+                "input": texts,
+            },
+        )
+        response.raise_for_status()
+        data = response.json()["data"]
+        return [item["embedding"] for item in data]
+
+    async def embed_one(self, text: str) -> list[float]:
+        embeddings = await self.embed([text])
+        return embeddings[0]
+
+
 def get_embedder() -> EmbeddingProvider:
     provider = os.environ.get("EMBEDDING_PROVIDER", "voyage").lower()
     if provider == "voyage":
         return VoyageEmbedder()
+    elif provider == "jina":
+        return JinaEmbedder()
     elif provider == "openai":
         return OpenAIEmbedder()
     else:
-        raise ValueError(f"Unknown EMBEDDING_PROVIDER: {provider!r}")
+        raise ValueError(
+            f"Unknown EMBEDDING_PROVIDER: {provider!r}. Choose 'voyage', 'jina', or 'openai'."
+        )

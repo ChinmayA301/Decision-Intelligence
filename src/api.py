@@ -1,12 +1,8 @@
 """FastAPI application — POST /briefs → DecisionBrief."""
 from __future__ import annotations
 
-import os
-import uuid
 from contextlib import asynccontextmanager
-from typing import Annotated
 
-import anthropic
 import asyncpg
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
@@ -14,6 +10,7 @@ from pydantic import BaseModel
 
 from src.contracts import DecisionBrief, FramerClarification
 from src.framer.framer import Framer, FramerParseError
+from src.llm.client import LLMClient, get_llm_client
 from src.retriever.retriever import Retriever, create_pool
 from src.critic.critic import Critic
 from src.synthesizer.synthesizer import Synthesizer
@@ -23,7 +20,7 @@ from src.synthesizer.synthesizer import Synthesizer
 
 class AppState:
     pool: asyncpg.Pool
-    client: anthropic.AsyncAnthropic
+    llm: LLMClient
     framer: Framer
     retriever: Retriever
     critic: Critic
@@ -36,11 +33,11 @@ state = AppState()
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     state.pool = await create_pool()
-    state.client = anthropic.AsyncAnthropic(api_key=os.environ["ANTHROPIC_API_KEY"])
-    state.framer = Framer(client=state.client)
+    state.llm = get_llm_client()
+    state.framer = Framer(llm=state.llm)
     state.retriever = Retriever(pool=state.pool)
-    state.critic = Critic(client=state.client)
-    state.synthesizer = Synthesizer(critic=state.critic, client=state.client)
+    state.critic = Critic(llm=state.llm)
+    state.synthesizer = Synthesizer(critic=state.critic, llm=state.llm)
     yield
     await state.pool.close()
 

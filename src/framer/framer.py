@@ -2,18 +2,15 @@
 from __future__ import annotations
 
 import json
-import os
 from pathlib import Path
 
-import anthropic
 from pydantic import ValidationError
 
 from src.contracts import FramedDecision, FramerClarification, FramerOutput
+from src.llm.client import LLMClient, Message, get_llm_client
 
 _PROMPT_PATH = Path(__file__).parent.parent.parent / "prompts" / "framer.md"
 _SYSTEM_PROMPT = _PROMPT_PATH.read_text()
-
-_MODEL = "claude-sonnet-4-6"
 _MAX_RETRIES = 2
 
 
@@ -22,8 +19,6 @@ def _build_user_message(raw_input: str) -> str:
 
 
 def _parse_response(text: str) -> FramerOutput:
-    """Parse and validate a JSON response from the LLM into a typed contract."""
-    # Strip markdown code fences if present
     content = text.strip()
     if content.startswith("```"):
         lines = content.split("\n")
@@ -48,43 +43,33 @@ def _inject_validation_error(error: str) -> str:
 
 
 class Framer:
-    def __init__(self, client: anthropic.AsyncAnthropic | None = None) -> None:
-        self._client = client or anthropic.AsyncAnthropic(
-            api_key=os.environ["ANTHROPIC_API_KEY"]
-        )
+    def __init__(self, llm: LLMClient | None = None) -> None:
+        self._llm = llm or get_llm_client()
 
     async def frame(self, raw_user_input: str) -> FramerOutput:
-        messages: list[dict] = [
-            {"role": "user", "content": _build_user_message(raw_user_input)}
+        messages: list[Message] = [
+            Message(role="user", content=_build_user_message(raw_user_input))
         ]
 
         last_error: Exception | None = None
 
         for attempt in range(_MAX_RETRIES + 1):
-            response = await self._client.messages.create(
-                model=_MODEL,
-                max_tokens=1024,
+            raw_text = await self._llm.complete(
                 system=_SYSTEM_PROMPT,
                 messages=messages,
+                max_tokens=1024,
             )
-
-            raw_text = response.content[0].text
 
             try:
                 return _parse_response(raw_text)
             except (json.JSONDecodeError, ValidationError, KeyError, ValueError) as exc:
                 last_error = exc
                 if attempt < _MAX_RETRIES:
-                    # Append the failed response and a correction prompt
-                    messages.append({"role": "assistant", "content": raw_text})
+                    messages.append(Message(role="assistant", content=raw_text))
                     messages.append(
-                        {
-                            "role": "user",
-                            "content": _inject_validation_error(str(exc)),
-                        }
+                        Message(role="user", content=_inject_validation_error(str(exc)))
                     )
 
-        # After max retries, return a clarification asking user to rephrase
         raise FramerParseError(
             f"Framer failed to produce valid output after {_MAX_RETRIES + 1} attempts. "
             f"Last error: {last_error}"
@@ -92,4 +77,4 @@ class Framer:
 
 
 class FramerParseError(Exception):
-    """Raised when the Framer cannot produce valid output after all retries."""
+    pass

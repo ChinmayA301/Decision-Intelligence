@@ -1,12 +1,9 @@
 """Synthesizer — assembles DecisionBrief, runs calibration checks, divergence retry."""
 from __future__ import annotations
 
-import asyncio
-import os
 import uuid
 from datetime import datetime, timezone
 
-import anthropic
 import numpy as np
 
 from src.contracts import (
@@ -18,8 +15,7 @@ from src.contracts import (
     ReferenceClass,
 )
 from src.critic.critic import Critic
-
-_MODEL = "claude-sonnet-4-6"
+from src.llm.client import LLMClient, Message, get_llm_client
 
 # Minimum embedding cosine distance between any pair of lens critiques for them to be
 # considered "divergent enough." Calibrated in eval plan as τ — we set a sensible default
@@ -109,7 +105,7 @@ def _extract_pre_mortem(critiques: list[LensCritique], refs: ReferenceClass) -> 
 
 
 async def _generate_tension_summary(
-    client: anthropic.AsyncAnthropic,
+    llm: LLMClient,
     decision: FramedDecision,
     critiques: list[LensCritique],
 ) -> str:
@@ -123,12 +119,12 @@ async def _generate_tension_summary(
         "Write exactly 2 sentences summarizing where the lenses DISAGREED and why the "
         "disagreement matters for this specific decision. Be concrete. No hedging."
     )
-    response = await client.messages.create(
-        model=_MODEL,
+    response = await llm.complete(
+        system="You write concise decision-analysis summaries.",
+        messages=[Message(role="user", content=prompt)],
         max_tokens=200,
-        messages=[{"role": "user", "content": prompt}],
     )
-    return response.content[0].text.strip()
+    return response.strip()
 
 
 def _build_calibration_notes(
@@ -157,12 +153,10 @@ class Synthesizer:
     def __init__(
         self,
         critic: Critic | None = None,
-        client: anthropic.AsyncAnthropic | None = None,
+        llm: LLMClient | None = None,
     ) -> None:
-        self._client = client or anthropic.AsyncAnthropic(
-            api_key=os.environ["ANTHROPIC_API_KEY"]
-        )
-        self._critic = critic or Critic(client=self._client)
+        self._llm = llm or get_llm_client()
+        self._critic = critic or Critic(llm=self._llm)
 
     async def synthesize(
         self,
@@ -173,14 +167,6 @@ class Synthesizer:
         converged = _critiques_are_converged(critiques, None)
 
         if converged:
-            # Re-run critics with divergence injection
-            divergence_note = (
-                "IMPORTANT: The previous analysis produced convergent critiques. "
-                "This lens MUST produce a meaningfully different perspective from the others. "
-                "Find what the other lenses are missing. Be willing to disagree."
-            )
-            # Inject into each lens system prompt by modifying the critic call
-            # We pass the note via the user message prefix
             retry_critiques = await self._critic.critique(
                 decision,
                 refs,
@@ -197,7 +183,7 @@ class Synthesizer:
         if not pre_mortem:
             pre_mortem = ["No specific failure modes extracted from reference class."]
 
-        tension_summary = await _generate_tension_summary(self._client, decision, critiques)
+        tension_summary = await _generate_tension_summary(self._llm, decision, critiques)
 
         return DecisionBrief(
             brief_id=str(uuid.uuid4()),
