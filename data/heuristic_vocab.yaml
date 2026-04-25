@@ -1,0 +1,191 @@
+# Heuristic vocabulary — closed tag set (~40 tags)
+# Every tag has a 2-sentence definition.
+# New tags require review (PR with at least 2 cases that needed it).
+
+risk_posture:
+  margin_of_safety:
+    definition: >
+      Require a significant buffer between the price paid and the conservative estimate of value received.
+      The goal is to survive being wrong, not to maximize the upside of being right.
+
+  asymmetric_payoff:
+    definition: >
+      Seek positions where the potential upside is a large multiple of the potential downside.
+      Accept lower probability of gain in exchange for bounded loss and large gain.
+
+  barbell_allocation:
+    definition: >
+      Split capital or attention between very safe positions and very speculative ones; avoid the middle.
+      The middle is where both the upside and downside are modest — which is the worst of both.
+
+  downside_minimization:
+    definition: >
+      Explicitly enumerate the worst plausible outcomes and verify the organization can survive them.
+      Success is defined as avoiding catastrophic loss; optimizing upside is secondary.
+
+speed_and_consensus:
+  speed_over_consensus:
+    definition: >
+      Move faster than full consensus requires, accepting some organizational friction and the risk of being wrong.
+      Often appropriate when competitive windows are short or reversibility is high.
+
+  consensus_required:
+    definition: >
+      Do not proceed without genuine organizational buy-in; speed of alignment is worth the delay.
+      Appropriate for decisions whose execution depends on people who could undermine a top-down decree.
+
+  decisive_under_uncertainty:
+    definition: >
+      Make the call even with incomplete information, because indecision is itself a choice with costs.
+      Typically requires a strong prior model and a fast feedback loop to correct course.
+
+  structured_deliberation:
+    definition: >
+      Slow down the decision process intentionally: use pre-mortems, red teams, or waiting periods.
+      Appropriate when the decision is a one-way door and the cost of being wrong is large.
+
+reversibility:
+  reversibility_first:
+    definition: >
+      Prefer actions that can be undone over actions that cannot, even at the cost of some upside.
+      A reversible path that underperforms can be corrected; an irreversible one that underperforms cannot.
+
+  one_way_door_acceptance:
+    definition: >
+      Proceed with an irreversible commitment because the upside is large enough and the insight is strong enough.
+      Requires explicit acknowledgment that the door cannot be reopened and contingency for the downside.
+
+  optionality_preserve:
+    definition: >
+      Design the decision to maintain as many future options as possible; avoid foreclosing paths prematurely.
+      Especially valuable in uncertain environments where the best move depends on information not yet available.
+
+  commit_and_kill:
+    definition: >
+      Make the commitment fully and simultaneously eliminate the fallback option.
+      Burning the boats prevents hedging behavior that undermines the primary strategy.
+
+resource_strategy:
+  cash_runway_priority:
+    definition: >
+      Protect the organization's ability to operate long enough to reach the next decision point.
+      Without runway, all other heuristics are moot; cash is the prerequisite for optionality.
+
+  capital_efficiency:
+    definition: >
+      Generate as much output as possible per unit of capital, even when capital is plentiful.
+      Efficient organizations have more options and are more resilient to downturns.
+
+  growth_at_cost:
+    definition: >
+      Intentionally sacrifice profitability or capital efficiency to accelerate market share.
+      Justified when winner-take-most dynamics are real and the company is positioned to win.
+
+  vertical_integration:
+    definition: >
+      Control adjacent steps in the value chain to capture more margin and reduce dependency.
+      Increases complexity and capital requirement; appropriate when supply-side power is a real risk.
+
+  horizontal_focus:
+    definition: >
+      Stay in one layer of the stack and do it better than anyone; resist the pull of vertical expansion.
+      The moat is depth, not breadth; expansion is a distraction until the primary layer is won.
+
+talent_and_org:
+  talent_density_bet:
+    definition: >
+      Concentrate resources on recruiting and retaining a smaller number of exceptional people rather than average hiring at scale.
+      Assumes that a small number of high-leverage individuals outperforms a larger mediocre team.
+
+  founder_mode:
+    definition: >
+      The leader stays deeply involved in product and operational decisions rather than delegating to a management layer.
+      Appropriate in early stages or during a crisis; can become a bottleneck if sustained past the inflection point.
+
+  delegation_first:
+    definition: >
+      Explicitly push decision-making authority down to the people closest to the information.
+      Requires strong processes, trust, and feedback loops; fails in organizations where judgment is not distributed.
+
+  cultural_homogeneity:
+    definition: >
+      Prioritize cultural fit and alignment over diversity of background in hiring and team composition.
+      Reduces coordination cost and speeds execution; risk is groupthink and blind spots.
+
+  cultural_diversity_bet:
+    definition: >
+      Explicitly recruit people with different backgrounds, disciplines, and mental models.
+      Increases innovation potential and reduces blind spots; increases coordination cost.
+
+market_posture:
+  first_mover:
+    definition: >
+      Enter a market before competitors to capture distribution, customer relationships, and learning advantages.
+      Advantage depends on switching costs and network effects; first-mover advantage is not universal.
+
+  fast_follower:
+    definition: >
+      Let others spend the market-creation cost, then enter with a better product once demand is proven.
+      Lower risk than first-mover; requires ability to execute quickly and compete on product, not timing.
+
+  platform_neutrality:
+    definition: >
+      Avoid building in a way that creates dependency on a single platform or distribution channel.
+      Especially relevant for businesses where the platform could compete or extract margin.
+
+  exclusive_partnership:
+    definition: >
+      Enter an exclusive distribution or integration deal with a partner, foreclosing alternatives in exchange for commitment.
+      Appropriate when the partner is category-dominant and exclusivity enables faster scale than fragmentation.
+
+  regulatory_arbitrage:
+    definition: >
+      Move faster than regulators by operating in a legal gray zone and building market position before rules solidify.
+      High reward if the market position sticks; high risk if regulatory response is swift and punitive.
+
+  regulatory_compliance_first:
+    definition: >
+      Build compliance into the product from day one, even when it is not yet required.
+      Reduces regulatory risk and can be a competitive differentiator in markets where compliance is a real cost.
+
+narrative_and_signal:
+  narrative_control:
+    definition: >
+      Proactively shape how the decision and its rationale are understood by employees, customers, and markets.
+      Especially important for decisions that will be initially unpopular; the explanation is often more important than the decision.
+
+  transparent_communication:
+    definition: >
+      Share more information than is strictly required with all affected stakeholders.
+      Builds trust and enables distributed decision-making; requires organizational maturity to avoid panic.
+
+  stealth_mode:
+    definition: >
+      Minimize information shared externally to prevent competitive response or premature scrutiny.
+      Appropriate for a limited window; tends to create distrust and surprises if sustained too long.
+
+  brand_protection_priority:
+    definition: >
+      Weight brand impact heavily in the decision calculus, even at the cost of short-term economics.
+      The brand is a long-duration asset; decisions that damage it have costs beyond the immediate period.
+
+competitive:
+  concentration_bet:
+    definition: >
+      Commit disproportionate resources to a single opportunity where the team has a genuine, non-obvious advantage.
+      Requires willingness to forgo optionality and tolerate risk; the expected value argument must be strong.
+
+  diversification_bet:
+    definition: >
+      Spread exposure across multiple opportunities to reduce variance, even if it reduces expected value.
+      Appropriate when downside risk is existential and no single opportunity is clearly dominant.
+
+  moat_widening:
+    definition: >
+      Reinvest gains into deepening the competitive advantage rather than harvesting them as margin.
+      Assumes the moat is durable and worth defending; risks over-investment if the advantage is not real.
+
+  asymmetric_competition:
+    definition: >
+      Compete on dimensions where the incumbent is structurally disadvantaged rather than matching them head-on.
+      Requires identifying the incumbent's Achilles heel; fails if the asymmetry is not real or not sustainable.

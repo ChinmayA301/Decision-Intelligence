@@ -1,0 +1,75 @@
+case_id: wework-softbank-investment-2019
+title: WeWork accepts $9.5B rescue financing from SoftBank, diluting all prior investors
+decision_maker: SoftBank / WeWork Board
+organization: WeWork / SoftBank
+year: 2019
+domain: capital_allocation
+decision_type: one_way
+
+context_summary: |
+  After WeWork's failed IPO attempt in September 2019, the company faced an existential cash
+  crisis: it was burning $700M+ per quarter with limited runway. SoftBank — already WeWork's
+  largest investor with $10B+ invested at $47B valuation — led a $9.5B rescue package in
+  October 2019. The package included: a $5B in new debt, acceleration of a prior $1.5B
+  commitment, and purchase of ~$3B in existing shareholder stock (at $19.19/share, far below
+  prior $47B implied value). Adam Neumann was paid $185M as part of his departure package
+  from SoftBank's tender offer. Existing shareholders were massively diluted.
+
+options_considered:
+  - Accept SoftBank rescue at massive dilution (the actual move)
+  - Seek bankruptcy protection
+  - Find an alternative buyer for the operating business
+  - Complete a smaller IPO at a lower valuation
+
+option_taken: Accept SoftBank rescue package at ~$8B valuation (vs. prior $47B)
+
+stated_rationale: |
+  WeWork's board had no realistic alternative — the company would have filed for bankruptcy
+  within weeks without the SoftBank capital. SoftBank accepted the rescue to protect its
+  existing $10B+ investment. The deal was not based on a positive view of WeWork's prospects
+  but on loss minimization by the dominant existing shareholder.
+
+inferred_heuristics:
+  - cash_runway_priority
+  - margin_of_safety
+  - downside_minimization
+
+constraints_at_time:
+  - WeWork had 12,000+ employees and 500+ leased locations globally
+  - SoftBank had committed to the $1.5B prior to IPO; walking away entirely was not clean
+  - Banks (JPMorgan, Goldman) had underwritten debt that would have defaulted in bankruptcy
+
+outcome_12mo: |
+  WeWork stabilized operationally under new CEO Sandeep Mathrani (appointed January 2020).
+  COVID-19 (March 2020) caused further demand collapse for office space. WeWork renegotiated
+  leases aggressively.
+
+outcome_36mo: |
+  WeWork went public via SPAC in October 2021 at a $9B valuation — 80%+ below its peak.
+  SoftBank's total loss on WeWork was estimated at $14B+. The company filed for bankruptcy in
+  November 2023.
+
+outcome_label: failure
+
+counterfactual_signal: |
+  IWG (Regus parent) used an asset-light model throughout the same period and survived COVID.
+  The WeWork model — long-term lease obligations with short-term membership revenue — had
+  been the source of structural fragility; the rescue financing did not address the underlying
+  business model problem.
+
+era_dependence: low
+
+sources:
+  - type: book
+    title: "The Cult of We"
+    author: Eliot Brown and Maureen Farrell
+    year: 2021
+    pages: "pp. 275-330"
+  - type: article
+    title: "SoftBank to rescue WeWork with $9.5 billion package"
+    author: Maureen Farrell
+    year: 2019
+    url: https://www.wsj.com/articles/softbank-rescues-wework-with-9-5-billion-package
+
+review_status: reviewed
+reviewed_by: seed_curator_v1

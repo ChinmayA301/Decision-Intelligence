@@ -1,0 +1,81 @@
+case_id: yahoo-mayer-ceo-2012
+title: Yahoo hires Marissa Mayer from Google as CEO to reverse declining trajectory
+decision_maker: Yahoo Board of Directors
+organization: Yahoo
+year: 2012
+domain: key_hire
+decision_type: one_way
+
+context_summary: |
+  Yahoo hired Marissa Mayer — then a VP at Google, known as the first female engineer there
+  and as the product lead behind Google Search and Maps — as CEO in July 2012. This was
+  Yahoo's fourth CEO in a year after Carol Bartz and Scott Thompson's tenures ended badly.
+  Yahoo was losing share in display advertising, had no clear mobile strategy, and had a $1.6B
+  stake in Alibaba that was worth more than the company itself. Mayer was 37, 6 months
+  pregnant, and had never been a public-company CEO. The board bet on her product credibility
+  to re-energize a demoralized culture and attract engineering talent.
+
+options_considered:
+  - Hire Mayer from Google (the actual move)
+  - Hire an established media CEO (Jeff Zucker, Ross Levinsohn were considered)
+  - Sell Yahoo's operating business and return Alibaba proceeds to shareholders
+  - Hire an operational turnaround specialist
+
+option_taken: Mayer hired as CEO with mandate to rebuild product culture and mobile strategy
+
+stated_rationale: |
+  The board wanted a credible technologist who could attract engineering talent and had
+  Google's product DNA. Mayer was the most prominent product executive available who had
+  both brand recognition and engineering credibility. Her pregnancy was reportedly not
+  disclosed to the board before the hire.
+
+inferred_heuristics:
+  - talent_density_bet
+  - decisive_under_uncertainty
+  - narrative_control
+  - speed_over_consensus
+
+constraints_at_time:
+  - Alibaba stake made Yahoo a holding company more than an operating company strategically
+  - Yahoo had lost its best engineers to Google and startups through the 2000s
+  - Advertising market was shifting from display to programmatic and search
+
+outcome_12mo: |
+  Mayer improved morale initially and made high-profile acquisitions (Tumblr for $1.1B in 2013).
+  She ended remote work (controversial but showed decisiveness). Yahoo mobile app downloads increased.
+  However, core display revenue continued to decline.
+
+outcome_36mo: |
+  By 2015, Yahoo's core business continued to decline despite acquisitions. The Tumblr
+  acquisition was largely written off. Mayer's tenure produced no sustainable product
+  improvement. Yahoo's operating business was sold to Verizon in 2016 for $4.8B —
+  far below what the Alibaba stake alone was worth.
+
+outcome_label: failure
+
+counterfactual_signal: |
+  The board's alternative (selling the operating business and returning capital) would have
+  produced better shareholder outcomes. The Alibaba stake appreciated from ~$12B in 2012 to
+  over $30B by 2014. A pure holding company or sale strategy would have captured more of
+  that value than Mayer's operating turnaround attempt.
+
+era_dependence: medium
+
+sources:
+  - type: book
+    title: "How Yahoo Blew It"
+    author: Nicholas Carlson
+    year: 2015
+  - type: article
+    title: "Marissa Mayer hired as Yahoo CEO"
+    author: Somini Sengupta
+    year: 2012
+    url: https://www.nytimes.com/2012/07/17/technology/yahoo-names-google-executive-as-ceo.html
+  - type: article
+    title: "Verizon completes $4.48 billion Yahoo deal"
+    author: Reuters
+    year: 2017
+    url: https://www.reuters.com/article/us-yahoo-m-a-verizon
+
+review_status: reviewed
+reviewed_by: seed_curator_v1

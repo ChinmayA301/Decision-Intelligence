@@ -1,0 +1,85 @@
+case_id: netflix-qwikster-2011
+title: Netflix attempts to spin off DVD business as Qwikster, then reverses
+decision_maker: Reed Hastings
+organization: Netflix
+year: 2011
+domain: product_sunset
+decision_type: one_way
+
+context_summary: |
+  By mid-2011 Netflix was running two businesses: a profitable but declining DVD-by-mail
+  service and a fast-growing but content-cost-heavy streaming service. CEO Reed Hastings
+  believed the two businesses required different cultures, cost structures, and brands.
+  In July 2011 Netflix announced a 60% price increase by separating the bundled plan
+  into two standalone subscriptions. In September 2011 Hastings announced the DVD
+  business would be rebranded "Qwikster" with a separate website and queue. After
+  ~800,000 subscriber losses in Q3 and significant brand damage, the Qwikster split was
+  cancelled in October 2011, three weeks after announcement.
+
+options_considered:
+  - Keep bundled offering, raise prices modestly
+  - Unbundle pricing only (the actual July move)
+  - Full split with separate brand (the announced September move)
+  - Run both businesses under one brand, separate pricing tiers
+
+option_taken: Full split with separate brand (Qwikster), reversed three weeks later
+
+stated_rationale: |
+  Hastings publicly argued the businesses had different economics and growth trajectories,
+  that bundling created confusion about the future, and that streaming required a culture
+  not weighed down by the legacy DVD business. He later wrote that he was "trying to
+  prepare Netflix for the streaming-only future" and underestimated the operational and
+  emotional cost of the split.
+
+inferred_heuristics:
+  - decisive_under_uncertainty
+  - founder_mode
+  - narrative_control
+  - one_way_door_acceptance
+
+constraints_at_time:
+  - Streaming content costs rising rapidly (Starz negotiation imminent)
+  - DVD business in structural decline but cash-generative
+  - Public-company quarterly reporting pressure
+
+outcome_12mo: |
+  Stock fell ~75% peak-to-trough through November 2011. ~800K subscribers lost in Q3 2011.
+  Brand damage measurable in customer surveys for 12+ months. However, the underlying
+  strategic insight (that streaming required separate focus) proved correct: by 2013 Netflix
+  had committed to original content (House of Cards) and the streaming business clearly
+  dominated narrative and growth.
+
+outcome_36mo: |
+  By 2014 Netflix stock had recovered and surpassed pre-Qwikster highs. Streaming business
+  was the clear engine. The DVD business continued to generate cash for years afterward
+  under the Netflix brand. The Qwikster reversal is widely cited as a CEO crisis-management
+  case study.
+
+outcome_label: mixed
+
+counterfactual_signal: |
+  Blockbuster, facing similar disruption pressure, did not split or rebrand and went
+  bankrupt in 2010. Hulu kept a unified brand through similar transitions. The lesson
+  is not that splits fail — it is that customer-facing operational splits need to follow
+  the strategic readiness, not precede it.
+
+era_dependence: medium
+
+sources:
+  - type: article
+    title: Netflix's Lost Year - The Inside Story of the Price-Hike Train Wreck
+    author: Greg Sandoval
+    year: 2012
+    url: https://www.cnet.com/tech/services-and-software/netflixs-lost-year-the-inside-story-of-the-price-hike-train-wreck/
+  - type: book
+    title: That Will Never Work
+    author: Marc Randolph
+    year: 2019
+  - type: interview
+    title: Reed Hastings on the Qwikster Mistake
+    author: Reed Hastings interviewed by Stratechery
+    year: 2018
+    url: https://stratechery.com/
+
+review_status: draft
+reviewed_by: null

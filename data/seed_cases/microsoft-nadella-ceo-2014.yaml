@@ -1,0 +1,77 @@
+case_id: microsoft-nadella-ceo-2014
+title: Microsoft board selects Satya Nadella as CEO over external candidates
+decision_maker: Microsoft Board of Directors
+organization: Microsoft
+year: 2014
+domain: key_hire
+decision_type: one_way
+
+context_summary: |
+  Steve Ballmer announced his retirement as Microsoft CEO in August 2013. The board ran a
+  five-month search, reportedly interviewing Ford CEO Alan Mulally, Nokia's Stephen Elop,
+  and others, before selecting Satya Nadella — a 22-year Microsoft veteran running Cloud and
+  Enterprise — in February 2014. Bill Gates stepped down as chairman simultaneously. Nadella
+  was not on the original shortlist in most press speculation and was a relatively low-profile
+  internal candidate. Microsoft under Ballmer had missed mobile, fumbled search, and was
+  widely characterized as a company in managed decline. The stock was flat for 14 years
+  under Ballmer. The board's choice of an internal candidate who built the cloud business
+  was a departure from the external-CEO narrative that had dominated press coverage.
+
+options_considered:
+  - Appoint Satya Nadella from internal cloud team (the actual move)
+  - Hire Alan Mulally (external, Ford CEO known for turnarounds)
+  - Hire Stephen Elop (Nokia CEO, former Microsoft employee)
+  - Promote another senior internal leader (Qi Lu, Terry Myerson)
+
+option_taken: Satya Nadella appointed as CEO; Bill Gates became technical advisor
+
+stated_rationale: |
+  The board cited Nadella's deep technology expertise, his track record building Azure and
+  Office 365 into substantial businesses, and his collaborative leadership style. John
+  Thompson (board chair) noted that the board wanted someone who understood the cloud
+  transition and could lead a cultural shift at Microsoft.
+
+inferred_heuristics:
+  - talent_density_bet
+  - founder_mode
+  - structured_deliberation
+  - cultural_diversity_bet
+
+constraints_at_time:
+  - Microsoft's core businesses (Windows, Office) were under threat from mobile and cloud
+  - Company culture was widely described as siloed and politically dysfunctional
+  - Surface, Windows Phone, and Xbox were all strategic priorities with unclear futures
+
+outcome_12mo: |
+  Nadella published "Hit Refresh" (2017) but more importantly moved quickly on strategy:
+  Office for iPad launched in March 2014. Mobile-first, cloud-first was articulated as the
+  new mission. Azure growth accelerated. The tone on open source changed immediately.
+
+outcome_36mo: |
+  By 2017, Microsoft's stock had risen 90% from Nadella's appointment. Azure was growing
+  90%+ annually. The GitHub acquisition (2018) and Teams launch (2017) followed.
+
+outcome_label: success
+
+counterfactual_signal: |
+  Yahoo's hiring of Marissa Mayer (external, from Google) in 2012 is the contrasting case:
+  an external hire who understood the technology but struggled with the culture and strategic
+  position, resulting in eventual sale to Verizon. The internal-vs-external hire debate
+  in large tech turnarounds consistently favors deep contextual knowledge over external prestige.
+
+era_dependence: low
+
+sources:
+  - type: book
+    title: "Hit Refresh"
+    author: Satya Nadella
+    year: 2017
+    pages: "pp. 1-55"
+  - type: article
+    title: "Satya Nadella named Microsoft CEO"
+    author: Tom Warren
+    year: 2014
+    url: https://www.theverge.com/2014/2/4/5377196/microsoft-satya-nadella-named-ceo
+
+review_status: reviewed
+reviewed_by: seed_curator_v1

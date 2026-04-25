@@ -1,0 +1,76 @@
+case_id: yahoo-tumblr-writedown-2016
+title: Yahoo writes down Tumblr acquisition by $712M, having paid $1.1B in 2013
+decision_maker: Marissa Mayer
+organization: Yahoo
+year: 2016
+domain: product_sunset
+decision_type: one_way
+
+context_summary: |
+  Yahoo acquired Tumblr in May 2013 for $1.1B under Marissa Mayer, promising not to "screw
+  it up." Tumblr had 300M+ blogs and was a darling of the creative web community. The
+  acquisition was meant to signal Yahoo's commitment to media and youth culture. By 2016,
+  Yahoo took a $712M write-down on Tumblr as monetization had substantially underperformed.
+  Advertisers were reluctant to appear next to Tumblr's adult and NSFW content. The audience,
+  while large, skewed younger and generated less advertising revenue per user than expected.
+  In 2019 (post-Verizon acquisition), Tumblr banned adult content; traffic collapsed 30%+
+  immediately.
+
+options_considered:
+  - Write down Tumblr and continue operating it as a reduced-investment product (actual)
+  - Sell Tumblr to a buyer who valued the audience
+  - Invest further in Tumblr monetization with brand-safe content filtering
+  - Shut down Tumblr entirely
+
+option_taken: Write down $712M; continue operating Tumblr at reduced investment
+
+stated_rationale: |
+  Mayer acknowledged monetization was below expectations but argued Tumblr's audience
+  remained valuable and that better content filtering and brand-safe ad products were in
+  development. The write-down was presented as an accounting adjustment, not a strategic reversal.
+
+inferred_heuristics:
+  - narrative_control
+  - growth_at_cost
+  - decisive_under_uncertainty
+
+constraints_at_time:
+  - Yahoo was under Verizon acquisition pressure; Verizon was evaluating the assets
+  - Tumblr's community resisted commercial monetization of their platform
+  - Adult content was estimated to be 20-30% of Tumblr traffic, making brand-safe ads difficult
+
+outcome_12mo: |
+  Yahoo was acquired by Verizon for $4.48B in 2017. Tumblr was included in the deal.
+  Verizon eventually sold Tumblr to Automattic (WordPress parent) in 2019 for a reported
+  price "in the single-digit millions" — roughly 99% below acquisition price.
+
+outcome_36mo: |
+  Tumblr under Automattic banned adult content in December 2018, losing ~30% traffic.
+  The platform stabilized but remained a fraction of its peak scale. The Tumblr acquisition
+  is a canonical example of acquiring a community-oriented platform and destroying the value
+  through monetization pressure.
+
+outcome_label: failure
+
+counterfactual_signal: |
+  Reddit, a comparable community-driven platform, resisted advertiser pressure for years and
+  ultimately built a monetization model that respected community norms — though its path
+  to profitability was also slow. Discord similarly built revenue around premium subscriptions
+  rather than advertising, suggesting alternative monetization paths for community platforms.
+
+era_dependence: medium
+
+sources:
+  - type: article
+    title: "Yahoo takes $712 million write-down on Tumblr"
+    author: Salvador Rodriguez
+    year: 2016
+    url: https://www.reuters.com/article/us-yahoo-results-tumblr
+  - type: article
+    title: "Tumblr sold to Automattic for 'single-digit millions'"
+    author: Casey Newton
+    year: 2019
+    url: https://www.theverge.com/2019/8/12/20801258/tumblr-acquisition-automattic-wordpress-verizon-million-dollars-blogger-blogging
+
+review_status: reviewed
+reviewed_by: seed_curator_v1

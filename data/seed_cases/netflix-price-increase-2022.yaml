@@ -1,0 +1,83 @@
+case_id: netflix-price-increase-2022
+title: Netflix raises prices and introduces ad-supported tier amid subscriber loss
+decision_maker: Reed Hastings / Ted Sarandos
+organization: Netflix
+year: 2022
+domain: pricing
+decision_type: sequential
+
+context_summary: |
+  Netflix raised prices in January 2022 (US Standard plan to $15.49/month, Premium to $19.99)
+  amid a period of decelerating subscriber growth. In Q1 2022, Netflix reported its first
+  subscriber loss in a decade, losing 200,000 subs. Q2 2022 saw a further 970,000 loss. The
+  stock fell ~75% from its November 2021 peak. In November 2022, Netflix launched an
+  ad-supported plan at $6.99/month — the first time the company had sold advertising, a model
+  Hastings had previously categorically rejected. These decisions came simultaneously with a
+  crackdown announcement on password sharing (implemented in 2023).
+
+options_considered:
+  - Hold prices and reduce content spend to improve profitability
+  - Raise prices (the actual move in Jan 2022)
+  - Introduce an ad-supported lower-priced tier (the Nov 2022 move)
+  - Acquire a major content studio to strengthen differentiation
+  - Launch gaming or expand bundles
+
+option_taken: Price increase + new ad-supported tier + password sharing crackdown (phased)
+
+stated_rationale: |
+  Netflix argued that its content quality justified premium pricing. The ad-supported tier was
+  framed as expanding addressable market rather than capitulating. Password sharing was framed
+  as monetizing an existing (but free) audience of 100M+ households.
+
+inferred_heuristics:
+  - growth_at_cost
+  - narrative_control
+  - decisive_under_uncertainty
+  - barbell_allocation
+
+constraints_at_time:
+  - $15B+ in content obligations (long-term contracts)
+  - Post-pandemic streaming normalization globally
+  - Disney+, HBO Max, Apple TV+ had all launched as well-funded competitors
+  - Activist investor pressure after stock decline
+
+outcome_12mo: |
+  By Q4 2022, Netflix returned to subscriber growth, adding 7.7M in the quarter. Ad-supported
+  plan launched to mixed reviews but grew rapidly through 2023. Password sharing crackdown
+  rolled out globally in 2023, initially causing further short-term churn before driving
+  re-subscriptions.
+
+outcome_36mo: |
+  By 2024, Netflix stock had recovered past 2021 highs. Ad-supported plan reached 40M monthly
+  active users by 2024. Password sharing crackdown drove net subscriber additions of 13M+ in
+  Q4 2023. Broadly viewed as a successful repositioning, though at the cost of a brutal 18-month
+  transition.
+
+outcome_label: success
+
+counterfactual_signal: |
+  Disney+ and HBO Max both cut prices or added ad-supported tiers around the same period,
+  suggesting the industry consensus moved toward ad-supported models regardless. Streaming
+  services that did not add ad tiers (Apple TV+) remained subscale.
+
+era_dependence: medium
+
+sources:
+  - type: article
+    title: "Netflix loses subscribers for first time in decade"
+    author: Alex Sherman
+    year: 2022
+    url: https://www.cnbc.com/2022/04/19/netflix-q1-2022-earnings.html
+  - type: article
+    title: "Netflix launches ad-supported plan"
+    author: Todd Spangler
+    year: 2022
+    url: https://variety.com/2022/digital/news/netflix-ad-supported-launch-1235428408/
+  - type: article
+    title: "Netflix password-sharing crackdown drives subscriber surge"
+    author: Reuters
+    year: 2024
+    url: https://www.reuters.com/
+
+review_status: reviewed
+reviewed_by: seed_curator_v1

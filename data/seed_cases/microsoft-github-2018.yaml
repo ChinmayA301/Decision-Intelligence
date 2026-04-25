@@ -1,0 +1,80 @@
+case_id: microsoft-github-2018
+title: Microsoft acquires GitHub for $7.5B, despite developer community skepticism
+decision_maker: Satya Nadella
+organization: Microsoft
+year: 2018
+domain: m_and_a
+decision_type: one_way
+
+context_summary: |
+  Microsoft acquired GitHub in June 2018 for $7.5B in Microsoft stock — its largest
+  acquisition since LinkedIn in 2016. GitHub had ~27M developers and was the world's dominant
+  code hosting and collaboration platform. The acquisition triggered immediate developer
+  backlash: GitLab reported a spike in new accounts as developers, fearful of Microsoft's
+  historical hostility to open source, considered migrating. Microsoft under Nadella had been
+  rebuilding its open-source credibility (acquiring Xamarin, releasing VS Code, contributing
+  to Linux), but many developers were skeptical. The deal price implied ~30x revenue.
+
+options_considered:
+  - Acquire GitHub at the $7.5B valuation
+  - Invest in Azure DevOps and compete with GitHub organically
+  - Acquire GitLab instead (smaller, but similar functionality)
+  - Establish a deeper commercial partnership with GitHub without acquisition
+
+option_taken: Full acquisition of GitHub at $7.5B in stock
+
+stated_rationale: |
+  Nadella framed GitHub as the "developer platform of choice" and argued that Microsoft was
+  uniquely positioned to grow GitHub by providing enterprise distribution, cloud infrastructure
+  (Azure), and financial support for GitHub's open-source community programs. He committed
+  to leaving GitHub autonomous under CEO Nat Friedman.
+
+inferred_heuristics:
+  - concentration_bet
+  - moat_widening
+  - talent_density_bet
+  - platform_neutrality
+
+constraints_at_time:
+  - GitHub had been weighing IPO alternatives; Microsoft moved quickly to pre-empt
+  - GitLab was gaining ground as a self-hosted alternative
+  - Developer trust in Microsoft remained fragile after years of "Embrace, Extend, Extinguish" perception
+
+outcome_12mo: |
+  Developer migration concerns subsided quickly — GitLab's spike reversed within months.
+  GitHub's product velocity increased: GitHub Actions (CI/CD), GitHub Packages, and Codespaces
+  were all launched or accelerated post-acquisition.
+
+outcome_36mo: |
+  By 2021, GitHub had 65M+ developers, more than double pre-acquisition. GitHub Copilot
+  launched in 2021 and became a significant revenue driver. The acquisition is widely considered
+  one of the best enterprise software acquisitions of the decade.
+
+outcome_label: success
+
+counterfactual_signal: |
+  GitLab went public in October 2021 at a $15B valuation, suggesting significant value
+  remained in the independent developer-platform category. Amazon's CodeCommit never achieved
+  material share, validating the network effects that made GitHub defensible.
+
+era_dependence: low
+
+sources:
+  - type: article
+    title: "Microsoft acquires GitHub for $7.5 billion"
+    author: Tom Warren
+    year: 2018
+    url: https://www.theverge.com/2018/6/4/17422788/microsoft-github-acquisition-official-deal
+  - type: article
+    title: "How Microsoft is making GitHub better"
+    author: Dina Bass
+    year: 2021
+    url: https://www.bloomberg.com/news/features/2021-07-29/how-microsoft-is-making-github-better
+  - type: article
+    title: "GitHub CEO on the acquisition three years later"
+    author: Nat Friedman
+    year: 2021
+    url: https://natfriedman.com/
+
+review_status: reviewed
+reviewed_by: seed_curator_v1

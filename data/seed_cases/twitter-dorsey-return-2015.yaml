@@ -1,0 +1,78 @@
+case_id: twitter-dorsey-return-2015
+title: Twitter board returns Jack Dorsey as CEO after Dick Costolo's departure
+decision_maker: Twitter Board of Directors
+organization: Twitter
+year: 2015
+domain: key_hire
+decision_type: one_way
+
+context_summary: |
+  Twitter CEO Dick Costolo resigned in June 2015 under pressure from the board after years of
+  missing growth targets. User growth had stalled at ~300M MAU. Jack Dorsey — Twitter's
+  co-founder who had been forced out as CEO in 2008 — returned first as interim CEO and was
+  confirmed as permanent CEO in October 2015. Dorsey was simultaneously running Square,
+  which he was preparing for IPO. The dual-CEO arrangement was unusual and drew significant
+  criticism from governance experts. Twitter also cut 8% of its workforce at the same time.
+  The board faced limited choices: no obvious internal successor existed, and the most
+  credible external candidates (who had been approached) declined.
+
+options_considered:
+  - Return Dorsey as permanent CEO while he keeps Square CEO role (the actual move)
+  - Hire an external CEO and keep Dorsey as executive chairman
+  - Promote an internal executive (Adam Bain, others)
+  - Sell Twitter rather than execute a management change
+
+option_taken: Dorsey confirmed as permanent CEO of Twitter while remaining Square CEO
+
+stated_rationale: |
+  The board argued Dorsey had original product vision, authentic connection to Twitter's
+  founding mission, and the ability to attract talent. His continued role at Square was
+  framed as a "two founding-stage companies" argument rather than a conflict. The board
+  had limited alternatives given declined external approaches.
+
+inferred_heuristics:
+  - founder_mode
+  - decisive_under_uncertainty
+  - talent_density_bet
+  - narrative_control
+
+constraints_at_time:
+  - Twitter's stock had fallen 60%+ from its 2014 peak
+  - Square IPO was scheduled for late 2015, competing for Dorsey's attention
+  - Advertiser trust in Twitter's long-term platform was fragile
+
+outcome_12mo: |
+  Square IPO'd successfully in November 2015. Twitter's user growth remained stagnant under
+  Dorsey. Product changes (timeline algorithm, moments) were incremental. Multiple executive
+  departures followed.
+
+outcome_36mo: |
+  By 2017, Twitter had not achieved meaningful user growth recovery. Acquisition talks with
+  Salesforce and Disney fell through in 2016. Revenue growth decelerated. Twitter was
+  structurally challenged by its product complexity and harassment problems, issues that
+  Dorsey's return did not resolve.
+
+outcome_label: mixed
+
+counterfactual_signal: |
+  Twitter was eventually taken private by Elon Musk in 2022 at $44/share — roughly where
+  it had been in 2014 before Costolo's departure. The company's value did not grow
+  meaningfully under Dorsey's second tenure, suggesting the CEO choice mattered less than
+  the structural product and monetization challenges.
+
+era_dependence: medium
+
+sources:
+  - type: article
+    title: "Jack Dorsey confirmed as permanent Twitter CEO"
+    author: Mike Isaac
+    year: 2015
+    url: https://www.nytimes.com/2015/10/06/technology/twitter-jack-dorsey-permanent-ceo.html
+  - type: article
+    title: "The Twitter problem that Jack Dorsey can't solve"
+    author: Ben Thompson
+    year: 2016
+    url: https://stratechery.com/
+
+review_status: reviewed
+reviewed_by: seed_curator_v1

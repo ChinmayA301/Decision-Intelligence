@@ -1,0 +1,80 @@
+case_id: apple-itunes-store-2003
+title: Apple launches iTunes Music Store, creating legal $0.99/song digital download market
+decision_maker: Steve Jobs
+organization: Apple
+year: 2003
+domain: market_entry
+decision_type: sequential
+
+context_summary: |
+  Apple launched the iTunes Music Store in April 2003, selling individual songs for $0.99 and
+  albums for $9.99 — the first major legal digital music marketplace. Apple had already
+  introduced the iPod in 2001 and iTunes desktop software in 2002. To launch the store, Jobs
+  negotiated with all five major record labels (Universal, Sony, Warner, EMI, BMG), overcoming
+  their resistance to per-song pricing and digital rights management. The record labels feared
+  that legal digital downloads would cannibalize physical CD sales. Napster had been shut down
+  in 2001 but illegal downloading remained widespread. Apple's entry into music distribution
+  required Apple to become a licensed content distributor, a new business with different
+  economics and regulatory requirements from hardware.
+
+options_considered:
+  - Launch iTunes Store as a music retailer at $0.99/song (the actual move)
+  - Build iPod/iTunes for hardware sales only, without a first-party store
+  - Acquire a music label or distribution company
+  - Partner with an existing digital music service (Rhapsody, MusicNet)
+
+option_taken: Launch iTunes Store with per-song pricing, negotiated directly with all majors
+
+stated_rationale: |
+  Jobs argued that legal digital music could succeed only if priced low enough to beat
+  piracy's "good enough" quality and at a price that felt fair to consumers. He framed the
+  $0.99 price as the point of psychological comfort where people would choose legal over free.
+  He also argued that the major labels needed Apple to do this — they had no better alternative
+  and Napster had proven their existing model was failing.
+
+inferred_heuristics:
+  - decisive_under_uncertainty
+  - first_mover
+  - narrative_control
+  - vertical_integration
+
+constraints_at_time:
+  - Apple had no prior experience in content licensing or entertainment distribution
+  - Record labels were hostile and slow-moving; each required separate negotiation
+  - Windows-only customers could not use iTunes (Mac-only at launch in April 2003; Windows in October 2003)
+
+outcome_12mo: |
+  iTunes Store sold 70M songs in its first year. iPod sales doubled on the back of the
+  store's content library. The $0.99 price point held. The Windows version (October 2003)
+  dramatically expanded addressable market.
+
+outcome_36mo: |
+  By 2006, iTunes was the #3 music retailer in the US, behind Walmart and Best Buy. Apple
+  had effectively created the legal digital music market and captured the majority of its
+  economics. The store became a platform for music, TV shows, movies, and eventually apps.
+
+outcome_label: success
+
+counterfactual_signal: |
+  Microsoft's Zune music player and associated store (2006) failed to challenge iPod/iTunes
+  despite Microsoft's distribution power, validating the first-mover network effects.
+  Amazon's MP3 store launched in 2007 with DRM-free tracks and was the only meaningful
+  competitor, gaining share slowly.
+
+era_dependence: high
+
+sources:
+  - type: book
+    title: "Steve Jobs"
+    author: Walter Isaacson
+    year: 2011
+    pages: "pp. 394-412"
+    quote: "We're agnostic about what the future of music is, but we think it's about playing music, not owning it."
+  - type: article
+    title: "Apple launches iTunes Music Store"
+    author: Macworld
+    year: 2003
+    url: https://www.macworld.com/article/2010250/apple-launches-itunes-music-store.html
+
+review_status: reviewed
+reviewed_by: seed_curator_v1

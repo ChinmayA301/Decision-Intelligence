@@ -1,0 +1,75 @@
+case_id: hubspot-freemium-2014
+title: HubSpot introduces free CRM to expand top of funnel and compete with Salesforce
+decision_maker: Brian Halligan
+organization: HubSpot
+year: 2014
+domain: pricing
+decision_type: sequential
+
+context_summary: |
+  HubSpot went public in October 2014 at ~$880M valuation. The company had built its
+  business on inbound marketing software with a sales-led model. In 2014, HubSpot introduced
+  a free CRM product, positioning it as a gateway to its Marketing Hub and Sales Hub paid
+  products. The free CRM was a departure from HubSpot's previous SMB-focused paid model.
+  The decision came as Salesforce dominated the CRM market and smaller competitors (Pipedrive,
+  Zoho) were gaining ground with lower-cost options. HubSpot's bet was that giving away the
+  CRM would drive adoption of its higher-margin marketing automation tools.
+
+options_considered:
+  - Maintain the paid-only marketing and CRM bundle
+  - Introduce a free CRM as a standalone product (the actual move)
+  - Acquire a CRM company rather than build free
+  - Partner with an existing CRM provider for integration
+
+option_taken: Build and launch HubSpot CRM as a permanently free, standalone product
+
+stated_rationale: |
+  Halligan argued that the CRM was a foundational layer: companies that used HubSpot CRM
+  would naturally gravitate toward paying for the marketing automation, sales sequences, and
+  service tools built on top. The free CRM was not a loss leader but a platform strategy —
+  a wedge into the customer's tech stack.
+
+inferred_heuristics:
+  - growth_at_cost
+  - platform_neutrality
+  - moat_widening
+  - first_mover
+
+constraints_at_time:
+  - HubSpot had just IPO'd and had public market pressure on near-term profitability
+  - Engineering resources were finite; building a full CRM required significant investment
+  - Salesforce ecosystem partners were potential channel allies or enemies
+
+outcome_12mo: |
+  HubSpot CRM reached 10,000+ customers within months of launch. Cross-sell into paid
+  Marketing Hub grew. The free product significantly reduced CAC for SMB accounts.
+
+outcome_36mo: |
+  By 2017, HubSpot had over 23,000 customers and was growing revenue 35%+ annually.
+  The free CRM was widely credited with expanding HubSpot's addressable market and reducing
+  competitive churn. The platform strategy succeeded: CRM was the wedge, and the higher-margin
+  products followed.
+
+outcome_label: success
+
+counterfactual_signal: |
+  Salesforce launched its own freemium Essentials tier in 2017, suggesting validation of the
+  freemium-CRM approach. Zoho had long offered a free CRM tier and used it to grow to
+  significant scale without venture funding, providing an earlier proof of the model.
+
+era_dependence: low
+
+sources:
+  - type: article
+    title: "HubSpot's free CRM strategy"
+    author: HubSpot Blog
+    year: 2014
+    url: https://www.hubspot.com/products/crm
+  - type: article
+    title: "How HubSpot became a platform company"
+    author: Ben Thompson
+    year: 2018
+    url: https://stratechery.com/
+
+review_status: reviewed
+reviewed_by: seed_curator_v1

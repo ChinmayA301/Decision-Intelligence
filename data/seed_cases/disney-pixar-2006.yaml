@@ -1,0 +1,78 @@
+case_id: disney-pixar-2006
+title: Disney acquires Pixar for $7.4B in stock, rescuing Disney's animation studio
+decision_maker: Bob Iger
+organization: Walt Disney Company
+year: 2006
+domain: m_and_a
+decision_type: one_way
+
+context_summary: |
+  Disney CEO Bob Iger took over in October 2005 inheriting a strained relationship with Pixar
+  and Steve Jobs, who had announced Pixar would not renew its distribution deal with Disney.
+  Iger's first major act was to propose acquiring Pixar rather than repairing the distribution
+  deal. Disney paid $7.4B in all-stock transaction, making Jobs Disney's largest individual
+  shareholder. The deal brought John Lasseter and Ed Catmull to run Disney's animation studios.
+  Disney animation had produced a string of failures (Treasure Planet, Brother Bear, Home on
+  the Range) and was considering abandoning 2D animation entirely.
+
+options_considered:
+  - Renew the distribution deal with Pixar on updated terms
+  - Acquire Pixar outright (the actual move)
+  - Build Disney's internal animation capability through investment and new hires
+  - Acquire DreamWorks Animation instead (a different asset at lower price)
+
+option_taken: Full acquisition of Pixar at $7.4B in Disney stock
+
+stated_rationale: |
+  Iger argued that Pixar's cultural and creative capabilities could not be replicated and
+  could regenerate Disney's flagging animation business. He was explicit that he was buying
+  talent and culture, not just IP, and that protecting Pixar's culture from Disney's
+  bureaucracy was a condition of deal success.
+
+inferred_heuristics:
+  - concentration_bet
+  - talent_density_bet
+  - decisive_under_uncertainty
+  - cultural_homogeneity
+
+constraints_at_time:
+  - Disney animation had failed commercially multiple times since The Lion King (1994)
+  - Steve Jobs was the key decision-maker at Pixar and had publicly burned bridges with Eisner
+  - Disney's board was in a post-Eisner transition and vulnerable to activist pressure
+
+outcome_12mo: |
+  John Lasseter became chief creative officer of both Pixar and Walt Disney Animation Studios.
+  The Pixar cultural principles (story trust, notes culture) began influencing Disney productions.
+  Disney's animation slate was restructured.
+
+outcome_36mo: |
+  Disney animation produced Bolt (2008), which was commercial but modest. Lasseter
+  commissioned The Princess and the Frog (traditional 2D) and Tangled. Pixar continued to
+  produce Cars, Ratatouille, and WALL-E, all successes. By 2010, Toy Story 3 grossed $1B.
+
+outcome_label: success
+
+counterfactual_signal: |
+  DreamWorks Animation — which had been a possible alternative — went through sustained
+  creative struggles and was eventually acquired by NBCUniversal in 2016 for $3.8B at a
+  lower valuation than the Pixar deal commanded 10 years earlier. The Pixar acquisition is
+  widely regarded as unlocking a decade of Disney animation value that would not have
+  been possible otherwise.
+
+era_dependence: low
+
+sources:
+  - type: book
+    title: "The Ride of a Lifetime"
+    author: Robert Iger
+    year: 2019
+    pages: "pp. 131-168"
+    quote: "I called Steve and told him I thought we should buy Pixar rather than just renegotiate our deal."
+  - type: article
+    title: "Disney to acquire Pixar for $7.4 billion"
+    author: CNN Money
+    year: 2006
+    url: https://money.cnn.com/2006/01/24/news/companies/disney_pixar/
+
+review_status: reviewed
+reviewed_by: seed_curator_v1

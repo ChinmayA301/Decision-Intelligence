@@ -1,0 +1,77 @@
+case_id: amazon-india-entry-2013
+title: Amazon commits $2B to India operations to compete with Flipkart on its home turf
+decision_maker: Jeff Bezos
+organization: Amazon
+year: 2013
+domain: market_entry
+decision_type: sequential
+
+context_summary: |
+  Amazon launched Amazon.in in India in June 2013, entering a market dominated by Flipkart
+  (founded 2007, backed by Tiger Global and Accel) and Snapdeal. India had 200M+ internet
+  users growing rapidly, but e-commerce penetration was low (under 1%). Foreign direct
+  investment rules prohibited Amazon from owning inventory directly, requiring a marketplace
+  model. In July 2014, Bezos personally visited India and announced a $2B investment
+  commitment — the largest single foreign e-commerce investment in India at that time.
+  Flipkart responded with a $1B fundraise. The battle required sustained loss-making to
+  build logistics infrastructure (Amazon invested in Fulfillment by Amazon warehouses),
+  seller acquisition, and customer subsidies in a market with very different purchasing
+  behavior from the US.
+
+options_considered:
+  - Enter India as a marketplace with $2B+ commitment (the actual move)
+  - Enter India through a joint venture with a local partner
+  - Wait for the market to mature and enter via acquisition (e.g., acquire Flipkart)
+  - Focus on other international markets (Brazil, Southeast Asia) instead
+
+option_taken: Direct entry with marketplace model and committed $2B+ capital in the first year
+
+stated_rationale: |
+  Bezos argued that India was one of the world's last major e-commerce frontiers, that the
+  regulatory environment favored marketplaces, and that Amazon's logistics and seller-services
+  expertise would transfer. He believed the window for entry was closing as Flipkart grew.
+
+inferred_heuristics:
+  - first_mover
+  - growth_at_cost
+  - concentration_bet
+  - decisive_under_uncertainty
+
+constraints_at_time:
+  - FDI regulations prohibited inventory ownership; marketplace model had structural limitations
+  - Last-mile logistics in India was underdeveloped; Amazon needed to build its own
+  - Payment infrastructure was cash-on-delivery dependent, increasing operational complexity
+
+outcome_12mo: |
+  Amazon.in grew rapidly in 2014, approaching Flipkart's GMV in some categories. The logistics
+  investment (fulfillment centers, Amazon Logistics) began paying off. Walmart acquired a
+  major stake in Flipkart in 2018.
+
+outcome_36mo: |
+  By 2016, Amazon.in was the #2 Indian e-commerce platform. Flipkart (including Myntra and
+  Jabong) remained #1 by GMV. Amazon India reached profitability milestone in select categories.
+  The duopoly structure has persisted, with Amazon and Flipkart/Walmart dominating.
+
+outcome_label: mixed
+
+counterfactual_signal: |
+  eBay had entered India earlier (via Baazee acquisition in 2004) and exited by selling to
+  Flipkart in 2017, having failed to compete. This suggests that the capital commitment
+  required to win in India was higher than most Western e-commerce companies could sustain.
+
+era_dependence: medium
+
+sources:
+  - type: article
+    title: "Amazon commits $2 billion to India operations"
+    author: Jeffrey Dastin
+    year: 2014
+    url: https://www.reuters.com/article/us-amazon-india
+  - type: article
+    title: "The great India e-commerce war"
+    author: Bloomberg
+    year: 2018
+    url: https://www.bloomberg.com/news/features/2018-06-01/amazon-vs-flipkart
+
+review_status: reviewed
+reviewed_by: seed_curator_v1

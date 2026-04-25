@@ -1,0 +1,77 @@
+case_id: uber-khosrowshahi-ceo-2017
+title: Uber board selects Dara Khosrowshahi to replace Travis Kalanick amid culture crisis
+decision_maker: Uber Board of Directors
+organization: Uber
+year: 2017
+domain: key_hire
+decision_type: one_way
+
+context_summary: |
+  Travis Kalanick resigned as Uber CEO in June 2017 under pressure from a board revolt
+  following a series of crises: the #DeleteUber movement (January 2017), a viral blog post
+  by Susan Fowler describing systemic sexual harassment (February 2017), a video of Kalanick
+  berating an Uber driver (February 2017), and an internal investigation by Eric Holder's law
+  firm (June 2017). The board hired Dara Khosrowshahi — then CEO of Expedia — over internal
+  candidates and Jeff Immelt (former GE CEO). Khosrowshahi was known for calm execution and
+  rebuilding trust; he was not a Silicon Valley insider. The hire represented a deliberate
+  break from the Kalanick "always be hustling" culture.
+
+options_considered:
+  - Hire Khosrowshahi from Expedia (the actual move)
+  - Hire Jeff Immelt (former GE CEO, known for enterprise credibility)
+  - Promote an internal executive (Ryan Graves, others)
+  - Keep Kalanick with reduced role while board searched
+
+option_taken: Khosrowshahi hired as CEO with mandate to repair culture and prepare for IPO
+
+stated_rationale: |
+  The board wanted operational execution, culture repair, and IPO readiness. Khosrowshahi
+  had rebuilt Expedia's culture and taken it through a period of profitable growth.
+  He was seen as a "safe pair of hands" who could represent Uber credibly to regulators,
+  drivers, and public markets without the Kalanick baggage.
+
+inferred_heuristics:
+  - structured_deliberation
+  - transparent_communication
+  - brand_protection_priority
+  - consensus_required
+
+constraints_at_time:
+  - Uber was operating in 75+ countries with major regulatory battles ongoing
+  - London and other key markets had threatened or revoked Uber's license
+  - Employee morale and culture were severely damaged
+
+outcome_12mo: |
+  Khosrowshahi moved quickly to acknowledge past failures publicly. London issued a new
+  probationary license. Tone in press coverage shifted. Internal morale surveys improved.
+  Regulatory relations improved in multiple markets.
+
+outcome_36mo: |
+  Uber IPO'd in May 2019 at a $82B valuation. The IPO was below earlier targets but
+  successful. Uber's business continued to face challenges (COVID-19, driver classification
+  disputes) but the existential governance crisis was resolved.
+
+outcome_label: success
+
+counterfactual_signal: |
+  Jeff Immelt, the alternative candidate, was known for empire-building at GE and was
+  widely seen as the wrong profile for a culture repair and IPO-readiness mandate.
+  Lyft, Uber's primary competitor, did not face an equivalent governance crisis because
+  its culture was different from inception — validating that culture matters at the CEO level.
+
+era_dependence: low
+
+sources:
+  - type: book
+    title: "Super Pumped: The Battle for Uber"
+    author: Mike Isaac
+    year: 2019
+    pages: "pp. 289-340"
+  - type: article
+    title: "Dara Khosrowshahi is Uber's new CEO"
+    author: Mike Isaac
+    year: 2017
+    url: https://www.nytimes.com/2017/08/27/technology/uber-chief-executive-khosrowshahi.html
+
+review_status: reviewed
+reviewed_by: seed_curator_v1

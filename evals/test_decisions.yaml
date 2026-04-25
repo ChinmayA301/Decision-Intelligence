@@ -1,0 +1,226 @@
+# Held-out test decisions for process evals.
+# 20 total. Distribution: pricing×4, m_and_a×4, market_entry×4, key_hire×3, product_sunset×3, capital_allocation×2
+# At least 3 expected_clarification: true; at least 2 weak_reference_class expected.
+
+# ─── PRICING (4) ─────────────────────────────────────────────────────────────
+
+- id: test_p01
+  user_input: |
+    We're a B2B analytics tool, $4M ARR. We've been charging $500/seat/mo with no enterprise tier.
+    Customers keep asking for usage-based add-ons. We're considering moving to a hybrid where the
+    base seat is $300 plus consumption-based pricing for query volume. Sales is split. Founder is
+    leaning toward the change because it would let us land smaller teams and grow with them, but
+    we're worried about revenue predictability.
+  expected_domain: pricing
+  expected_decision_type: sequential
+  expected_clarification: false
+  trap: false
+
+- id: test_p02
+  user_input: |
+    We've been SaaS-only at $199/user/month. Three enterprise customers are asking for annual
+    contracts at a 30% discount. Our head of sales says we'll lose all three without it. Our
+    CFO is worried it sets a precedent. We do $2.1M ARR. We have 8 months of runway.
+  expected_domain: pricing
+  expected_decision_type: reversible
+  expected_clarification: false
+  trap: false
+
+- id: test_p03
+  user_input: |
+    I'm thinking about changing how we charge. Maybe per-usage? Or a flat fee? Or tiered?
+    The current model isn't working great. We have some customers who love us. I want to
+    make more money but also not lose people.
+  expected_clarification: true
+  trap: false
+
+- id: test_p04
+  user_input: |
+    We're a developer tools company doing $6M ARR. We currently charge $29/seat/month.
+    OpenAI, Anthropic, and other AI companies have entered adjacent spaces and are bundling
+    similar tooling into their APIs for free. We're trying to decide whether to cut prices
+    by 50%, hold, or move upmarket to enterprise-only. We have 22 months of runway.
+  expected_domain: pricing
+  expected_decision_type: sequential
+  expected_clarification: false
+  trap: true
+
+# ─── M&A (4) ─────────────────────────────────────────────────────────────────
+
+- id: test_m01
+  user_input: |
+    A larger competitor is offering to acquire us for $80M, all stock. We did $9M ARR last year
+    growing 90%. Cap table is messy — Series A preferred has 1.5x liquidation. Founders would
+    walk away with around $14M each after taxes. Team is excited about the resources; some
+    investors want us to push for $120M. Term sheet expires in 11 days.
+  expected_domain: m_and_a
+  expected_decision_type: one_way
+  expected_clarification: false
+  trap: false
+
+- id: test_m02
+  user_input: |
+    We're considering acquiring a small startup (6 people, $800K ARR) that has built a
+    complementary AI feature we've been planning to build ourselves. They're asking $4M.
+    We have $12M in the bank. Build vs. buy analysis shows ~18 months to build vs.
+    ~6 months to integrate their tech. We're worried about team retention post-acquisition.
+  expected_domain: m_and_a
+  expected_decision_type: reversible
+  expected_clarification: false
+  trap: false
+
+- id: test_m03
+  user_input: |
+    Should we merge with our main competitor? They're about our size. We've been talking
+    informally. I think it could be interesting. What do you think?
+  expected_clarification: true
+  trap: false
+
+- id: test_m04
+  user_input: |
+    Our board has identified a niche vertical software company in the healthcare compliance
+    space. $2.3M ARR, 40% growth. They want $18M (about 7.8x ARR). We're a horizontal
+    compliance platform at $22M ARR. We've never done an acquisition. The sellers have
+    a 12-month earnout requirement for the founders. We need to decide in 3 weeks.
+  expected_domain: m_and_a
+  expected_decision_type: one_way
+  expected_clarification: false
+  trap: true
+
+# ─── MARKET ENTRY (4) ────────────────────────────────────────────────────────
+
+- id: test_me01
+  user_input: |
+    We make professional kitchen scheduling software. Big consulting firm we trust says we
+    should expand into healthcare staff scheduling — they say the workflows are 70% similar
+    and the market is 5x larger. Our CRO is excited. CTO thinks the regulatory overhead
+    (HIPAA, union contracts) is a hidden 18-month cost we're underestimating. We have 9 months
+    of runway and could raise more if we have a clear story.
+  expected_domain: market_entry
+  expected_decision_type: sequential
+  expected_clarification: false
+  trap: true
+
+- id: test_me02
+  user_input: |
+    We built a successful legal research tool for US corporate law firms ($8M ARR, 150 customers).
+    We're being asked by 3 large UK law firms if we'll support UK law. The expansion would require
+    a UK legal database, UK-specific training, and a sales presence. We estimate $1.5M investment
+    to launch and 18 months to reach meaningful UK revenue.
+  expected_domain: market_entry
+  expected_decision_type: sequential
+  expected_clarification: false
+  trap: false
+
+- id: test_me03
+  user_input: |
+    I run a software company and I'm thinking about expanding internationally. Should I?
+  expected_clarification: true
+  trap: false
+
+- id: test_me04
+  user_input: |
+    We have a dominant position in the SMB restaurant POS market (12% market share, $40M ARR).
+    A large hotel chain approached us wanting an enterprise POS. The hotel POS market is
+    fundamentally different: 7-layer payment integrations, room-charging, 24/7 SLA requirements.
+    Winning one hotel chain could be worth $3M ARR but could absorb 30% of engineering for 12 months.
+    We'd be competing against established hotel-tech vendors (Oracle Hospitality, Agilysys).
+  expected_domain: market_entry
+  expected_decision_type: one_way
+  expected_clarification: false
+  trap: true
+  notes: "deliberately niche — expect weak_reference_class for hotel-POS vertical"
+
+# ─── KEY HIRE (3) ────────────────────────────────────────────────────────────
+
+- id: test_k01
+  user_input: |
+    We're a 40-person startup ($7M ARR, Series A). Our VP Engineering left last month.
+    We've narrowed to two candidates: an ex-Google engineering director with 15 years
+    at big tech but no startup experience, and a Series A/B startup CTO who built and
+    sold a small company ($15M exit). Big-company candidate wants $280K base; startup
+    candidate wants $220K + larger equity. We need someone who can hire fast and also
+    push features. Board is split.
+  expected_domain: key_hire
+  expected_decision_type: one_way
+  expected_clarification: false
+  trap: true
+
+- id: test_k02
+  user_input: |
+    Our founder-CEO is burning out. She's been running the company for 6 years and wants
+    to transition to CPO role and hire a professional CEO to scale. We're at $15M ARR,
+    Series B. We have two internal candidates (our COO and our CRO) and are also considering
+    an external search. The board is supportive. CEO wants to stay actively involved.
+  expected_domain: key_hire
+  expected_decision_type: one_way
+  expected_clarification: false
+  trap: false
+
+- id: test_k03
+  user_input: |
+    We need to hire a Head of Sales. We've been founder-led sales up to $3M ARR.
+    A recruiter sent us some candidates. Should we hire one of them?
+  expected_clarification: true
+  trap: false
+
+# ─── PRODUCT SUNSET (3) ──────────────────────────────────────────────────────
+
+- id: test_ps01
+  user_input: |
+    We have a legacy version (v1) of our product that 800 customers are still on.
+    V2 launched 18 months ago. V1 customers generate $1.2M ARR (18% of total) but
+    require 2 engineers dedicated to maintenance. V1 customers have a 2x higher churn
+    rate than V2. We want to sunset V1 but we signed multi-year contracts with 60 of
+    those customers. Legal says we can exit those contracts with 6 months notice under
+    a deprecation clause. This is a one-time decision; we won't be able to reverse it.
+  expected_domain: product_sunset
+  expected_decision_type: one_way
+  expected_clarification: false
+  trap: false
+
+- id: test_ps02
+  user_input: |
+    We acquired a small analytics product 2 years ago for $4M. It does $600K ARR but
+    is declining 15% year-over-year. It shares almost no code with our core platform.
+    We've tried to cross-sell it to our main customer base but conversion is under 2%.
+    The product has a small but loyal customer base. Sell it, shut it down, or keep
+    maintaining it at current investment?
+  expected_domain: product_sunset
+  expected_decision_type: one_way
+  expected_clarification: false
+  trap: false
+
+- id: test_ps03
+  user_input: |
+    Things have been tough lately. The team morale is low. I'm not sure what to do.
+  expected_clarification: true
+  trap: false
+
+# ─── CAPITAL ALLOCATION (2) ──────────────────────────────────────────────────
+
+- id: test_ca01
+  user_input: |
+    We have $8M in the bank and are default alive (slightly FCF positive). We're growing
+    25% YoY. Our board is split between: (a) raise a Series A now in a favorable market
+    to accelerate growth, (b) continue bootstrapped growth until we hit $5M ARR, or
+    (c) run a structured process to find a strategic acquirer. We're at $2.8M ARR.
+    Founders own 95% (pre-money). We've had one inbound term sheet at $18M valuation.
+  expected_domain: capital_allocation
+  expected_decision_type: sequential
+  expected_clarification: false
+  trap: false
+
+- id: test_ca02
+  user_input: |
+    We're considering whether to build our AI inference infrastructure in-house or pay
+    cloud costs to run on AWS/Azure. We currently spend $180K/month on inference. Building
+    in-house (on-prem GPU cluster) would cost $2.2M upfront and $40K/month ongoing.
+    Breakeven is roughly 18 months. We have 28 months of runway. The risk is that model
+    architectures are changing rapidly and the hardware we buy today may be suboptimal in
+    2 years.
+  expected_domain: capital_allocation
+  expected_decision_type: one_way
+  expected_clarification: false
+  trap: true
+  notes: "deliberately niche AI infra decision — may hit weak_reference_class"

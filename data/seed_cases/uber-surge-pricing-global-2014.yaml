@@ -1,0 +1,77 @@
+case_id: uber-surge-pricing-global-2014
+title: Uber rolls out surge pricing globally, doubling down despite backlash
+decision_maker: Travis Kalanick
+organization: Uber
+year: 2014
+domain: market_entry
+decision_type: sequential
+
+context_summary: |
+  Uber introduced surge pricing in 2012 and expanded it globally through 2014, making it a
+  core element of its market entry playbook. In each new market, Uber launched with surge
+  pricing as an explicit differentiator: prices would rise during peak demand to attract more
+  drivers. The strategy drew intense backlash — press coverage during New Year's Eve 2013
+  showed fares 8x normal; the Boston blizzard of 2015 generated intense negative coverage.
+  Regulators in multiple cities used surge pricing as justification for restrictive rules.
+  Despite the backlash, Kalanick was explicit and public about defending surge pricing,
+  framing it as a marketplace mechanism rather than price gouging.
+
+options_considered:
+  - Maintain surge pricing globally as a standard feature (the actual move)
+  - Cap surge pricing at 2–3x in regulated markets to reduce political risk
+  - Use a different mechanism (ride credits, waitlists) during peak demand
+  - Remove surge pricing in politically sensitive markets to ease regulatory pressure
+
+option_taken: Global rollout of uncapped surge pricing; defend it publicly
+
+stated_rationale: |
+  Kalanick argued that surge pricing was economically necessary: without higher prices during
+  peak demand, supply would not appear. He framed it as an algorithm, not a corporate decision,
+  and argued that any cap would create artificial shortages. He used economic arguments
+  publicly and did not shy away from defending the mechanism even when unpopular.
+
+inferred_heuristics:
+  - decisive_under_uncertainty
+  - speed_over_consensus
+  - regulatory_arbitrage
+  - narrative_control
+
+constraints_at_time:
+  - Lyft was a direct competitor with a "friendly" brand and political positioning
+  - Taxi medallion holders had significant political influence in most cities
+  - Uber was simultaneously fighting regulatory battles in multiple cities
+
+outcome_12mo: |
+  Uber continued to grow despite surge pricing controversy. Regulatory battles intensified in
+  multiple markets (London, Austin, NYC). The driver supply mechanism worked: supply consistently
+  appeared during surge events, validating the economic model.
+
+outcome_36mo: |
+  Uber's global expansion continued, though the company faced regulatory setbacks in multiple
+  cities. The surge pricing mechanism was never fundamentally abandoned and became industry
+  standard. However, Uber's brand suffered persistent trust issues that contributed to
+  executive and leadership problems by 2017.
+
+outcome_label: mixed
+
+counterfactual_signal: |
+  Lyft, which took a softer stance on surge pricing and regulatory engagement, had a better
+  brand reputation but significantly less market share. This suggests Uber's hard-line approach
+  bought market share at the cost of trust capital that proved expensive in 2017.
+
+era_dependence: medium
+
+sources:
+  - type: book
+    title: "Super Pumped: The Battle for Uber"
+    author: Mike Isaac
+    year: 2019
+    pages: "pp. 112-145"
+  - type: article
+    title: "Uber's surge pricing explained"
+    author: Kara Swisher
+    year: 2014
+    url: https://www.vox.com/
+
+review_status: reviewed
+reviewed_by: seed_curator_v1

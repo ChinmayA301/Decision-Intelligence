@@ -1,0 +1,77 @@
+case_id: apple-sculley-hire-1983
+title: Apple hires John Sculley from PepsiCo as CEO, leading to Jobs's departure
+decision_maker: Steve Jobs / Apple Board
+organization: Apple Computer
+year: 1983
+domain: key_hire
+decision_type: one_way
+
+context_summary: |
+  Steve Jobs recruited PepsiCo president John Sculley as Apple CEO in 1983 with the famous
+  challenge: "Do you want to spend the rest of your life selling sugared water, or do you
+  want a chance to change the world?" Sculley was the highest-profile consumer goods executive
+  of his era — the architect of the "Pepsi Generation" campaign and a skilled marketer.
+  Apple needed a CEO who could manage scale and Wall Street after the 1980 IPO. The board
+  wanted professional management; Jobs believed Sculley's marketing talent would complement
+  Jobs's product instincts. Within 18 months, Jobs and Sculley were in a direct power struggle
+  over the Macintosh division, culminating in Sculley siding with the board and Jobs being
+  stripped of his Mac division role in May 1985. Jobs resigned in September 1985.
+
+options_considered:
+  - Hire Sculley as CEO, with Jobs remaining (the actual move)
+  - Promote an existing Apple executive to CEO
+  - Recruit a tech-industry executive from the emerging PC industry
+  - Keep Jobs as CEO and hire Sculley as COO or CMO
+
+option_taken: Sculley hired as CEO; Jobs retained as founder and Mac division leader
+
+stated_rationale: |
+  Jobs said publicly that Apple needed a great marketer to compete with IBM. He believed
+  Sculley's consumer-brand building skills could make Apple mainstream. The board wanted
+  operational stability after the Apple III failure and Lisa's struggles.
+
+inferred_heuristics:
+  - talent_density_bet
+  - structured_deliberation
+  - narrative_control
+  - consensus_required
+
+constraints_at_time:
+  - Apple had gone public in 1980 and had public-market accountability requirements
+  - Apple II was generating most of revenue while Mac was consuming resources
+  - Jobs was considered difficult to manage and unpredictable by the board
+
+outcome_12mo: |
+  Sculley and Jobs were in significant tension by late 1984 over Mac sales shortfalls.
+  The board sided with Sculley in May 1985. Jobs was stripped of his Mac role.
+
+outcome_36mo: |
+  Jobs resigned in September 1985 and founded NeXT. Sculley led Apple through a period of
+  reasonable commercial success (Mac II, 1987) but also strategic drift. Apple's market
+  share declined through the late 1980s under a succession of management changes.
+
+outcome_label: failure
+
+counterfactual_signal: |
+  When Jobs returned to Apple in 1997 (via the NeXT acquisition), he reversed almost all of
+  Sculley's strategic decisions and rebuilt Apple's design-led identity. The outcome suggests
+  the hire of a non-technical CEO who lacked conviction about product-led strategy was the
+  wrong archetype for Apple's stage.
+
+era_dependence: medium
+
+sources:
+  - type: book
+    title: "Steve Jobs"
+    author: Walter Isaacson
+    year: 2011
+    pages: "pp. 152-195"
+    quote: "I was always looking for the best person for each job. And I thought John was outstanding."
+  - type: book
+    title: "Odyssey: Pepsi to Apple"
+    author: John Sculley
+    year: 1987
+    pages: "pp. 79-120"
+
+review_status: reviewed
+reviewed_by: seed_curator_v1

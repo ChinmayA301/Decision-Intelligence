@@ -1,0 +1,75 @@
+case_id: amazon-aws-reinvestment-2006
+title: Amazon launches AWS as a public cloud platform, cannibalizing its own infrastructure advantage
+decision_maker: Jeff Bezos / Andy Jassy
+organization: Amazon
+year: 2006
+domain: capital_allocation
+decision_type: sequential
+
+context_summary: |
+  Amazon launched Amazon Web Services (S3 and EC2) in 2006, opening its internal cloud
+  infrastructure to external customers. The decision required sustained internal investment
+  in infrastructure that Amazon had built for its own retail operations. By 2006, Amazon
+  had built a large, sophisticated distributed systems capability to run Amazon.com.
+  Bezos made the decision to sell this capability externally — initially opposed by some
+  who feared building a competitor's infrastructure. The investment was substantial:
+  hundreds of millions in data center capex, with no guarantee of external adoption.
+  At launch, AWS was priced at commodity rates (S3 at $0.15/GB-month), far below what
+  a customer would pay to build equivalent capacity.
+
+options_considered:
+  - Launch AWS externally at commodity pricing (the actual move)
+  - Keep infrastructure internal and do not open to external customers
+  - License the infrastructure model to a third party without operating it
+  - Launch AWS at premium pricing to existing Amazon partners only
+
+option_taken: External launch of AWS at low commodity pricing; treat as a standalone business
+
+stated_rationale: |
+  Bezos framed AWS as serving startups and developers who needed infrastructure without
+  the capex. He believed that if Amazon built the infrastructure anyway, selling it
+  externally was incremental margin. He also understood that cloud would be a winner-take-most
+  market and first-mover advantage in infrastructure would be durable.
+
+inferred_heuristics:
+  - first_mover
+  - concentration_bet
+  - moat_widening
+  - asymmetric_payoff
+
+constraints_at_time:
+  - AWS investment competed for capital with Amazon's rapidly growing retail business
+  - No proven market for "cloud computing" as a concept yet existed
+  - Traditional IT vendors (IBM, HP, EMC) had deep enterprise relationships
+
+outcome_12mo: |
+  S3 stored 800M objects by end of 2006. Startups adopted rapidly. EC2 launch in August 2006
+  enabled elastic compute. Early adopters (Reddit, Dropbox founded in 2007) validated the market.
+
+outcome_36mo: |
+  By 2009, AWS had become the de facto standard for startup infrastructure. In 2010, Amazon's
+  own retail infrastructure migrated fully to AWS. AWS was growing faster than the retail business.
+
+outcome_label: success
+
+counterfactual_signal: |
+  Google launched Google Cloud Platform in 2008 and Microsoft Azure in 2010 — both years
+  behind AWS. Despite their superior distribution and technical resources, neither achieved
+  AWS's market position, validating the first-mover structural advantage in cloud infrastructure.
+
+era_dependence: high
+
+sources:
+  - type: book
+    title: "The Everything Store"
+    author: Brad Stone
+    year: 2013
+    pages: "pp. 218-240"
+  - type: article
+    title: "How AWS came to be"
+    author: Andy Jassy
+    year: 2016
+    url: https://techcrunch.com/2016/07/02/andy-jassys-brief-history-of-the-genesis-of-aws/
+
+review_status: reviewed
+reviewed_by: seed_curator_v1

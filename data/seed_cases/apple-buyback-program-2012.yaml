@@ -1,0 +1,76 @@
+case_id: apple-buyback-program-2012
+title: Apple initiates $10B share buyback and dividend after decades of no capital return
+decision_maker: Tim Cook
+organization: Apple
+year: 2012
+domain: capital_allocation
+decision_type: sequential
+
+context_summary: |
+  Apple had accumulated over $100B in cash and cash equivalents by early 2012 and had not
+  paid a dividend since 1995 or executed a buyback under Jobs. Activist investor David Einhorn
+  had been pushing for capital return. In March 2012, Tim Cook announced a $10B buyback program
+  and a $2.65/quarter dividend — the first since 1995. The program was subsequently expanded
+  multiple times: by 2020 Apple had returned over $400B in buybacks and dividends to
+  shareholders. At the time of the initial announcement, the cash position was seen as both an
+  asset (acquisition war chest) and a liability (capital inefficiency). Apple's business
+  generated $40B+ in free cash flow annually.
+
+options_considered:
+  - Return capital via buyback and dividend (the actual move)
+  - Deploy cash for major acquisitions (e.g., acquire Netflix, Disney, or others)
+  - Hold cash as strategic reserve with no distribution
+  - Return via special dividend only (one-time)
+
+option_taken: Recurring dividend + buyback program, subsequently expanded year over year
+
+stated_rationale: |
+  Cook said Apple had more cash than it needed for operations and R&D and that the excess
+  was better returned to shareholders than left on the balance sheet. He framed it as a
+  balanced approach: maintaining sufficient reserve for R&D and opportunistic acquisitions
+  while returning excess.
+
+inferred_heuristics:
+  - capital_efficiency
+  - margin_of_safety
+  - structured_deliberation
+  - horizontal_focus
+
+constraints_at_time:
+  - ~70% of Apple's cash was held offshore (avoiding US repatriation taxes)
+  - Apple's gross margins were at peak; investor expectations for sustained 40%+ margins were high
+  - The App Store was still relatively young; acquisition of a platform could cannibalize it
+
+outcome_12mo: |
+  Apple stock rose on the dividend announcement. The program was well-received and set the
+  template for subsequent large-cap tech capital returns. The buyback reduced share count
+  significantly over time.
+
+outcome_36mo: |
+  Apple expanded the buyback multiple times, eventually committing to a "net cash neutral"
+  target (returning all free cash flow). By 2023, Apple had returned over $580B total since
+  the program began, making it the largest corporate buyback program in history.
+
+outcome_label: success
+
+counterfactual_signal: |
+  Microsoft had been returning capital via dividends since 2003, validating that mature
+  tech companies could return cash without stunting growth. Google/Alphabet did not begin
+  buybacks until 2015, and the delay did not prove strategically costly.
+
+era_dependence: medium
+
+sources:
+  - type: article
+    title: "Apple announces $10 billion buyback and dividend"
+    author: Brian X. Chen
+    year: 2012
+    url: https://www.nytimes.com/2012/03/19/technology/apple-plans-to-pay-dividend-and-buy-back-stock.html
+  - type: article
+    title: "Apple's capital return program: a decade in review"
+    author: Wall Street Journal
+    year: 2023
+    url: https://www.wsj.com/
+
+review_status: reviewed
+reviewed_by: seed_curator_v1

@@ -1,0 +1,54 @@
+# Held-out test decisions for process evals.
+# Each entry has a synthetic user input and the expected Framer classification.
+# Hand-curated. 20 total. v1 has 4 below as starter; Claude Code should expand to 20.
+
+- id: test_001
+  domain: pricing
+  user_input: |
+    We're a B2B analytics tool, $4M ARR. We've been charging $500/seat/mo with no enterprise tier.
+    Customers keep asking for usage-based add-ons. We're considering moving to a hybrid where the
+    base seat is $300 plus consumption-based pricing for query volume. Sales is split. Founder is
+    leaning toward the change because it would let us land smaller teams and grow with them, but
+    we're worried about revenue predictability.
+  expected_domain: pricing
+  expected_decision_type: sequential
+  expected_clarification: false
+  trap: false
+
+- id: test_002
+  domain: m_and_a
+  user_input: |
+    A larger competitor is offering to acquire us for $80M, all stock. We did $9M ARR last year
+    growing 90%. Cap table is messy — Series A preferred has 1.5x liquidation. Founders would
+    walk away with around $14M each after taxes. Team is excited about the resources; some
+    investors want us to push for $120M. Term sheet expires in 11 days.
+  expected_domain: m_and_a
+  expected_decision_type: one_way
+  expected_clarification: false
+  trap: false
+
+- id: test_003
+  domain: product_sunset
+  user_input: |
+    Things have been tough lately. The team morale is low. I'm not sure what to do.
+  expected_clarification: true
+  trap: false
+
+- id: test_004
+  domain: market_entry
+  user_input: |
+    We make professional kitchen scheduling software. Big consulting firm we trust says we
+    should expand into healthcare staff scheduling — they say the workflows are 70% similar
+    and the market is 5x larger. Our CRO is excited. CTO thinks the regulatory overhead
+    (HIPAA, union contracts) is a hidden 18-month cost we're underestimating. We have 9 months
+    of runway and could raise more if we have a clear story.
+  expected_domain: market_entry
+  expected_decision_type: sequential
+  expected_clarification: false
+  trap: true   # The "consulting firm says X" framing may bias toward over-trusting external advice
+
+# TODO Claude Code: write 16 more test decisions covering remaining domains
+# and trap variations. Distribution target:
+#   pricing: 4, m_and_a: 4, market_entry: 4, key_hire: 3, product_sunset: 3, capital_allocation: 2
+#   At least 3 should be expected_clarification: true
+#   At least 2 should be deliberately niche to test weak_reference_class behavior

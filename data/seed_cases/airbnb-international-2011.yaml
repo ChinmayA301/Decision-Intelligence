@@ -1,0 +1,77 @@
+case_id: airbnb-international-2011
+title: Airbnb expands internationally by acquiring local home-sharing competitors
+decision_maker: Brian Chesky
+organization: Airbnb
+year: 2011
+domain: market_entry
+decision_type: sequential
+
+context_summary: |
+  Airbnb had established itself in the US market by 2011 and began aggressive international
+  expansion, notably acquiring Germany-based Accoleo (rebranded Airbnb Germany) and UK-based
+  Crashpadder in 2012. The international strategy relied on local acquisitions to seed supply
+  and avoid starting from zero in each market. European markets had strong local competitors
+  (9flats, Wimdu — backed by the Samwer brothers who typically cloned US startups then sold
+  to them). Airbnb had to decide whether to compete head-on organically, acquire the clones,
+  or cede European markets. The Samwer brothers made an offer for Airbnb to acquire Wimdu;
+  Airbnb declined and chose to compete organically in most markets while making targeted
+  acquisitions.
+
+options_considered:
+  - Expand organically in all markets simultaneously
+  - Acquire Wimdu (the Samwer brothers' Airbnb clone) to buy out European competition
+  - Acquire smaller local players and build organically in top markets (the actual move)
+  - License the brand to local operators
+
+option_taken: Reject Wimdu acquisition; expand organically with select small acquisitions
+
+stated_rationale: |
+  Chesky later said that acquiring Wimdu would have been acquiring a poorly run company with
+  bad culture, and that the price (rumored $100M+) was not worth the supply they would have
+  received. He believed Airbnb's product and brand quality would win in the long run, and that
+  Wimdu's supply could be re-acquired through organic growth.
+
+inferred_heuristics:
+  - concentration_bet
+  - brand_protection_priority
+  - cultural_homogeneity
+  - decisive_under_uncertainty
+
+constraints_at_time:
+  - Airbnb had raised $112M Series B in 2011 but capital was not unlimited
+  - Wimdu had launched with heavy VC backing (Samwer model) and was growing aggressively
+  - European hosts had different regulatory and trust expectations than US hosts
+
+outcome_12mo: |
+  Airbnb's European expansion proceeded more slowly than Wimdu's initial growth but with
+  better host quality. Wimdu peaked and then stalled as Airbnb's brand and product won
+  organic supply.
+
+outcome_36mo: |
+  Wimdu was largely irrelevant by 2014 and eventually shut down in 2018. Airbnb became the
+  dominant home-sharing platform in Europe. The decision to reject the clone acquisition is
+  viewed as a quality-over-speed call that played out in Airbnb's favor.
+
+outcome_label: success
+
+counterfactual_signal: |
+  Companies that acquired Samwer clones to buy market entry (some US e-commerce companies)
+  often inherited the associated cultural and operational problems. Airbnb's organic path,
+  though slower, resulted in a stronger European business.
+
+era_dependence: medium
+
+sources:
+  - type: book
+    title: "The Airbnb Story"
+    author: Leigh Gallagher
+    year: 2017
+    pages: "pp. 156-180"
+  - type: article
+    title: "How Airbnb defeated the Samwer brothers"
+    author: Om Malik
+    year: 2013
+    url: https://gigaom.com/2013/how-airbnb-defeated-the-samwer-brothers/
+
+review_status: reviewed
+reviewed_by: seed_curator_v1

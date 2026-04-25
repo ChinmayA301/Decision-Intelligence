@@ -1,0 +1,79 @@
+case_id: hp-autonomy-2011
+title: HP acquires Autonomy for $11.1B, takes $8.8B writedown 13 months later
+decision_maker: Léo Apotheker / Meg Whitman
+organization: Hewlett-Packard
+year: 2011
+domain: m_and_a
+decision_type: one_way
+
+context_summary: |
+  Under CEO Léo Apotheker, HP acquired UK software company Autonomy for $11.1B in August 2011
+  — a 79% premium to its pre-offer share price. Autonomy was a search and data analytics firm.
+  The acquisition was HP's attempt to pivot toward software under competitive pressure from IBM's
+  and Oracle's software-heavy business models. The deal was rushed: due diligence lasted ~2 weeks.
+  HP's board approved it over the objections of some members. In November 2012, under new CEO
+  Meg Whitman, HP took an $8.8B writedown on Autonomy, alleging accounting fraud. Autonomy's
+  founders disputed the fraud allegations. The writedown was one of the largest in tech history.
+
+options_considered:
+  - Acquire Autonomy at the 79% premium
+  - Reject the deal and pursue organic software investment
+  - Acquire a smaller enterprise software company at lower premium
+  - Partner with Autonomy for joint enterprise go-to-market without acquisition
+
+option_taken: Full acquisition of Autonomy at $11.1B, later written down by $8.8B
+
+stated_rationale: |
+  Apotheker argued Autonomy's IDOL platform was a strategic asset in unstructured data
+  management — a category he believed would define enterprise software for the next decade.
+  The premium was justified by strategic urgency and Autonomy's position as the only
+  independent company of sufficient scale in the segment.
+
+inferred_heuristics:
+  - decisive_under_uncertainty
+  - growth_at_cost
+  - vertical_integration
+
+constraints_at_time:
+  - HP's core hardware business was under severe margin pressure from cloud and commoditization
+  - Apotheker had been appointed only months earlier and was under board pressure to show strategy
+  - Oracle had acquired Sun Microsystems in 2010, IBM was generating 40%+ of revenue from software
+
+outcome_12mo: |
+  Apotheker was fired in September 2011, six weeks after the deal closed. Meg Whitman became
+  CEO. In November 2012, HP announced the $8.8B writedown and alleged Autonomy had manipulated
+  its financials pre-acquisition. The resulting litigation lasted years.
+
+outcome_36mo: |
+  HP split into HPE (enterprise) and HP Inc. (consumer hardware) in 2015. Autonomy's technology
+  was eventually divested. The deal is studied as a canonical example of acqui-failure driven by
+  board pressure, insufficient due diligence, and a CEO seeking a transformative narrative.
+
+outcome_label: failure
+
+counterfactual_signal: |
+  IBM's organic investment in Watson and enterprise AI during the same period showed that
+  software transformation was possible without a single large acquisition. Oracle's
+  methodical M&A (Siebel, PeopleSoft, Sun) proceeded with longer due diligence periods and
+  generally better integration outcomes.
+
+era_dependence: low
+
+sources:
+  - type: article
+    title: "HP to take $8.8 billion write-down on Autonomy"
+    author: Ian Paul
+    year: 2012
+    url: https://www.pcworld.com/article/2011671/hp-to-take-8-8-billion-charge-over-autonomy.html
+  - type: book
+    title: "The HP Way: How Bill Hewlett and I Built Our Company"
+    author: David Packard
+    year: 1995
+  - type: article
+    title: "HP and Autonomy: a comprehensive timeline"
+    author: Financial Times
+    year: 2015
+    url: https://www.ft.com/
+
+review_status: reviewed
+reviewed_by: seed_curator_v1

@@ -1,0 +1,76 @@
+case_id: spotify-direct-listing-2018
+title: Spotify chooses direct listing over traditional IPO, forgoing $300M+ in underwriter fees
+decision_maker: Daniel Ek
+organization: Spotify
+year: 2018
+domain: capital_allocation
+decision_type: one_way
+
+context_summary: |
+  Spotify listed on the NYSE on April 3, 2018 via a direct listing — the largest direct listing
+  to that date. The company did not issue new shares (raising no new capital) and did not use
+  investment banks as underwriters in the traditional sense. Goldman Sachs and Morgan Stanley
+  acted as financial advisors, not underwriters, at significantly lower fees. The direct listing
+  was possible because Spotify did not need new capital — it had raised sufficient private
+  funding. The move was explicitly designed to give existing shareholders (employees, early
+  investors) liquidity at market price without the "IPO pop" (artificial underpricing that
+  benefits institutional buyers at the expense of the company).
+
+options_considered:
+  - Traditional IPO with book-building and underwriters
+  - Direct listing (the actual move)
+  - SPAC merger (not yet a viable alternative in 2018)
+  - Remain private and pursue strategic acquisition
+
+option_taken: Direct listing on NYSE with no new share issuance
+
+stated_rationale: |
+  Ek argued that a traditional IPO would undervalue Spotify (by pricing below market to
+  ensure an "IPO pop" that rewards institutional allocations) and would not serve existing
+  shareholders. He also cited transparency as a value: in a direct listing, price is set by
+  actual market demand rather than by underwriter book-building behind closed doors.
+
+inferred_heuristics:
+  - transparent_communication
+  - capital_efficiency
+  - decisive_under_uncertainty
+  - optionality_preserve
+
+constraints_at_time:
+  - NYSE required a regulatory exception to allow the direct listing structure
+  - No recent precedent for a large-cap tech company using direct listing
+  - Market conditions were favorable; Snap's traditional IPO in 2017 had been volatile
+
+outcome_12mo: |
+  Spotify opened at $165.90 on its first day, above the reference price of $132. The listing
+  was viewed as successful. The structure was widely praised as founder-friendly and has since
+  been used by Slack (2019), Palantir and Asana (2020), and others.
+
+outcome_36mo: |
+  The direct listing structure has become a viable IPO alternative, validating Spotify's
+  pioneering use. Spotify's stock has been volatile driven by business fundamentals rather
+  than the listing structure, but the listing itself was a success.
+
+outcome_label: success
+
+counterfactual_signal: |
+  Uber (2019) and Lyft (2019) pursued traditional IPOs and experienced the standard IPO pop
+  followed by declines, with large underwriter fees. Spotify's savings on underwriting were
+  estimated at $300M+. Slack's subsequent direct listing in 2019 validated the model further.
+
+era_dependence: medium
+
+sources:
+  - type: article
+    title: "Spotify's Direct Listing: a new model for tech IPOs"
+    author: Ben Thompson
+    year: 2018
+    url: https://stratechery.com/2018/spotifys-direct-listing/
+  - type: article
+    title: "Spotify begins trading on NYSE in direct listing"
+    author: Peter Kafka
+    year: 2018
+    url: https://www.vox.com/2018/4/3/17195192/spotify-stock-market-ipo-direct-listing-nyse
+
+review_status: reviewed
+reviewed_by: seed_curator_v1

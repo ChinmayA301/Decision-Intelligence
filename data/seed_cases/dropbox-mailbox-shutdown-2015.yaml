@@ -1,0 +1,73 @@
+case_id: dropbox-mailbox-shutdown-2015
+title: Dropbox shuts down Mailbox and Carousel, refocusing on core sync product
+decision_maker: Drew Houston
+organization: Dropbox
+year: 2015
+domain: product_sunset
+decision_type: one_way
+
+context_summary: |
+  Dropbox acquired Mailbox, a highly regarded mobile email app, for ~$100M in March 2013.
+  It also launched Carousel, a photo organizing app, in April 2014. Both were part of
+  Dropbox's strategy to expand beyond file sync into adjacent productivity and communication
+  tools. In December 2015, Dropbox shut down both Mailbox and Carousel simultaneously,
+  laying off the associated teams. The shutdowns came as Dropbox prepared for an eventual IPO
+  and faced criticism for lack of focus. Mailbox had been growing but not at the pace needed
+  to justify continued investment against Google Inbox, Apple Mail, and Outlook.
+
+options_considered:
+  - Shut down Mailbox and Carousel, return engineering focus to core (the actual move)
+  - Sell Mailbox to an interested acquirer
+  - Continue investing in Mailbox as a standalone email product
+  - Spin out Mailbox as an independent company
+
+option_taken: Shutdown of both Mailbox and Carousel; team redeployed or laid off
+
+stated_rationale: |
+  Houston said Dropbox needed to focus on its core business (sync and collaboration) and that
+  Mailbox and Carousel were not on a path to strategic relevance at the required scale.
+  He framed it as a strategic clarity decision: Dropbox is a collaboration platform, not an
+  email company.
+
+inferred_heuristics:
+  - horizontal_focus
+  - commit_and_kill
+  - capital_efficiency
+  - decisive_under_uncertainty
+
+constraints_at_time:
+  - Dropbox was approaching IPO and investor scrutiny of burn rate was increasing
+  - Box had IPO'd in January 2015 with a premium valuation; Dropbox needed a clear story
+  - Email market was dominated by Google and Microsoft with deep OS integration
+
+outcome_12mo: |
+  Dropbox refocused on Paper (collaborative docs) and core sync features. Revenue grew but
+  margins improved on reduced engineering overhead. IPO preparation continued.
+
+outcome_36mo: |
+  Dropbox IPO'd in March 2018 at a $9.2B valuation. The focus story held. The shutdown
+  decision is viewed as a necessary and well-executed course correction.
+
+outcome_label: success
+
+counterfactual_signal: |
+  Companies that continued to invest in unfocused product portfolios approaching IPO
+  (some SaaS companies) received lower revenue multiples and faced difficult investor questions.
+  Dropbox's focus story was credited by analysts as a key factor in the IPO's success.
+
+era_dependence: low
+
+sources:
+  - type: article
+    title: "Dropbox kills Mailbox and Carousel"
+    author: Josh Constine
+    year: 2015
+    url: https://techcrunch.com/2015/12/08/dropbox-mailbox-carousel/
+  - type: article
+    title: "Dropbox IPO: the focus story"
+    author: Bloomberg
+    year: 2018
+    url: https://www.bloomberg.com/
+
+review_status: reviewed
+reviewed_by: seed_curator_v1

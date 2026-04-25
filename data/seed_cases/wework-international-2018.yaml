@@ -1,0 +1,82 @@
+case_id: wework-international-2018
+title: WeWork accelerates international expansion into 80+ cities before proving unit economics
+decision_maker: Adam Neumann
+organization: WeWork
+year: 2018
+domain: market_entry
+decision_type: sequential
+
+context_summary: |
+  WeWork, backed by SoftBank's Vision Fund ($4.4B+ investment by 2018), accelerated expansion
+  into international markets at a pace far exceeding its ability to prove unit economics.
+  By early 2018, WeWork was operating in 20+ countries and had committed to being in 100+
+  cities by 2020. Real estate leases were signed on long-term fixed-cost structures while
+  revenue was short-term variable. The company's valuation reached $47B in early 2019.
+  International expansion included markets with vastly different real estate cost structures
+  (India, Latin America) and regulatory environments (China, under a joint venture structure).
+  Each new market launch consumed significant capital in tenant improvements and below-cost
+  membership pricing to gain market share.
+
+options_considered:
+  - Expand to 100+ cities on SoftBank capital (the actual move)
+  - Slow expansion to prove per-market unit economics before proceeding
+  - Focus on top-10 global markets only
+  - Franchising or partnership model for international markets
+
+option_taken: Aggressive global expansion to 100+ cities funded by SoftBank investment
+
+stated_rationale: |
+  Neumann framed the expansion as a land-grab for a category-defining position: the company
+  that built the global infrastructure for flexible work would be worth trillions. He argued
+  that every market not captured now would be captured by a competitor. The SoftBank
+  relationship enabled the speed; slowing down would be "choosing to lose."
+
+inferred_heuristics:
+  - growth_at_cost
+  - first_mover
+  - regulatory_arbitrage
+  - concentration_bet
+
+constraints_at_time:
+  - Real estate leases were 10–15 year obligations; revenue was month-to-month
+  - Each new market required local regulatory navigation and cultural customization
+  - WeWork's community management model did not scale without significant headcount
+
+outcome_12mo: |
+  WeWork filed for IPO in August 2019, revealing massive losses ($1.9B on $1.8B revenue
+  in 2018). The S-1 was widely criticized for governance issues and unsustainable economics.
+  The IPO was pulled in September 2019. SoftBank led a rescue financing and Neumann resigned.
+
+outcome_36mo: |
+  WeWork filed for bankruptcy in November 2023 after years of restructuring. International
+  markets were significantly scaled back. The expansion model — long-term lease liabilities
+  with short-term revenue — proved fatal in the 2020 COVID environment.
+
+outcome_label: failure
+
+counterfactual_signal: |
+  IWG (International Workplace Group, parent of Regus), WeWork's most direct comparable,
+  operated an asset-light franchise model that survived COVID. Convene and other co-working
+  operators that moved more slowly showed better unit economics at scale.
+
+era_dependence: medium
+
+sources:
+  - type: book
+    title: "The Cult of We"
+    author: Eliot Brown and Maureen Farrell
+    year: 2021
+    pages: "pp. 201-245"
+  - type: article
+    title: "WeWork's IPO collapse"
+    author: Wall Street Journal
+    year: 2019
+    url: https://www.wsj.com/articles/wework-ipo-adam-neumann
+  - type: article
+    title: "WeWork files for bankruptcy"
+    author: Reuters
+    year: 2023
+    url: https://www.reuters.com/business/wework-files-bankruptcy
+
+review_status: reviewed
+reviewed_by: seed_curator_v1

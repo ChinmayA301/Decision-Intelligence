@@ -1,0 +1,86 @@
+case_id: adobe-creative-cloud-2013
+title: Adobe transitions Creative Suite from perpetual license to subscription-only (Creative Cloud)
+decision_maker: Shantanu Narayen
+organization: Adobe Systems
+year: 2013
+domain: pricing
+decision_type: one_way
+
+context_summary: |
+  By 2012, Adobe faced a structural threat: perpetual-license revenue required customers to
+  upgrade every 18–24 months, producing lumpy, unpredictable cash flows. Piracy of Photoshop
+  and Illustrator was rampant. Competitors like Canva were entering the lower end. CEO Shantanu
+  Narayen decided to move the entire Creative Suite product line to a subscription-only model
+  called Creative Cloud, announced at Adobe MAX in May 2013. There would be no Creative Suite 7;
+  customers who did not subscribe would not receive new features. The initial backlash was
+  significant: a Change.org petition with 50,000+ signatures, social-media outrage, and an
+  immediate stock dip. Adobe's enterprise customers expressed concern about ongoing cost and
+  data sovereignty.
+
+options_considered:
+  - Continue selling perpetual licenses and add a subscription option alongside (hybrid)
+  - Move fully to subscription-only, eliminating perpetual licenses (the actual move)
+  - Maintain perpetual licenses indefinitely and compete on features
+  - Sell the creative tools business or spin it out
+
+option_taken: Full migration to subscription-only — no perpetual license sold after CS6
+
+stated_rationale: |
+  Narayen argued that subscription would enable faster feature releases, fairer pricing for
+  occasional users, and a stronger relationship with the customer base. He framed it as moving
+  from a transaction relationship to a continuous service relationship. Adobe also cited the
+  cloud storage and collaboration features as differentiation the perpetual model couldn't
+  deliver credibly.
+
+inferred_heuristics:
+  - commit_and_kill
+  - decisive_under_uncertainty
+  - narrative_control
+  - moat_widening
+
+constraints_at_time:
+  - Adobe had $500M+ in deferred revenue risk if revenue recognition changed sharply
+  - Competitive pressure from lower-cost tools (Canva, Affinity Photo) was nascent but real
+  - Enterprise customers on multi-year contracts could not be forced to switch immediately
+
+outcome_12mo: |
+  Revenue dropped ~8% in fiscal 2013 due to the transition. Stock declined. Creative Cloud
+  subscriptions reached 1.84M paid subscribers by end of 2013. Analyst consensus shifted from
+  skeptical to cautiously positive by Q4 2013 as subscription metrics improved.
+
+outcome_36mo: |
+  By fiscal 2016, Creative Cloud had 9.8M paid subscribers. Revenue surpassed pre-transition
+  levels and was growing ~25% annually. Gross margins expanded substantially versus the
+  perpetual model. The transition is widely cited as one of the most successful enterprise
+  software business-model pivots of the 2010s.
+
+outcome_label: success
+
+counterfactual_signal: |
+  Autodesk ran a parallel transition to subscription over 2015–2020, encountering similar
+  short-term revenue dips and similar long-term margin expansion. Companies that maintained
+  perpetual models (e.g., older CAD vendors) saw declining revenue and difficulty investing
+  in cloud features. The market validated the transition model.
+
+era_dependence: medium
+
+sources:
+  - type: article
+    title: "Adobe's Subscription Gamble Paid Off"
+    author: Ben Thompson
+    year: 2015
+    url: https://stratechery.com/2015/adobes-subscription-gamble-paid-off/
+    quote: "Adobe's transition to subscription was the most successful software business model pivot of the decade."
+  - type: article
+    title: "How Adobe Became a Wall Street Darling"
+    author: Jordan Novet
+    year: 2018
+    url: https://www.cnbc.com/2018/09/20/how-adobe-became-a-wall-street-darling.html
+  - type: article
+    title: "Adobe Creative Cloud — 5 years later"
+    author: Daring Fireball
+    year: 2018
+    url: https://daringfireball.net/
+
+review_status: reviewed
+reviewed_by: seed_curator_v1

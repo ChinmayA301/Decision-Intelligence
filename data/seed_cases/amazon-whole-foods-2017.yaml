@@ -1,0 +1,84 @@
+case_id: amazon-whole-foods-2017
+title: Amazon acquires Whole Foods Market for $13.7B, entering physical grocery
+decision_maker: Jeff Bezos
+organization: Amazon
+year: 2017
+domain: m_and_a
+decision_type: one_way
+
+context_summary: |
+  Amazon announced the acquisition of Whole Foods Market in June 2017 for $13.7B in cash —
+  Amazon's largest acquisition to that date and its entry into physical retail grocery.
+  Whole Foods had 470+ stores, a premium brand, and a loyal customer base among affluent
+  shoppers. Amazon had been experimenting with Amazon Go (cashierless convenience stores)
+  but had no meaningful brick-and-mortar grocery presence. The deal caused immediate stock drops
+  across all major grocery chains (Kroger, Walmart, Target) as the market priced in Amazon
+  competitive disruption. Amazon Prime members received immediate discounts at Whole Foods
+  following close.
+
+options_considered:
+  - Acquire Whole Foods at full price
+  - Build grocery presence organically through Amazon Fresh expansion
+  - Acquire a different, less premium grocery chain (Albertsons, Sprouts)
+  - Continue with Amazon Go as the primary physical retail strategy
+
+option_taken: Full acquisition of Whole Foods at $13.7B in cash
+
+stated_rationale: |
+  Amazon framed it as an acceleration of its physical retail strategy and an entry into grocery,
+  the largest consumer spending category. Whole Foods provided 470 distribution and fulfillment
+  locations in premium zip codes, a credible premium food brand, and a loyal customer base
+  with significant overlap with Amazon Prime membership.
+
+inferred_heuristics:
+  - concentration_bet
+  - decisive_under_uncertainty
+  - vertical_integration
+  - moat_widening
+
+constraints_at_time:
+  - Whole Foods had been struggling with organic grocery competition and investor pressure
+  - Amazon's Amazon Fresh delivery service had not scaled as expected
+  - Walmart and Kroger were investing heavily in online grocery to pre-empt Amazon
+
+outcome_12mo: |
+  Amazon cut Whole Foods prices immediately on key products, drove Prime membership
+  sign-ups at checkout, and integrated Amazon Lockers into stores. Whole Foods stores
+  began serving as delivery hubs for Amazon Fresh. Grocery competitors accelerated
+  their own online investment in response.
+
+outcome_36mo: |
+  By 2020, Amazon was the #3 US online grocery retailer. During COVID-19, Whole Foods
+  became critical to Amazon's grocery infrastructure. Amazon launched Amazon Fresh physical
+  stores separately in 2020, suggesting it viewed Whole Foods as one piece of a larger
+  grocery strategy rather than the complete answer.
+
+outcome_label: mixed
+
+counterfactual_signal: |
+  Walmart's acquisition of Jet.com (2016) for $3.3B gave it an e-commerce platform but
+  did not fundamentally alter the grocery war. Target's investment in same-day delivery
+  (via Shipt acquisition) proved effective at defending grocery share. Neither had the
+  same physical footprint integration as the Whole Foods move.
+
+era_dependence: low
+
+sources:
+  - type: article
+    title: "Amazon to acquire Whole Foods Market for $13.7 billion"
+    author: Reuters
+    year: 2017
+    url: https://www.reuters.com/article/us-wholefds-m-a-amazon
+  - type: article
+    title: "What Amazon's Whole Foods deal means for grocery"
+    author: Ben Thompson
+    year: 2017
+    url: https://stratechery.com/2017/amazons-whole-foods-acquisition/
+  - type: article
+    title: "Amazon Fresh physical stores struggle to find footing"
+    author: Wall Street Journal
+    year: 2023
+    url: https://www.wsj.com/
+
+review_status: reviewed
+reviewed_by: seed_curator_v1

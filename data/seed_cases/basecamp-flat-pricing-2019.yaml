@@ -1,0 +1,76 @@
+case_id: basecamp-flat-pricing-2019
+title: Basecamp switches from per-user pricing to flat $99/month for all users
+decision_maker: Jason Fried
+organization: Basecamp
+year: 2019
+domain: pricing
+decision_type: reversible
+
+context_summary: |
+  Basecamp had operated on per-user pricing since its founding, charging per seat in a way
+  that caused friction as teams grew. In 2019, founder Jason Fried announced Basecamp 3 would
+  switch to a flat $99/month plan with no user limits for new customers. Existing customers
+  could stay on their current pricing or switch. The motivation was to eliminate a recurring
+  sales objection ("we can't add more people because of cost"), reduce anxiety about inviting
+  contractors and clients, and simplify the pricing message. The move was made unilaterally
+  and quickly, without extensive market testing.
+
+options_considered:
+  - Continue per-user pricing with volume discounts for large teams
+  - Move to flat unlimited pricing at $99/month (the actual move)
+  - Introduce a tiered model (team size bands)
+  - Grandfathering all existing users on current plans while new users pay flat
+
+option_taken: Flat $99/month unlimited users for new customers; existing customers given choice
+
+stated_rationale: |
+  Fried argued that per-user pricing punished growth and collaboration. The anxiety of adding
+  users had a hidden cost: teams would avoid putting contractors in Basecamp, using email
+  instead. Flat pricing solved a behavioral problem, not just a pricing problem. He also argued
+  it would attract larger teams who would be underserved at the per-seat rate.
+
+inferred_heuristics:
+  - decisive_under_uncertainty
+  - narrative_control
+  - horizontal_focus
+  - speed_over_consensus
+
+constraints_at_time:
+  - Basecamp was bootstrapped (no investor pressure to maximize ARR)
+  - Small team could not support complex pricing models
+  - Existing customers needed to be handled carefully to avoid churn
+
+outcome_12mo: |
+  Basecamp reported strong new customer acquisition in 2019 as the flat pricing removed
+  the friction of team-size decisions. The move attracted more enterprise interest. Some
+  customers with very small teams (1–2 people) were effectively paying more, but Basecamp
+  offered a lower-price Hey-or-legacy plan path. The move was cash-positive within 3 months.
+
+outcome_36mo: |
+  Basecamp continued with flat pricing through 2022. The model became a reference point in
+  the SaaS community for counter-consensus pricing decisions. Revenue was not publicly disclosed
+  but leadership publicly described the business as healthy and growing.
+
+outcome_label: success
+
+counterfactual_signal: |
+  Most SaaS companies maintained per-seat pricing, as it more directly captures value as usage
+  grows. However, several products (Notion, Craft, Linear) subsequently adopted team-flat or
+  company-flat pricing for specific plans, validating the segment that Basecamp identified.
+
+era_dependence: low
+
+sources:
+  - type: article
+    title: "Introducing Basecamp 3 — same price no matter how many people"
+    author: Jason Fried
+    year: 2019
+    url: https://basecamp.com/pricing
+  - type: article
+    title: "Signal v. Noise — Basecamp's new pricing"
+    author: Jason Fried
+    year: 2019
+    url: https://m.signalvnoise.com/
+
+review_status: reviewed
+reviewed_by: seed_curator_v1

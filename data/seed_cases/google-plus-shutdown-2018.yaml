@@ -1,0 +1,78 @@
+case_id: google-plus-shutdown-2018
+title: Google shuts down Google+ consumer product following security bug disclosure
+decision_maker: Sundar Pichai
+organization: Google / Alphabet
+year: 2018
+domain: product_sunset
+decision_type: one_way
+
+context_summary: |
+  Google+ was Google's social network, launched in 2011 as an attempt to compete with
+  Facebook. Despite mandatory integration with YouTube and Gmail in its early years,
+  Google+ never achieved meaningful social engagement — a 2015 internal analysis reportedly
+  showed 90% of user sessions lasted less than 5 seconds. In October 2018, Google disclosed
+  a security bug that had exposed profile data of up to 500,000 users since 2015. Google
+  announced it had known about the bug since March 2018 but had not disclosed it publicly.
+  The company announced it would wind down the consumer Google+ product by August 2019.
+  The Wall Street Journal reported that Google had withheld disclosure partly to avoid
+  regulatory scrutiny.
+
+options_considered:
+  - Shut down Google+ consumer product and disclose the security bug (the actual move)
+  - Continue Google+ with reduced investment and delayed disclosure
+  - Sell or spin out Google+ to a third party
+  - Pivot Google+ to a pure enterprise product before sunsetting consumer
+
+option_taken: Announce consumer shutdown alongside security disclosure; transition to enterprise G+ briefly
+
+stated_rationale: |
+  After disclosure, Pichai positioned the shutdown as a decision about resources and viability,
+  noting that Google+ had not achieved the engagement levels required to justify continued
+  investment in a competitive consumer social market. The security bug was described as the
+  precipitating event that accelerated a decision that had been building.
+
+inferred_heuristics:
+  - transparent_communication
+  - brand_protection_priority
+  - commit_and_kill
+  - horizontal_focus
+
+constraints_at_time:
+  - GDPR had come into effect May 2018, increasing regulatory sensitivity to data incidents
+  - Facebook was under intense scrutiny for Cambridge Analytica (March 2018)
+  - Google+ engineers had largely already been redeployed to other teams
+
+outcome_12mo: |
+  Google+ consumer shutdown completed in April 2019 (accelerated from August 2019 after a
+  second security bug). G Suite / Google Workspace enterprise social features continued.
+  The disclosure and shutdown reduced immediate regulatory risk.
+
+outcome_36mo: |
+  The Google+ shutdown had minimal business impact. Google's other products continued to grow.
+  The decision is viewed as a clean exit from a failed bet, handled better than the initial
+  non-disclosure decision.
+
+outcome_label: success
+
+counterfactual_signal: |
+  Facebook's handling of Cambridge Analytica (denial, delayed disclosure, testimony) resulted
+  in years of regulatory proceedings and billions in fines. Google's proactive shutdown and
+  disclosure, while not without criticism, avoided a prolonged platform-defense battle for
+  a product that had already failed on its merits.
+
+era_dependence: medium
+
+sources:
+  - type: article
+    title: "Google exposed user data, then chose not to disclose it"
+    author: Douglas MacMillan, Robert McMillan
+    year: 2018
+    url: https://www.wsj.com/articles/google-exposed-user-data-feared-repercussions-of-disclosing-to-public-1539017194
+  - type: article
+    title: "Google+ is shutting down"
+    author: Dieter Bohn
+    year: 2018
+    url: https://www.theverge.com/2018/10/8/17951890/google-plus-shutting-down
+
+review_status: reviewed
+reviewed_by: seed_curator_v1

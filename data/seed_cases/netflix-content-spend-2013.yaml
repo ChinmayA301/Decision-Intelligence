@@ -1,0 +1,77 @@
+case_id: netflix-content-spend-2013
+title: Netflix commits to original content with $100M House of Cards, betting on owned IP
+decision_maker: Reed Hastings / Ted Sarandos
+organization: Netflix
+year: 2013
+domain: capital_allocation
+decision_type: sequential
+
+context_summary: |
+  Netflix committed to producing House of Cards — a political drama — for $100M for two seasons
+  in 2011, releasing it in February 2013. This was Netflix's first major original production
+  and required the company to become a content creator, not just a content distributor.
+  Netflix was simultaneously negotiating renewals with content providers (Disney, Starz, HBO)
+  who were increasing licensing fees or withholding new content to protect their own streaming
+  ambitions. The original content bet was explicitly designed to reduce Netflix's dependence
+  on licensed content. The company used its subscriber data — viewing patterns, completion
+  rates — to predict that a Fincher-directed political drama with Kevin Spacey would succeed.
+
+options_considered:
+  - Invest heavily in original content (the actual move)
+  - License more content at premium prices to stay purely a distributor
+  - Merge with a content studio to acquire a library
+  - Limit originals to low-cost reality or documentary formats only
+
+option_taken: Commit $100M to House of Cards as the first of a growing originals slate
+
+stated_rationale: |
+  Sarandos argued that Netflix's data advantage (knowing what its subscribers actually watched
+  vs. what studios assumed they watched) gave it an edge in predicting which content would
+  succeed. He also argued that owned IP would have perpetual value while licensed content
+  would become more expensive and scarce as studios built their own streaming services.
+
+inferred_heuristics:
+  - concentration_bet
+  - asymmetric_payoff
+  - moat_widening
+  - growth_at_cost
+
+constraints_at_time:
+  - Netflix was still a subscale content buyer vs. HBO, Showtime, and the studios
+  - The company had 30M subscribers in 2013 — small by studio audience standards
+  - Content writing down on balance sheet differently than licensed content
+
+outcome_12mo: |
+  House of Cards won Emmy Awards in 2013 — the first streaming service to win major Emmys.
+  Subscriber growth accelerated. The originals strategy was validated sufficiently to expand
+  the slate significantly.
+
+outcome_36mo: |
+  Netflix expanded original content spend to $3B by 2016. Orange Is the New Black, Narcos,
+  and other originals established Netflix as a legitimate studio. The original content
+  strategy is widely credited with enabling Netflix to survive the loss of Disney and
+  other licensed content over 2016-2019.
+
+outcome_label: success
+
+counterfactual_signal: |
+  Amazon Video and Hulu also invested in originals around the same period (Transparent, 2013;
+  Orange Is the New Black equivalent). HBO, which had always produced originals, was the
+  benchmark — and Netflix proved it could match HBO's quality at higher volume.
+
+era_dependence: medium
+
+sources:
+  - type: article
+    title: "Netflix goes big: House of Cards commitment"
+    author: Joe Nocera
+    year: 2013
+    url: https://www.nytimes.com/2013/02/26/opinion/nocera-house-of-cards-is-good-for-netflix.html
+  - type: article
+    title: "Netflix's content strategy"
+    author: Ben Thompson
+    year: 2016
+    url: https://stratechery.com/2016/the-netflix-strategy/
+
+review_status: reviewed
+reviewed_by: seed_curator_v1

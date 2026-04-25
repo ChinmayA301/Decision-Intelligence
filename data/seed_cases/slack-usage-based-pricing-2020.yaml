@@ -1,0 +1,75 @@
+case_id: slack-usage-based-pricing-2020
+title: Slack introduces Fair Billing policy — charging only for active users
+decision_maker: Stewart Butterfield
+organization: Slack Technologies
+year: 2020
+domain: pricing
+decision_type: reversible
+
+context_summary: |
+  Slack had long charged per active user per month, with a prorated refund for inactive users
+  under its Fair Billing policy. In 2020, Slack formalized and publicized this policy as a
+  competitive differentiator against Microsoft Teams, which had no equivalent. The decision
+  was less a new pricing structure and more a deliberate narrative and positioning move during
+  the COVID-19 WFH surge, when Slack's user count exploded but Teams' integration into Office
+  365 bundles posed an existential bundling threat. Slack chose to lean into pricing
+  transparency and fairness as a brand attribute rather than matching Teams' bundle pricing.
+
+options_considered:
+  - Maintain current Fair Billing without emphasizing it
+  - Publicize Fair Billing aggressively as a differentiator (the actual move)
+  - Move to a flat team-based pricing model
+  - Introduce a permanent free tier with reduced limits to counter Teams' free offering
+
+option_taken: Formalize and market Fair Billing policy explicitly against Teams' pricing model
+
+stated_rationale: |
+  Butterfield argued that enterprise buyers were increasingly sophisticated about total cost
+  and would pay attention to whether they were billed for inactive users. Fairness in billing
+  was framed as consistent with Slack's brand positioning as a customer-first company.
+
+inferred_heuristics:
+  - narrative_control
+  - transparent_communication
+  - brand_protection_priority
+  - asymmetric_competition
+
+constraints_at_time:
+  - Microsoft Teams had been bundled free with Office 365 since 2017
+  - COVID surge added millions of users but also accelerated Teams adoption
+  - Slack was preparing for a direct listing on NYSE in June 2019
+
+outcome_12mo: |
+  Slack grew paid customers from 110,000+ in 2020 to significant enterprise expansion.
+  However, Teams continued to grow faster on bundle distribution. Slack's stock underperformed
+  against its initial listing valuation, reflecting investor concern about the Teams threat.
+
+outcome_36mo: |
+  Salesforce acquired Slack in July 2021 for $27.7B. The pricing strategy did not prevent
+  Teams from becoming the market leader by seat count, but it helped Slack maintain a
+  defensible enterprise customer base and achieve a strong acquisition outcome.
+
+outcome_label: mixed
+
+counterfactual_signal: |
+  Zoom, competing in a different but adjacent collaboration category, used aggressive freemium
+  pricing (40-minute free calls) rather than transparency-based positioning. Zoom's market cap
+  peaked at ~$160B in 2020. The strategies served different customer segments: Slack's
+  enterprise focus vs. Zoom's broad consumer/SMB base.
+
+era_dependence: medium
+
+sources:
+  - type: article
+    title: "Slack's Fair Billing and the Microsoft Teams threat"
+    author: Ben Thompson
+    year: 2020
+    url: https://stratechery.com/2020/slack-vs-microsoft-teams/
+  - type: article
+    title: "Salesforce to acquire Slack for $27.7 billion"
+    author: Reuters
+    year: 2020
+    url: https://www.reuters.com/article/us-slack-m-a-salesforce
+
+review_status: reviewed
+reviewed_by: seed_curator_v1

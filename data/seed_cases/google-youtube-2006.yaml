@@ -1,0 +1,82 @@
+case_id: google-youtube-2006
+title: Google acquires YouTube for $1.65B in stock, 18 months after YouTube's founding
+decision_maker: Eric Schmidt / Larry Page / Sergey Brin
+organization: Google
+year: 2006
+domain: m_and_a
+decision_type: one_way
+
+context_summary: |
+  YouTube was founded in February 2005 and was acquired by Google in October 2006 for $1.65B
+  in Google stock — Google's largest acquisition to that date. YouTube had 65,000 new video
+  uploads per day and 100M video views per day but had never turned a profit and had massive
+  copyright exposure. MySpace Video, Microsoft, and Viacom were also rumored to be interested.
+  Google's own video product, Google Video, had failed to gain traction. The deal closed in
+  roughly two months from the initiation of talks, reflecting Google's urgency. At the time,
+  many analysts questioned the valuation given YouTube's unresolved copyright risk.
+
+options_considered:
+  - Acquire YouTube at the $1.65B asking price
+  - Invest in Google Video to compete organically
+  - Acquire a smaller video startup at lower valuation
+  - Partner with YouTube for distribution without full acquisition
+
+option_taken: Full acquisition of YouTube for $1.65B in Google stock
+
+stated_rationale: |
+  Google framed the acquisition as securing the dominant video platform before a competitor
+  could. Schmidt said publicly that Google did not want to repeat the mistake of missing
+  search; video was a search opportunity. The stock consideration (not cash) meant Google was
+  not impaired by the spend relative to cash position.
+
+inferred_heuristics:
+  - concentration_bet
+  - decisive_under_uncertainty
+  - first_mover
+  - moat_widening
+
+constraints_at_time:
+  - YouTube faced unresolved copyright infringement risk (Viacom would later sue for $1B)
+  - Google Video had failed despite Google's brand and infrastructure
+  - Stock consideration meant deal was done at Google's peak 2006 valuation
+
+outcome_12mo: |
+  The copyright exposure materialized: Viacom filed a $1B lawsuit in 2007. YouTube continued
+  to grow rapidly. Google faced ongoing negotiation with content owners over licensing and
+  revenue sharing, ultimately investing in ContentID as a copyright management system.
+
+outcome_36mo: |
+  By 2009, YouTube was the dominant global video platform. ContentID resolved the major
+  copyright issues through revenue sharing. By 2013, YouTube was reported to be generating
+  over $1B in annual revenue. By 2020, YouTube revenue was ~$15B annually — validating the
+  acquisition many times over at the original price.
+
+outcome_label: success
+
+counterfactual_signal: |
+  MySpace, which was also in acquisition talks with YouTube, did not acquire it and later
+  declined in relevance. Viacom, a major content owner that sued YouTube, ultimately lost
+  the case and had to negotiate revenue sharing like other studios. Companies that built
+  competing video platforms (Vimeo, Dailymotion) never approached YouTube's scale.
+
+era_dependence: medium
+
+sources:
+  - type: article
+    title: "Google Closes $1.65 Billion YouTube Deal"
+    author: Associated Press
+    year: 2006
+    url: https://www.washingtonpost.com/wp-dyn/content/article/2006/10/13/AR2006101300916.html
+  - type: article
+    title: "How YouTube became the internet's video giant"
+    author: Mark Bergen
+    year: 2019
+    url: https://www.bloomberg.com/
+  - type: book
+    title: "In the Plex"
+    author: Steven Levy
+    year: 2011
+    pages: "pp. 287-296"
+
+review_status: reviewed
+reviewed_by: seed_curator_v1

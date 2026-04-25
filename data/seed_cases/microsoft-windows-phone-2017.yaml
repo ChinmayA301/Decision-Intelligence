@@ -1,0 +1,77 @@
+case_id: microsoft-windows-phone-2017
+title: Microsoft officially exits mobile phone market, writing off Nokia acquisition
+decision_maker: Satya Nadella
+organization: Microsoft
+year: 2017
+domain: product_sunset
+decision_type: one_way
+
+context_summary: |
+  Microsoft acquired Nokia's mobile phone division in 2014 for $7.2B under Steve Ballmer.
+  Satya Nadella inherited the acquisition and over 2014–2017 progressively wound it down.
+  In July 2015, Microsoft took a $7.6B write-down on the Nokia acquisition and laid off 7,800
+  Nokia employees. In 2016, Microsoft sold the Nokia feature-phone business to Foxconn for
+  $350M. By 2017, Windows Phone had 0.3% market share globally, and Microsoft officially
+  stopped updating the platform. The decision to exit mobile was painful given the ~$8B
+  write-down, but the Windows Phone platform had failed to attract app developers and had
+  been losing share throughout.
+
+options_considered:
+  - Continue investing in Windows Phone and Nokia hardware
+  - Write down the acquisition and exit mobile (the actual move)
+  - Sell the entire mobile division to a strategic buyer
+  - License Windows Phone to third-party OEMs only
+
+option_taken: Wind down Windows Phone and Nokia hardware; take write-down; redirect mobile strategy to iOS/Android apps
+
+stated_rationale: |
+  Nadella argued Microsoft's mobile strategy had to be "apps and services across all devices"
+  rather than a competing mobile OS. He reframed Microsoft's mobile mission as being present
+  on iOS and Android (Office for iPad, etc.) rather than owning the platform. The write-down
+  was framed as clearing a mistake from the previous regime.
+
+inferred_heuristics:
+  - commit_and_kill
+  - horizontal_focus
+  - decisive_under_uncertainty
+  - brand_protection_priority
+
+constraints_at_time:
+  - App developers had definitively chosen iOS and Android; the Windows Phone app gap was insurmountable
+  - Qualcomm/Android OEM ecosystem was fully consolidated
+  - Nokia's hardware team culture was difficult to integrate
+
+outcome_12mo: |
+  The write-down and exit freed engineering resources for Azure, Office 365, and Teams.
+  Microsoft's cross-platform app strategy (Office on iOS/Android) proved successful.
+  The mobile exit was quickly forgotten as Microsoft's cloud business dominated the narrative.
+
+outcome_36mo: |
+  By 2018, Teams was growing rapidly, Azure was the #2 cloud provider, and Microsoft's
+  stock had recovered strongly. The mobile exit is viewed as one of Nadella's most important
+  decisions — acknowledging a failure quickly and redirecting resources rather than sustaining
+  a sunk cost.
+
+outcome_label: success
+
+counterfactual_signal: |
+  BlackBerry continued to invest in its own platform (BB10) through 2016 before eventually
+  adopting Android, losing all remaining market share in the process. The comparison suggests
+  that the right answer for a failing mobile platform is to exit cleanly, not sustain.
+
+era_dependence: medium
+
+sources:
+  - type: article
+    title: "Microsoft takes $7.6 billion write-down on Nokia acquisition"
+    author: Tom Warren
+    year: 2015
+    url: https://www.theverge.com/2015/7/8/8913189/microsoft-nokia-writedown-7-point-6-billion
+  - type: book
+    title: "Hit Refresh"
+    author: Satya Nadella
+    year: 2017
+    pages: "pp. 100-115"
+
+review_status: reviewed
+reviewed_by: seed_curator_v1
