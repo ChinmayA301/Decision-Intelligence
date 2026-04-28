@@ -10,7 +10,6 @@ from __future__ import annotations
 import argparse
 import asyncio
 import json
-import os
 import sys
 from pathlib import Path
 
@@ -23,8 +22,8 @@ load_dotenv()
 # Add project root to path
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
-from src.retriever.embeddings import get_embedder
-from src.retriever.retriever import create_pool
+from src.retriever.embeddings import get_embedder  # noqa: E402
+from src.retriever.retriever import create_pool  # noqa: E402
 
 _REQUIRED_SOURCES = 2
 _VALID_DOMAINS = {"pricing", "m_and_a", "market_entry", "key_hire", "product_sunset", "capital_allocation"}

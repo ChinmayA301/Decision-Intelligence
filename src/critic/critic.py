@@ -42,8 +42,8 @@ def _build_critic_user_message(decision: FramedDecision, refs: ReferenceClass) -
         f"Domain: {decision.domain.value}\n"
         f"Decision type: {decision.decision_type.value}\n"
         f"Time horizon: {decision.time_horizon_months} months\n"
-        f"Alternatives:\n" + "\n".join(f"  - {a}" for a in decision.alternatives)
-        + f"\nKey uncertainties:\n" + "\n".join(f"  - {u}" for u in decision.key_uncertainties)
+        "Alternatives:\n" + "\n".join(f"  - {a}" for a in decision.alternatives)
+        + "\nKey uncertainties:\n" + "\n".join(f"  - {u}" for u in decision.key_uncertainties)
         + (f"\nUser's apparent leaning: {decision.user_apparent_leaning}" if decision.user_apparent_leaning else "")
         + f"\nConstraints: {', '.join(decision.constraints) if decision.constraints else 'none stated'}"
         + f"\n\n## Reference Class\n\n"
@@ -93,7 +93,7 @@ async def _run_single_lens(
                     lens_id=lens_id,
                     lens_display_name=_LENS_DISPLAY_NAMES[lens_id],
                     verdict=LensVerdict.ABSTAINS,
-                    reasoning=f"Lens could not produce valid output after retries.",
+                    reasoning="Lens could not produce valid output after retries.",
                     key_questions=["Please retry with a more specific decision framing."],
                     most_relevant_case_ids=[],
                     confidence="low",

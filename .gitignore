@@ -47,3 +47,6 @@ pgdata/
 
 # Logs
 *.log
+
+# Local-only notes and handoff material
+.local_notes/

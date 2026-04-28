@@ -7,26 +7,24 @@ Requires a running Postgres instance and env vars set.
 from __future__ import annotations
 
 import asyncio
-import os
 import time
 from pathlib import Path
+import sys
 from typing import Any
 
-import asyncpg
 import pytest
 import yaml
 from dotenv import load_dotenv
 
 load_dotenv()
 
-import sys
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
-from src.contracts import FramedDecision, FramerClarification
-from src.framer.framer import Framer
-from src.retriever.retriever import Retriever, create_pool
-from src.critic.critic import Critic
-from src.synthesizer.synthesizer import Synthesizer
+from src.contracts import FramedDecision, FramerClarification  # noqa: E402
+from src.framer.framer import Framer  # noqa: E402
+from src.retriever.retriever import Retriever, create_pool  # noqa: E402
+from src.critic.critic import Critic  # noqa: E402
+from src.synthesizer.synthesizer import Synthesizer  # noqa: E402
 
 _TEST_DECISIONS_PATH = Path(__file__).parent / "test_decisions.yaml"
 _DECISIONS = yaml.safe_load(_TEST_DECISIONS_PATH.read_text())
@@ -88,7 +86,7 @@ async def test_p1_framer_schema_validity(framer):
     for spec, output in results:
         if not isinstance(output, (FramedDecision, FramerClarification)):
             failures.append(f"{spec['id']}: got {type(output)}")
-    assert not failures, f"P1 failures:\n" + "\n".join(failures)
+    assert not failures, "P1 failures:\n" + "\n".join(failures)
 
 
 # ─── P2: Framer domain accuracy ───────────────────────────────────────────────

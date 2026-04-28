@@ -4,8 +4,8 @@
 - **Backend:** FastAPI (Python 3.11+)
 - **Database:** Postgres 16 with `pgvector`
 - **Frontend:** Next.js 14 (App Router) + TypeScript + Tailwind
-- **LLM:** Anthropic API, Claude Sonnet for reasoning, Claude Haiku for cheap classification tasks
-- **Embeddings:** `voyage-3` (preferred) or OpenAI `text-embedding-3-large`
+- **LLM:** Provider abstraction with Groq as the default cloud option and Anthropic/Ollama support
+- **Embeddings:** Provider abstraction with Jina AI as the default cloud option and Voyage/OpenAI support
 - **Hosting (MVP):** Single Fly.io app + managed Postgres. No Kubernetes. No microservices.
 
 ## Module-by-module
@@ -99,7 +99,7 @@ If checks fail, the synthesizer rejects its own output and re-runs the critics w
 - Retriever: ~1s (pgvector is fast)
 - Critic (parallel): ~15s (gated by slowest lens)
 - Synthesizer: ~5s
-- Cost per brief: target <$0.30 in API spend at MVP. Sonnet pricing makes this comfortable.
+- Cost per brief: target <$0.30 in API spend at MVP.
 
 ## Failure modes the system explicitly handles
 

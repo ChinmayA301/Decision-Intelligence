@@ -1,6 +1,5 @@
 # Held-out test decisions for process evals.
-# 20 total. Distribution: pricing×4, m_and_a×4, market_entry×4, key_hire×3, product_sunset×3, capital_allocation×2
-# At least 3 expected_clarification: true; at least 2 weak_reference_class expected.
+# Distribution: pricing, m_and_a, market_entry, key_hire, product_sunset, and capital_allocation.
 
 # ─── PRICING (4) ─────────────────────────────────────────────────────────────
 

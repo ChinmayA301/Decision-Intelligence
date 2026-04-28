@@ -3,13 +3,6 @@ Typed I/O contracts between modules.
 
 Every module in the reasoning loop reads and writes one of these.
 This is the source of truth for what each step is committing to produce.
-
-Implementation order recommendation for Claude Code:
-  1. Land this file as-is (or with corrections discussed in PR)
-  2. Implement Framer (uses FramedDecision)
-  3. Implement Retriever (consumes FramedDecision, produces ReferenceClass)
-  4. Implement Critic (consumes both, produces list[LensCritique])
-  5. Implement Synthesizer (consumes everything, produces DecisionBrief)
 """
 from __future__ import annotations
 

@@ -1,9 +1,7 @@
 """Unit tests for the Framer module against the 4 original test decisions."""
 from __future__ import annotations
 
-import asyncio
 from pathlib import Path
-from unittest.mock import AsyncMock, MagicMock, patch
 
 import pytest
 import yaml
@@ -11,8 +9,8 @@ import yaml
 import sys
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
-from src.contracts import Domain, DecisionType, FramedDecision, FramerClarification
-from src.framer.framer import Framer, _parse_response
+from src.contracts import Domain, DecisionType, FramedDecision, FramerClarification  # noqa: E402
+from src.framer.framer import Framer, _parse_response  # noqa: E402
 
 _TEST_DECISIONS = yaml.safe_load(
     (Path(__file__).parent.parent / "evals" / "test_decisions.yaml").read_text()
