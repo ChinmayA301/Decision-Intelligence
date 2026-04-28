@@ -1,6 +1,6 @@
 # Success Directory — Decision Intelligence Engine
 
-> **Hand-off package for Claude Code.** This repo defines the scope, architecture, data model, and MVP build plan for a Decision Intelligence (DI) tool that helps users make high-stakes ambiguous decisions by surfacing relevant historical decision patterns and grounding recommendations in causal evidence — not vibes.
+This repo defines the scope, architecture, data model, and MVP build plan for a Decision Intelligence (DI) tool that helps users make high-stakes ambiguous decisions by surfacing relevant historical decision patterns and grounding recommendations in causal evidence — not vibes.
 
 ---
 
@@ -169,7 +169,7 @@ A controlled tag set (~40 tags) for `inferred_heuristics`. Examples:
 This vocabulary is the connective tissue between cases and the Expert Lenses. Lenses are defined as *weighted combinations* of these tags, not as personalities.
 
 ### 3.3 v1 corpus target
-**150 cases.** Distributed across the 6 target domains. Curated by a human + Claude pair, every case reviewed by a human before publication. Estimated effort: 2–3 weeks for one senior researcher.
+**150 cases.** Distributed across the 6 target domains. Curated with human review, every case reviewed by a human before publication. Estimated effort: 2–3 weeks for one senior researcher.
 
 ---
 
@@ -225,7 +225,7 @@ Each step has a typed contract. Each step is independently testable. See `/src/c
 
 ---
 
-## 6. MVP scope (what Claude Code builds first)
+## 6. MVP scope
 
 **Goal: a working end-to-end loop on 30 seed cases in 2 weeks of build time.**
 
@@ -343,21 +343,6 @@ success-directory/
 
 ---
 
-## 11. Hand-off prompt for Claude Code
+## 11. What this document is NOT
 
-```
-Read /docs/architecture.md, /docs/data-model.md, and /docs/lenses.md.
-Then implement Phase 1 (week 1) of the MVP per /README.md §6.
-Stack: FastAPI + Postgres 16 + pgvector + Next.js + TypeScript.
-LLM: Claude Sonnet via Anthropic API for all reasoning steps.
-Embeddings: voyage-3 or text-embedding-3-large.
-Begin by writing /src/contracts.py — the typed I/O contracts between Framer, Retriever, Critic, Synthesizer. Get those committed before writing any module logic.
-After contracts, implement the Framer module first; it's the smallest and unblocks the rest.
-Run /evals/process_evals.py against your work before claiming a phase is done.
-```
-
----
-
-## 12. What this document is NOT
-
-It's not the full implementation. Claude Code will write `/docs/architecture.md`, `/docs/data-model.md`, the contracts file, the prompts, the seed cases, and the modules. This README is the *constitution* — the thing the implementation has to stay loyal to.
+It's not the full implementation. This README is the *constitution* — the thing the implementation has to stay loyal to.
