@@ -11,14 +11,37 @@ All expose the same async interface:
 """
 from __future__ import annotations
 
+import asyncio
 import os
+import random
+import re
 from dataclasses import dataclass
+
+_MAX_ATTEMPTS = 5
+_RETRY_AFTER_HINT = re.compile(r"try again in (\d+(?:\.\d+)?)s")
 
 
 @dataclass
 class Message:
     role: str  # "user" | "assistant"
     content: str
+
+
+async def _call_with_rate_limit_retry(fn, *args, **kwargs):
+    """Retry transient 429s. Free-tier Groq allows ~12k tokens/min and one brief
+    uses most of that, so a second brief inside the same minute would otherwise
+    fail. Honors the provider's 'try again in Ns' hint when present."""
+    from openai import RateLimitError
+
+    for attempt in range(1, _MAX_ATTEMPTS + 1):
+        try:
+            return await fn(*args, **kwargs)
+        except RateLimitError as exc:
+            if attempt == _MAX_ATTEMPTS:
+                raise
+            hint = _RETRY_AFTER_HINT.search(str(exc))
+            delay = float(hint.group(1)) + 1.0 if hint else 2.0 * (2 ** (attempt - 1))
+            await asyncio.sleep(min(delay, 30.0) + random.uniform(0, 0.5))
 
 
 class LLMClient:
@@ -73,7 +96,8 @@ class GroqClient(LLMClient):
     async def complete(self, system: str, messages: list[Message], max_tokens: int = 1024) -> str:
         all_messages = [{"role": "system", "content": system}]
         all_messages += [{"role": m.role, "content": m.content} for m in messages]
-        response = await self._client.chat.completions.create(
+        response = await _call_with_rate_limit_retry(
+            self._client.chat.completions.create,
             model=self._model,
             messages=all_messages,
             max_tokens=max_tokens,
