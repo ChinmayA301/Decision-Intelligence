@@ -50,3 +50,6 @@ pgdata/
 
 # Local-only notes and handoff material
 .local_notes/
+
+# Local demo artifacts
+data/briefs/

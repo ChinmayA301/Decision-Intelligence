@@ -1,4 +1,5 @@
-"""Retriever — embeds a FramedDecision and fetches analogous cases from Postgres/pgvector."""
+"""Retriever — embeds a FramedDecision and fetches analogous cases from a CaseStore
+(Postgres/pgvector in production, or a local JSON store for zero-dependency demos)."""
 from __future__ import annotations
 
 import os
@@ -16,8 +17,8 @@ from src.contracts import (
     RetrievedCase,
 )
 from src.retriever.embeddings import EmbeddingProvider, get_embedder
+from src.store.case_store import CaseStore
 
-_TOP_K_INITIAL = 30
 _TOP_K_FINAL = 10
 _WEAK_CLASS_THRESHOLD = 4
 
@@ -25,10 +26,10 @@ _WEAK_CLASS_THRESHOLD = 4
 class Retriever:
     def __init__(
         self,
-        pool: asyncpg.Pool,
+        store: CaseStore,
         embedder: EmbeddingProvider | None = None,
     ) -> None:
-        self._pool = pool
+        self._store = store
         self._embedder = embedder or get_embedder()
 
     async def retrieve(self, decision: FramedDecision) -> ReferenceClass:
@@ -55,45 +56,18 @@ class Retriever:
         embedding: list[float],
         decision: FramedDecision,
         ignore_domain: bool = False,
-    ) -> list[asyncpg.Record]:
-        vec_literal = "[" + ",".join(str(x) for x in embedding) + "]"
-
-        # Build query with optional domain filter
-        domain_clause = "" if ignore_domain else "AND domain = $2"
-        params: list = [vec_literal]
-        if not ignore_domain:
-            params.append(decision.domain.value)
-
-        query = f"""
-            SELECT
-                case_id,
-                title,
-                year,
-                organization,
-                decision_maker,
-                domain,
-                decision_type,
-                outcome_label,
-                era_dependence,
-                context_summary,
-                1 - (embedding <=> $1::vector) AS similarity
-            FROM cases
-            WHERE review_status = 'reviewed'
-              AND embedding IS NOT NULL
-              {domain_clause}
-            ORDER BY embedding <=> $1::vector
-            LIMIT {_TOP_K_INITIAL}
-        """
-
-        async with self._pool.acquire() as conn:
-            rows = await conn.fetch(query, *params)
-
+    ) -> list:
+        rows = await self._store.fetch_candidates(
+            embedding, decision.domain.value, ignore_domain=ignore_domain
+        )
         return _rerank(rows, decision)
 
 
-def _rerank(rows: list[asyncpg.Record], decision: FramedDecision) -> list[asyncpg.Record]:
-    """Re-rank: boost decision_type match; penalize high era_dependence."""
-    def score(row: asyncpg.Record) -> float:
+def _rerank(rows: list, decision: FramedDecision) -> list:
+    """Re-rank: boost decision_type match; penalize high era_dependence.
+
+    Rows may be asyncpg Records or plain dicts; both support key access."""
+    def score(row) -> float:
         sim: float = row["similarity"]
         boost = 0.0
         if row["decision_type"] == decision.decision_type.value:
@@ -105,7 +79,7 @@ def _rerank(rows: list[asyncpg.Record], decision: FramedDecision) -> list[asyncp
     return sorted(rows, key=score, reverse=True)
 
 
-def _row_to_retrieved_case(row: asyncpg.Record) -> RetrievedCase:
+def _row_to_retrieved_case(row) -> RetrievedCase:
     context = row["context_summary"] or ""
     snippet = context[:800].rsplit(" ", 1)[0] + "…" if len(context) > 800 else context
     return RetrievedCase(

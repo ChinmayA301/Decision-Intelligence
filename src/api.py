@@ -1,9 +1,16 @@
-"""FastAPI application — POST /briefs → DecisionBrief."""
+"""FastAPI application — POST /briefs → DecisionBrief.
+
+Storage backend is chosen at startup:
+- ``DATABASE_URL`` set   → Postgres + pgvector (production path).
+- ``DATABASE_URL`` unset → local JSON case store + file-backed briefs, so the
+  full pipeline runs with no external database (demo path).
+"""
 from __future__ import annotations
 
+import os
 from contextlib import asynccontextmanager
+from pathlib import Path
 
-import asyncpg
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
@@ -12,17 +19,25 @@ from src.contracts import DecisionBrief, FramerClarification
 from src.framer.framer import Framer, FramerParseError
 from src.llm.client import LLMClient, get_llm_client
 from src.retriever.retriever import Retriever, create_pool
+from src.store.brief_store import BriefStore, LocalBriefStore, PgBriefStore
+from src.store.case_store import LocalCaseStore, PgCaseStore
 from src.critic.critic import Critic
 from src.synthesizer.synthesizer import Synthesizer
+
+_PROJECT_ROOT = Path(__file__).resolve().parent.parent
+_LOCAL_CASE_STORE = _PROJECT_ROOT / "data" / "case_store.json"
+_LOCAL_BRIEFS_DIR = _PROJECT_ROOT / "data" / "briefs"
 
 
 # ─── App state ───────────────────────────────────────────────────────────────
 
 class AppState:
-    pool: asyncpg.Pool
+    pool: object | None = None
+    store_backend: str = "unset"
     llm: LLMClient
     framer: Framer
     retriever: Retriever
+    briefs: BriefStore
     critic: Critic
     synthesizer: Synthesizer
 
@@ -32,14 +47,30 @@ state = AppState()
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    state.pool = await create_pool()
+    if os.environ.get("DATABASE_URL"):
+        state.pool = await create_pool()
+        case_store = PgCaseStore(state.pool)
+        state.briefs = PgBriefStore(state.pool)
+        state.store_backend = "postgres"
+    else:
+        if not _LOCAL_CASE_STORE.exists():
+            raise RuntimeError(
+                f"DATABASE_URL is not set and {_LOCAL_CASE_STORE} is missing. "
+                "Run 'python scripts/build_local_store.py' once (needs an embedding "
+                "API key) or point DATABASE_URL at Postgres."
+            )
+        case_store = LocalCaseStore(_LOCAL_CASE_STORE)
+        state.briefs = LocalBriefStore(_LOCAL_BRIEFS_DIR)
+        state.store_backend = "local"
+
     state.llm = get_llm_client()
     state.framer = Framer(llm=state.llm)
-    state.retriever = Retriever(pool=state.pool)
+    state.retriever = Retriever(store=case_store)
     state.critic = Critic(llm=state.llm)
     state.synthesizer = Synthesizer(critic=state.critic, llm=state.llm)
     yield
-    await state.pool.close()
+    if state.pool is not None:
+        await state.pool.close()
 
 
 app = FastAPI(title="Decision Pattern Library API", version="0.1.0", lifespan=lifespan)
@@ -68,7 +99,7 @@ class ClarificationResponse(BaseModel):
 
 @app.get("/health")
 async def health() -> dict:
-    return {"status": "ok"}
+    return {"status": "ok", "store": state.store_backend}
 
 
 @app.post("/briefs", response_model=DecisionBrief | ClarificationResponse)
@@ -107,31 +138,13 @@ async def create_brief(req: BriefRequest):
 
 @app.get("/briefs/{brief_id}", response_model=DecisionBrief)
 async def get_brief(brief_id: str):
-    async with state.pool.acquire() as conn:
-        row = await conn.fetchrow(
-            "SELECT final_brief FROM briefs WHERE brief_id = $1",
-            brief_id,
-        )
-    if row is None:
+    brief = await state.briefs.get(brief_id)
+    if brief is None:
         raise HTTPException(status_code=404, detail="Brief not found")
-    return DecisionBrief.model_validate_json(row["final_brief"])
+    return brief
 
 
 # ─── Helpers ─────────────────────────────────────────────────────────────────
 
 async def _store_brief(brief: DecisionBrief, user_input: str) -> None:
-    async with state.pool.acquire() as conn:
-        await conn.execute(
-            """
-            INSERT INTO briefs (brief_id, user_input, framed_decision, reference_class,
-                                lens_critiques, final_brief)
-            VALUES ($1, $2, $3, $4, $5, $6)
-            ON CONFLICT (brief_id) DO NOTHING
-            """,
-            brief.brief_id,
-            user_input,
-            brief.framed_decision.model_dump_json(),
-            brief.reference_class.model_dump_json(),
-            "[" + ",".join(c.model_dump_json() for c in brief.lens_critiques) + "]",
-            brief.model_dump_json(),
-        )
+    await state.briefs.save(brief, user_input)

@@ -1,8 +1,10 @@
 # Decision Intelligence
 
+[![CI](https://github.com/ChinmayA301/Decision-Intelligence/actions/workflows/ci.yml/badge.svg)](https://github.com/ChinmayA301/Decision-Intelligence/actions/workflows/ci.yml)
+
 Decision Intelligence is a web app for pressure-testing high-stakes business decisions against a curated library of historical decision patterns.
 
-Users describe a decision in plain language. The system frames the decision, retrieves analogous cases from a Postgres/pgvector library, runs several strategic lenses, and returns a structured decision brief with reference cases, tensions, and failure modes.
+Users describe a decision in plain language. The system frames the decision, retrieves analogous cases from a curated case library (bundled local store by default, Postgres/pgvector optional), runs several strategic lenses, and returns a structured decision brief with reference cases, tensions, and failure modes.
 
 ## What It Does
 
@@ -18,45 +20,32 @@ This is a research and decision-support tool. It is not legal, financial, or inv
 
 - Backend: FastAPI, Python 3.11+
 - Frontend: Next.js 14, TypeScript, Tailwind
-- Database: Postgres 16 with pgvector
+- Case store: bundled JSON + in-process cosine retrieval by default; Postgres 16 + pgvector optional
 - LLM provider: Groq by default, with Anthropic/Ollama support in the provider abstraction
 - Embeddings: Jina AI by default, with Voyage/OpenAI support in the provider abstraction
 
-## Local Launch
+## Local Launch (no database required)
 
 Prerequisites:
 
-- Docker
-- Python 3.11+
-- `uv`
+- Python 3.11+ and `uv`
 - Node.js
-- Groq API key
-- Jina AI API key
+- Groq API key (free tier, console.groq.com)
+- Jina AI API key (free tier, jina.ai)
 
-Create a local environment file:
+Create a local environment file and fill in `GROQ_API_KEY` and `JINA_API_KEY`:
 
 ```bash
 cp .env.example .env
 ```
 
-Fill in `GROQ_API_KEY` and `JINA_API_KEY` in `.env`.
-
-Start Postgres with pgvector:
-
-```bash
-docker compose up -d postgres
-```
-
-Install Python dependencies and load seed cases:
+Install dependencies and start the API. With `DATABASE_URL` unset, retrieval is
+served from the bundled `data/case_store.json` (the 30 seed cases with
+precomputed embeddings) and briefs are stored as local files — no Docker, no
+Postgres:
 
 ```bash
 uv sync --extra dev
-uv run python scripts/load_cases.py --force-status reviewed
-```
-
-Start the API:
-
-```bash
 uv run uvicorn src.api:app --reload --port 8000
 ```
 
@@ -68,16 +57,34 @@ npm install
 npm run dev
 ```
 
-Open `http://localhost:3000`.
+Open `http://localhost:3000`, describe a decision, and generate a brief.
 
 The Next.js app proxies `/api/*` requests to `http://localhost:8000` by default.
+
+### Optional: Postgres + pgvector (production path)
+
+Set `DATABASE_URL` in `.env`, then:
+
+```bash
+docker compose up -d postgres
+uv run python scripts/load_cases.py --force-status reviewed
+uv run uvicorn src.api:app --reload --port 8000
+```
+
+### Rebuilding the local case store
+
+`data/case_store.json` ships in the repo. Regenerate it after editing seed
+cases (requires `JINA_API_KEY`):
+
+```bash
+uv run python scripts/build_local_store.py --force-status reviewed
+```
 
 ## Environment
 
 Required for the default local setup:
 
 ```env
-DATABASE_URL=postgresql://sd_user:sd_password@localhost:5432/success_directory
 LLM_PROVIDER=groq
 GROQ_API_KEY=
 GROQ_MODEL=llama-3.3-70b-versatile
@@ -85,6 +92,8 @@ EMBEDDING_PROVIDER=jina
 JINA_API_KEY=
 JINA_MODEL=jina-embeddings-v3
 JINA_TASK=text-matching
+# Optional — enables the Postgres/pgvector backend:
+# DATABASE_URL=postgresql://sd_user:sd_password@localhost:5432/success_directory
 ```
 
 Optional provider settings are documented in `.env.example`.
@@ -96,7 +105,8 @@ src/
   api.py                 FastAPI application
   contracts.py           Typed data contracts
   framer/                Decision framing module
-  retriever/             Embedding and pgvector retrieval
+  retriever/             Embedding + retrieval over a CaseStore
+  store/                 Case/brief storage backends (local JSON or Postgres)
   critic/                Strategy lens critique module
   synthesizer/           Final brief assembly
   llm/                   LLM provider abstraction
@@ -113,7 +123,7 @@ docs/                    Technical documentation
 
 The frontend can be deployed on Vercel from the `web/` directory.
 
-The backend needs a Python web host and a Postgres database with pgvector enabled. Render, Railway, Fly.io, Supabase, and Neon are reasonable options depending on how you want to split API hosting and database hosting.
+The backend needs only a Python web host in local-store mode (Render, Railway, Fly.io) — briefs persist to the instance's disk, which is fine for a demo. For durable multi-instance deployments, add a Postgres database with pgvector enabled (Supabase and Neon both work) and set `DATABASE_URL`.
 
 For a split deployment:
 

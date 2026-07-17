@@ -6,7 +6,7 @@ This is the source of truth for what each step is committing to produce.
 """
 from __future__ import annotations
 
-from datetime import datetime
+from datetime import datetime, timezone
 from enum import Enum
 from typing import Literal
 from pydantic import BaseModel, Field, field_validator
@@ -207,7 +207,7 @@ class DecisionBrief(BaseModel):
         default_factory=list,
         description="Honesty surface: 'reference class is small', 'all lenses converged', etc."
     )
-    created_at: datetime = Field(default_factory=datetime.utcnow)
+    created_at: datetime = Field(default_factory=lambda: datetime.now(timezone.utc))
 
 
 # ─────────────────────────────────────────────────────────────────────
