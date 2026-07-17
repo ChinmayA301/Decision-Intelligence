@@ -4,7 +4,8 @@ import { DecisionBrief, LensCritique, RetrievedCase } from "@/types/api";
 
 interface Props {
   brief: DecisionBrief;
-  onNewDecision: () => void;
+  /** Omitted on server-rendered shared pages — the button then links home. */
+  onNewDecision?: () => void;
 }
 
 const VERDICT_STYLES: Record<string, { bg: string; text: string; label: string }> = {
@@ -116,12 +117,21 @@ export default function BriefViewer({ brief, onNewDecision }: Props) {
             </span>
           </div>
         </div>
-        <button
-          onClick={onNewDecision}
-          className="flex-none text-xs px-3 py-1.5 border border-gray-200 rounded hover:bg-gray-50 text-gray-600"
-        >
-          New decision
-        </button>
+        {onNewDecision ? (
+          <button
+            onClick={onNewDecision}
+            className="flex-none text-xs px-3 py-1.5 border border-gray-200 rounded hover:bg-gray-50 text-gray-600"
+          >
+            New decision
+          </button>
+        ) : (
+          <a
+            href="/"
+            className="flex-none text-xs px-3 py-1.5 border border-gray-200 rounded hover:bg-gray-50 text-gray-600"
+          >
+            New decision
+          </a>
+        )}
       </div>
 
       {/* Calibration warnings */}
