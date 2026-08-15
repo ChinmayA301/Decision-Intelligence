@@ -1,0 +1,76 @@
+case_id: ackman-herbalife-short-2012
+title: Bill Ackman commits publicly to a $1B Herbalife short and escalates for five years
+decision_maker: Bill Ackman
+organization: Pershing Square Capital Management
+year: 2012
+domain: capital_allocation
+decision_type: sequential
+
+context_summary: |
+  In December 2012 Bill Ackman presented a lengthy public thesis arguing Herbalife was a
+  pyramid scheme that regulators would ultimately shut down, disclosing a short position
+  reported at roughly one billion dollars and stating he would take the position "to zero."
+  The analytical claim — that the company's distributor economics resembled a pyramid — was
+  argued at length. The decision was not merely to short, but to commit publicly and
+  irreversibly to a specific terminal outcome that depended on regulators acting, and then to
+  escalate repeatedly with further presentations and lobbying as the stock moved against him.
+
+options_considered:
+  - Hold a sized short position privately without a public campaign
+  - Publish the analysis once and let regulators and the market respond
+  - Publicly commit to the position and escalate through lobbying and further presentations (the actual move)
+  - Exit early when Federal Trade Commission action stopped short of shutting the company down
+
+option_taken: Public $1B short with sustained multi-year escalation and regulatory advocacy
+
+stated_rationale: |
+  Ackman argued the distributor compensation structure rewarded recruitment over end-user
+  retail sales, meeting the regulatory definition of a pyramid scheme, and that a public
+  campaign was both financially justified and socially warranted because ongoing recruitment
+  harmed low-income distributors.
+
+inferred_heuristics:
+  - public_commitment_to_thesis
+  - regulatory_catalyst_dependence
+  - escalation_of_commitment
+  - moral_framing_of_financial_position
+
+constraints_at_time:
+  - The thesis required a regulator to act, an outcome outside Ackman's control
+  - Carl Icahn took the opposing side publicly, creating a visible squeeze dynamic
+  - The public commitment made quiet position reduction reputationally costly
+
+outcome_12mo: |
+  Herbalife stock rose substantially rather than falling. Icahn built a large long position and
+  gained board representation. The dispute became a widely covered personal feud, and the
+  position was marked against Pershing Square through 2013.
+
+outcome_36mo: |
+  In July 2016 the Federal Trade Commission settled with Herbalife, requiring restructuring of
+  its compensation model and a $200M payment, but explicitly did not label it a pyramid scheme.
+  The stock rose on the settlement. Ackman exited the position in early 2018 with reported
+  losses in the hundreds of millions to roughly one billion dollars.
+
+outcome_label: failure
+
+counterfactual_signal: |
+  Ackman's underlying critique of the distributor model was substantially reflected in the FTC's
+  required restructuring — yet the position still lost money, because the thesis depended on a
+  binary regulatory outcome that did not arrive in the form or timeframe assumed. Being partly
+  right about the business while wrong about the catalyst produced a full loss. The public
+  commitment converted a sizing decision into an identity commitment that made exiting costly.
+
+era_dependence: low
+
+sources:
+  - type: index_entry
+    title: "Who Wants to Be a Millionaire? (Herbalife Short) — Billion Dollar PDFs directory entry"
+    year: 2026
+    url: https://billiondollarpdf.com/entry/ackman-herbalife/
+  - type: filing
+    title: "FTC v. Herbalife International of America, Inc. — Stipulated Order for Permanent Injunction"
+    author: United States Federal Trade Commission
+    year: 2016
+
+review_status: draft
+reviewed_by: null

@@ -1,0 +1,75 @@
+case_id: chanos-enron-short-2000
+title: Jim Chanos shorts Enron after reading its filings, against universal analyst enthusiasm
+decision_maker: Jim Chanos
+organization: Kynikos Associates
+year: 2000
+domain: capital_allocation
+decision_type: sequential
+
+context_summary: |
+  In late 2000 Enron was one of the most admired companies in America, named Fortune's "Most
+  Innovative Company" six years running and covered almost uniformly as a buy by sell-side
+  analysts. Jim Chanos, running a dedicated short fund, began reading Enron's 10-K and 10-Q
+  filings after a Texas journalist flagged the company's opaque accounting. He found that
+  Enron's return on capital was below its cost of capital, that enormous related-party
+  transactions were disclosed but unexplained, and that insiders were selling heavily. The
+  decision was whether to short a large, widely-held, politically connected company on the
+  basis of disclosed-but-ignored accounting, knowing the position could be carried against
+  him for years while the stock kept rising.
+
+options_considered:
+  - Avoid the name entirely given its size, momentum, and political connections
+  - Take a small token short position sized to survive being wrong
+  - Build a significant short position and add as the thesis confirmed (the actual move)
+  - Wait for a clear accounting restatement before committing capital
+
+option_taken: Built and progressively increased a short position in Enron from November 2000
+
+stated_rationale: |
+  Chanos argued the business did not earn its cost of capital, that mark-to-model gains were
+  being booked as earnings without corresponding cash, and that the disclosed related-party
+  partnerships run by the CFO were a structural conflict rather than a technicality. He was
+  explicit that everything he relied on was in the public filings.
+
+inferred_heuristics:
+  - read_the_primary_source
+  - disconfirmation_over_narrative
+  - cash_flow_over_reported_earnings
+  - insider_behavior_as_signal
+
+constraints_at_time:
+  - Enron was widely held and heavily promoted by sell-side analysts
+  - Short positions carry unlimited downside and financing cost while waiting
+  - No restatement or regulatory finding existed at the time of the decision
+
+outcome_12mo: |
+  Enron's stock declined through 2001 as questions about its partnerships surfaced. In October
+  2001 Enron announced large write-downs and an SEC inquiry; the CFO was removed. The company
+  filed for bankruptcy in December 2001, roughly thirteen months after Chanos initiated.
+
+outcome_36mo: |
+  Enron's collapse became the defining accounting fraud of its era, contributing directly to
+  the Sarbanes-Oxley Act of 2002 and the dissolution of Arthur Andersen. Chanos's position is
+  among the most-cited short theses in modern investing and established his public reputation.
+
+outcome_label: success
+
+counterfactual_signal: |
+  The analysts and institutional holders who deferred to Enron's reputation, its auditor, and
+  its analyst coverage rather than to its filings suffered near-total losses on the position.
+  The information asymmetry was not access to private facts but willingness to read public ones.
+
+era_dependence: low
+
+sources:
+  - type: index_entry
+    title: "Enron Short Thesis — Billion Dollar PDFs directory entry"
+    year: 2026
+    url: https://billiondollarpdf.com/entry/chanos-enron/
+  - type: book
+    title: "The Smartest Guys in the Room: The Amazing Rise and Scandalous Fall of Enron"
+    author: Bethany McLean and Peter Elkind
+    year: 2003
+
+review_status: draft
+reviewed_by: null

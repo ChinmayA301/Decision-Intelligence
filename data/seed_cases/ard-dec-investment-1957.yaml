@@ -1,0 +1,73 @@
+case_id: ard-dec-investment-1957
+title: Georges Doriot's ARD funds Digital Equipment Corporation, creating the venture capital model
+decision_maker: Georges Doriot
+organization: American Research and Development Corporation
+year: 1957
+domain: capital_allocation
+decision_type: one_way
+
+context_summary: |
+  In 1957 two MIT engineers sought funding for a company to build interactive computers at a
+  time when the industry consensus held that computing meant large batch-processing mainframes
+  sold to institutions. Georges Doriot's American Research and Development Corporation, an
+  early publicly held venture firm, agreed to fund them. Doriot required the founders to drop
+  the word "computer" from their proposal — the company was named Digital Equipment Corporation
+  and initially pitched modules rather than computers — because investors would not fund a
+  direct challenge to IBM. The decision committed a large equity share for a small sum into an
+  unproven category with no comparable exits to reference.
+
+options_considered:
+  - Decline the investment given no established market for interactive computing
+  - Provide a loan or convertible instrument rather than take concentrated equity
+  - Fund the company for a large equity stake and accept a long illiquid hold (the actual move)
+  - Wait for the founders to demonstrate commercial traction before committing
+
+option_taken: Funded DEC for a large majority equity stake and held the position for over a decade
+
+stated_rationale: |
+  Doriot's stated approach was to back people and long-horizon technical capability rather than
+  near-term financial projections, accepting that returns in genuinely new categories arrive
+  slowly and cannot be underwritten from existing comparables.
+
+inferred_heuristics:
+  - talent_density_bet
+  - long_horizon_capital
+  - category_creation_over_comparables
+  - concentration_bet
+
+constraints_at_time:
+  - No venture capital industry or track record existed to justify the asset class
+  - IBM dominated computing and the interactive category had no proven demand
+  - ARD was publicly held and had to justify illiquid marks to its own shareholders
+
+outcome_12mo: |
+  DEC shipped laboratory modules and reached early profitability, validating the interim
+  business while the interactive computing thesis remained unproven.
+
+outcome_36mo: |
+  DEC introduced the PDP series of interactive minicomputers, establishing a new product
+  category distinct from mainframes and building the foundation for a business that would
+  become one of the largest computer companies in the world by the 1980s.
+
+outcome_label: success
+
+counterfactual_signal: |
+  The single DEC position ultimately accounted for the overwhelming majority of ARD's total
+  returns across its entire portfolio and lifetime — the canonical demonstration that venture
+  returns are driven by extreme outliers rather than portfolio averages, and that a
+  diversification-weighted evaluation of the individual decision would have understated it.
+
+era_dependence: high
+
+sources:
+  - type: index_entry
+    title: "A Proposal to American Research and Development — Billion Dollar PDFs directory entry"
+    year: 2026
+    url: https://billiondollarpdf.com/entry/dec-ard-proposal/
+  - type: book
+    title: "Creative Capital: Georges Doriot and the Birth of Venture Capital"
+    author: Spencer E. Ante
+    year: 2008
+
+review_status: draft
+reviewed_by: null

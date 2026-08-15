@@ -1,0 +1,72 @@
+case_id: muddy-waters-luckin-2020
+title: Muddy Waters distributes an anonymous report on Luckin Coffee built from thousands of store videos
+decision_maker: Carson Block
+organization: Muddy Waters Research
+year: 2020
+domain: capital_allocation
+decision_type: one_way
+
+context_summary: |
+  Luckin Coffee was a rapidly expanding Chinese coffee chain that had listed on Nasdaq in 2019
+  and was widely presented as a credible domestic challenger to Starbucks. In January 2020
+  Muddy Waters distributed an anonymously authored report based on large-scale primary
+  collection — thousands of hours of in-store video and tens of thousands of customer receipts
+  — alleging that per-store transaction volumes were materially inflated. The decision was to
+  amplify third-party anonymous research, taking on the reputational exposure of the claim
+  without having produced the underlying evidence in-house.
+
+options_considered:
+  - Decline to distribute research the firm had not itself produced
+  - Independently replicate the entire data collection before publishing
+  - Distribute the anonymous report while disclosing a short position (the actual move)
+  - Pass the findings to the exchange or auditors privately
+
+option_taken: Publicly distributed the anonymous report while disclosing a short position
+
+stated_rationale: |
+  Block argued the underlying evidence was unusually verifiable for a fraud allegation — direct
+  observational counts of customers and receipts across many locations — and that the scale of
+  the primary collection made the inflation claim testable rather than inferential.
+
+inferred_heuristics:
+  - primary_field_verification
+  - unit_economics_verification
+  - cross_border_opacity_as_signal
+  - evidence_over_authorship
+
+constraints_at_time:
+  - The report was anonymous and its collection methods could not be immediately audited
+  - The company denied the allegations and retained a major auditor
+  - Distributing third-party research transfers reputational risk without full control of evidence
+
+outcome_12mo: |
+  Luckin's board announced an internal investigation in April 2020 concluding that a very large
+  portion of 2019 sales had been fabricated. The chief operating officer was terminated, the
+  stock collapsed, and the company was delisted from Nasdaq in June 2020.
+
+outcome_36mo: |
+  Luckin settled with the SEC for $180M and later underwent restructuring. The company
+  subsequently rebuilt operations and returned to growth trading over-the-counter, while the
+  original equity holders had already absorbed near-total losses.
+
+outcome_label: success
+
+counterfactual_signal: |
+  The fabrication was detectable by counting customers in stores — an approach requiring
+  organisational willingness rather than privileged access. Institutional holders relying on
+  audited financials and management guidance had no comparable observational input.
+
+era_dependence: medium
+
+sources:
+  - type: index_entry
+    title: "Luckin Coffee (Anonymous Report Distributed by Muddy Waters) — Billion Dollar PDFs directory entry"
+    year: 2026
+    url: https://billiondollarpdf.com/entry/muddy-waters-luckin/
+  - type: filing
+    title: "SEC v. Luckin Coffee Inc. — Settled Charges for Accounting Fraud"
+    author: United States Securities and Exchange Commission
+    year: 2020
+
+review_status: draft
+reviewed_by: null

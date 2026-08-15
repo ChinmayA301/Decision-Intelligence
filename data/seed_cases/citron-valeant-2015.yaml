@@ -1,0 +1,73 @@
+case_id: citron-valeant-2015
+title: Citron alleges Valeant is using a captive pharmacy to book phantom sales
+decision_maker: Andrew Left
+organization: Citron Research
+year: 2015
+domain: capital_allocation
+decision_type: one_way
+
+context_summary: |
+  Valeant Pharmaceuticals was among the best-performing large-cap stocks of the preceding
+  years, built on serial acquisitions, aggressive drug price increases and low reported R&D
+  spend, and was held by several prominent activist and value investors. In October 2015
+  Citron published research alleging that Valeant was using Philidor, a specialty pharmacy it
+  controlled but did not consolidate transparently, to channel prescriptions and recognise
+  revenue — comparing the structure to Enron. The decision was to publish a fraud-adjacent
+  allegation against a widely-held company backed by well-known sophisticated investors.
+
+options_considered:
+  - Publish a narrower critique of the price-increase business model without fraud allegations
+  - Hold a short position quietly pending regulatory or journalistic scrutiny
+  - Publish the captive-pharmacy allegation publicly and explicitly (the actual move)
+  - Wait for confirmation of the pharmacy relationship before publishing
+
+option_taken: Published a public report alleging improper revenue recognition via a controlled pharmacy
+
+stated_rationale: |
+  Left argued that the undisclosed economic control of a specialty pharmacy allowed Valeant to
+  create the appearance of end-market demand for price-inflated drugs, and that this
+  distribution channel, rather than genuine prescriber demand, explained the growth narrative.
+
+inferred_heuristics:
+  - channel_verification
+  - related_party_opacity_as_signal
+  - roll_up_growth_skepticism
+  - public_commitment_to_thesis
+
+constraints_at_time:
+  - The company was defended by prominent activist and value investors with large positions
+  - Fraud allegations against a large-cap pharmaceutical company invite litigation
+  - The relationship's economics were not fully disclosed in filings at the time of publication
+
+outcome_12mo: |
+  Valeant severed ties with Philidor within weeks, its CEO departed, filings were delayed, and
+  the stock lost the large majority of its value over the following year amid congressional
+  scrutiny and investigations.
+
+outcome_36mo: |
+  Valeant restated certain results, faced sustained regulatory and legal consequences, and
+  eventually rebranded as Bausch Health. A former executive and a Philidor executive were
+  convicted in connection with a kickback scheme. Large activist holders exited at substantial
+  losses.
+
+outcome_label: success
+
+counterfactual_signal: |
+  Several highly regarded investors had performed extensive diligence and reached the opposite
+  conclusion, holding through the decline. The distinguishing analytical step was examining the
+  distribution channel rather than the financial statements alone.
+
+era_dependence: low
+
+sources:
+  - type: index_entry
+    title: "Valeant: The Pharmaceutical Enron? — Billion Dollar PDFs directory entry"
+    year: 2026
+    url: https://billiondollarpdf.com/entry/citron-valeant/
+  - type: book
+    title: "Bad Blood? Valeant and the pharmaceutical roll-up model"
+    author: United States Senate Special Committee on Aging (hearings record)
+    year: 2016
+
+review_status: draft
+reviewed_by: null

@@ -1,0 +1,74 @@
+case_id: sequoia-airbnb-series-a-2009
+title: Sequoia funds Airbnb during a downturn, against the consensus that strangers will not share homes
+decision_maker: Greg McAdoo
+organization: Sequoia Capital
+year: 2009
+domain: capital_allocation
+decision_type: one_way
+
+context_summary: |
+  In early 2009, in the immediate aftermath of the financial crisis and with venture funding
+  contracting sharply, Airbnb's founders pitched a marketplace for renting space in private
+  homes. The company had been rejected by numerous investors on the view that few people would
+  sleep in a stranger's home or admit strangers into their own, and had been funding itself
+  partly through novelty cereal sales. Its market-size claims rested on a category that did not
+  yet exist in any measurable form. Sequoia's decision was to fund an unproven behavioural
+  premise at seed stage during the worst funding environment in a generation.
+
+options_considered:
+  - Decline on the basis that the trust barrier was a permanent behavioural constraint
+  - Wait for evidence of repeat usage outside of conference-driven demand spikes
+  - Invest at seed stage on the strength of founder quality and early marketplace signal (the actual move)
+  - Push the founders toward a safer adjacent market such as conventional vacation rentals
+
+option_taken: Led the seed financing during the post-crisis funding contraction
+
+stated_rationale: |
+  The reported reasoning emphasised founder resourcefulness and iteration speed, evidence that
+  supply and demand were both reappearing without paid acquisition, and the observation that
+  the addressable market should be defined by the behaviour the product could create rather
+  than by existing hotel or rental market sizing.
+
+inferred_heuristics:
+  - talent_density_bet
+  - market_creation_over_market_sizing
+  - contrarian_timing
+  - early_retention_as_signal
+
+constraints_at_time:
+  - The financial crisis had sharply reduced venture funding and consumer discretionary spend
+  - The core behavioural premise had been rejected by many sophisticated investors
+  - Regulatory treatment of short-term rentals was entirely untested
+
+outcome_12mo: |
+  Airbnb expanded beyond event-driven demand into sustained bookings across multiple cities and
+  raised further financing at a materially higher valuation within roughly a year.
+
+outcome_36mo: |
+  The company scaled internationally, established trust infrastructure including reviews,
+  verified identity, and host guarantees, and became the reference example of a
+  trust-dependent marketplace — eventually reaching a public market valuation in the tens of
+  billions of dollars.
+
+outcome_label: success
+
+counterfactual_signal: |
+  The investors who declined did so on a plausible and specific behavioural objection that
+  turned out to be a solvable product problem rather than a fixed constraint. The distinguishing
+  judgement was treating a behavioural barrier as an engineering target instead of a market
+  boundary.
+
+era_dependence: medium
+
+sources:
+  - type: index_entry
+    title: "Airbnb Series A Pitch Deck — Billion Dollar PDFs directory entry"
+    year: 2026
+    url: https://billiondollarpdf.com/entry/airbnb-pitch-deck/
+  - type: book
+    title: "The Airbnb Story"
+    author: Leigh Gallagher
+    year: 2017
+
+review_status: draft
+reviewed_by: null

@@ -1,0 +1,73 @@
+case_id: einhorn-lehman-short-2008
+title: David Einhorn publicly presents his Lehman Brothers short thesis at the Ira Sohn conference
+decision_maker: David Einhorn
+organization: Greenlight Capital
+year: 2008
+domain: capital_allocation
+decision_type: one_way
+
+context_summary: |
+  After Bear Stearns collapsed in March 2008, David Einhorn examined Lehman Brothers'
+  disclosures and concluded its real estate marks were implausible relative to observable
+  market prices and that its capital position was weaker than reported. He had already
+  established a short position. The decision was whether to present the thesis publicly, by
+  name, at the Ira Sohn Investment Conference in May 2008 — attacking a systemically important
+  investment bank during a financial crisis, inviting regulatory scrutiny, management
+  retaliation, and blame for any resulting instability.
+
+options_considered:
+  - Hold the short quietly and let the thesis play out without public exposure
+  - Raise the concerns privately with Lehman management and regulators only
+  - Present the full thesis publicly and by name at Ira Sohn (the actual move)
+  - Exit the position given the systemic and political risk of being publicly associated with it
+
+option_taken: Delivered the detailed short thesis publicly at the Ira Sohn conference in May 2008
+
+stated_rationale: |
+  Einhorn argued that Lehman's disclosed marks on illiquid real estate assets were inconsistent
+  with comparable observable transactions, that its leverage left little margin for error, and
+  that public scrutiny was warranted precisely because the institution was systemically
+  important and its disclosures were not being challenged.
+
+inferred_heuristics:
+  - public_commitment_to_thesis
+  - disclosure_quality_as_signal
+  - mark_to_market_skepticism
+  - reputational_capital_at_risk
+
+constraints_at_time:
+  - Lehman management publicly disputed the analysis and criticized Einhorn personally
+  - Short sellers were being blamed politically for the deterioration of financial stocks
+  - A wrong public call on a major bank during a crisis would be reputationally severe
+
+outcome_12mo: |
+  Lehman Brothers filed for bankruptcy in September 2008, roughly four months after the
+  presentation — the largest bankruptcy filing in United States history. Regulators
+  subsequently imposed temporary restrictions on short selling financial stocks.
+
+outcome_36mo: |
+  The bankruptcy examiner's report later documented the Repo 105 accounting treatment that had
+  understated Lehman's leverage, substantially corroborating the concerns Einhorn had raised
+  publicly. The presentation became a reference case for public activist short research.
+
+outcome_label: success
+
+counterfactual_signal: |
+  Lehman's management responded to the analysis by disputing the messenger rather than
+  reconciling the marks. The institutions that accepted management's rebuttal at face value,
+  including counterparties and shareholders, absorbed the loss months later.
+
+era_dependence: medium
+
+sources:
+  - type: index_entry
+    title: "Lehman Brothers Short Thesis (Ira Sohn) — Billion Dollar PDFs directory entry"
+    year: 2026
+    url: https://billiondollarpdf.com/entry/einhorn-lehman/
+  - type: report
+    title: "Report of Anton R. Valukas, Examiner — In re Lehman Brothers Holdings Inc."
+    author: Anton R. Valukas
+    year: 2010
+
+review_status: draft
+reviewed_by: null

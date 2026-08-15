@@ -1,0 +1,76 @@
+case_id: tesla-master-plan-2006
+title: Elon Musk publishes a staged plan to fund mass-market EVs by starting with an expensive sports car
+decision_maker: Elon Musk
+organization: Tesla Motors
+year: 2006
+domain: market_entry
+decision_type: sequential
+
+context_summary: |
+  In 2006 electric vehicles were widely regarded as slow, short-range compliance products, and
+  no new American car company had succeeded in decades. Tesla was a small startup with no
+  manufacturing capability entering an industry with extreme capital intensity and entrenched
+  incumbents. Musk published a plan stating the sequence explicitly: build a low-volume,
+  high-price sports car, use those proceeds to fund a mid-price vehicle, then use those proceeds
+  to fund an affordable high-volume car. Publishing the sequence committed the company publicly
+  to a staged path whose later stages depended entirely on surviving the earlier ones.
+
+options_considered:
+  - Enter directly with an affordable mass-market vehicle to maximise environmental impact
+  - License the powertrain technology to established automakers instead of manufacturing
+  - Start with a low-volume premium sports car and reinvest proceeds down-market (the actual move)
+  - Remain a components supplier and avoid vehicle assembly capital requirements
+
+option_taken: Staged entry beginning with a low-volume high-price roadster, publicly stated in advance
+
+stated_rationale: |
+  Musk argued that all new technologies are expensive at low volume before achieving cost
+  reduction through scale, so entering at the premium end was the only financially viable path
+  for a capital-constrained entrant — and that stating the sequence publicly clarified that the
+  sports car was a means to an affordable vehicle rather than the objective.
+
+inferred_heuristics:
+  - staged_capital_recycling
+  - premium_entry_then_descend
+  - public_commitment_to_thesis
+  - technology_cost_curve_bet
+
+constraints_at_time:
+  - Automotive manufacturing is extremely capital intensive with long development cycles
+  - No new American automaker had achieved sustained scale in decades
+  - Battery costs were far too high for an affordable vehicle at 2006 technology levels
+
+outcome_12mo: |
+  Tesla continued Roadster development against significant delays and cost overruns, with
+  production slipping and the powertrain requiring substantial redesign. The company remained
+  dependent on further private financing rather than the self-funding the plan described.
+
+outcome_36mo: |
+  The Roadster reached customers in 2008, but the company nearly failed during the financial
+  crisis and required emergency financing plus a Department of Energy loan. It subsequently
+  executed the stated sequence — Model S, then Model 3 — becoming the most valuable automaker in
+  the world by 2020 and driving industry-wide electrification commitments.
+
+outcome_label: success
+
+counterfactual_signal: |
+  The staged plan was executed roughly as published but on a materially longer timeline and only
+  because external financing repeatedly bridged gaps the self-funding logic did not cover. The
+  strategy was sound and the sequencing correct, yet the mechanism that actually preserved the
+  company was access to outside capital during the 2008 crisis — a dependency the published
+  plan did not acknowledge.
+
+era_dependence: medium
+
+sources:
+  - type: index_entry
+    title: "The Secret Tesla Motors Master Plan (just between you and me) — Billion Dollar PDFs directory entry"
+    year: 2026
+    url: https://billiondollarpdf.com/entry/tesla-master-plan/
+  - type: book
+    title: "Elon Musk: Tesla, SpaceX, and the Quest for a Fantastic Future"
+    author: Ashlee Vance
+    year: 2015
+
+review_status: draft
+reviewed_by: null

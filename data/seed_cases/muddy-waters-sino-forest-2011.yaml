@@ -1,0 +1,74 @@
+case_id: muddy-waters-sino-forest-2011
+title: Muddy Waters publishes a fraud report on Sino-Forest, a company audited and analyst-covered
+decision_maker: Carson Block
+organization: Muddy Waters Research
+year: 2011
+domain: capital_allocation
+decision_type: one_way
+
+context_summary: |
+  Sino-Forest was a Chinese forestry company listed in Toronto with a multi-billion dollar
+  market capitalisation, a Big Four auditor, sell-side coverage and blue-chip institutional
+  holders including a large hedge fund. Carson Block's firm conducted field research in China,
+  attempting to verify claimed timber holdings and the intermediaries through which purchases
+  were booked, and concluded the asset base was materially overstated. The decision was whether
+  to publish a fraud allegation against an audited public company while holding a short
+  position, in a cross-border setting where the underlying assets were hard for anyone else to
+  independently verify.
+
+options_considered:
+  - Take a short position without publishing, avoiding legal and reputational exposure
+  - Share the field findings privately with regulators or the auditor
+  - Publish the full research report publicly while short (the actual move)
+  - Abandon the work given the difficulty of proving a negative across jurisdictions
+
+option_taken: Published a detailed public short report alleging materially overstated assets
+
+stated_rationale: |
+  Block argued that on-the-ground verification of timber rights and the use of undisclosed
+  intermediaries showed revenues and assets that could not be substantiated, and that the
+  audit and analyst coverage had not tested the physical existence of the underlying holdings.
+
+inferred_heuristics:
+  - primary_field_verification
+  - audit_is_not_verification
+  - cross_border_opacity_as_signal
+  - public_commitment_to_thesis
+
+constraints_at_time:
+  - Proving asset non-existence across jurisdictions is evidentiarily difficult
+  - The company was audited by a major firm and widely held by sophisticated institutions
+  - Publishing while short invites litigation and accusations of market manipulation
+
+outcome_12mo: |
+  The stock collapsed following publication and was suspended by the Ontario Securities
+  Commission. The auditor resigned, an independent committee was unable to substantiate key
+  holdings, and Sino-Forest filed for creditor protection in March 2012.
+
+outcome_36mo: |
+  The Ontario Securities Commission subsequently found fraud by senior Sino-Forest executives.
+  Institutional holders, including a prominent hedge fund, absorbed very large losses. The case
+  became a reference point for due diligence on cross-listed China-based issuers.
+
+outcome_label: success
+
+counterfactual_signal: |
+  The presence of a Big Four auditor, analyst coverage and sophisticated institutional holders
+  functioned socially as verification without functioning substantively as verification. The
+  differentiating input was physical field research that any holder could in principle have
+  commissioned and none had.
+
+era_dependence: medium
+
+sources:
+  - type: index_entry
+    title: "Sino-Forest Corporation (Strong Sell) — Billion Dollar PDFs directory entry"
+    year: 2026
+    url: https://billiondollarpdf.com/entry/muddy-waters-sino-forest/
+  - type: filing
+    title: "In the Matter of Sino-Forest Corporation et al. — Reasons and Decision"
+    author: Ontario Securities Commission
+    year: 2017
+
+review_status: draft
+reviewed_by: null

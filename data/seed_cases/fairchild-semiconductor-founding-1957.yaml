@@ -1,0 +1,74 @@
+case_id: fairchild-semiconductor-founding-1957
+title: Eight Shockley engineers resign together to found Fairchild Semiconductor
+decision_maker: Robert Noyce and seven colleagues
+organization: Fairchild Semiconductor
+year: 1957
+domain: market_entry
+decision_type: one_way
+
+context_summary: |
+  In 1957 eight engineers working for William Shockley — a Nobel laureate and co-inventor of the
+  transistor — concluded that his management was making the laboratory unworkable and that his
+  technical direction, away from silicon transistors, was wrong. Leaving as a group to start a
+  competing company was without meaningful precedent at the time; employment norms treated such
+  a departure as a serious breach of loyalty, and no financing structure existed for funding a
+  team of technologists directly. Arthur Rock arranged backing from Fairchild Camera and
+  Instrument after numerous established firms declined.
+
+options_considered:
+  - Remain at Shockley Semiconductor and attempt to change the technical direction internally
+  - Leave individually to join established electronics companies
+  - Resign together and found a new company with outside backing (the actual move)
+  - Seek to have Shockley replaced as laboratory head by his financial backers
+
+option_taken: Collective resignation and founding of a new silicon transistor company with corporate backing
+
+stated_rationale: |
+  The group judged that silicon rather than germanium was the correct material direction, that
+  the diffusion process they wanted to pursue was commercially viable, and that the existing
+  laboratory's management made execution impossible regardless of the quality of its underlying
+  science.
+
+inferred_heuristics:
+  - talent_density_bet
+  - exit_over_internal_reform
+  - technical_conviction_over_authority
+  - collective_bargaining_power
+
+constraints_at_time:
+  - Group resignation to compete with an employer was socially and professionally unprecedented
+  - No venture capital industry existed to finance a team without a product
+  - Their former employer was a Nobel laureate with far greater scientific standing
+
+outcome_12mo: |
+  Fairchild Semiconductor secured early defence and computing orders and began producing silicon
+  transistors using the diffusion techniques the group had advocated.
+
+outcome_36mo: |
+  The company developed the planar process, which enabled reliable mass production of integrated
+  circuits and became the foundational manufacturing technique of the semiconductor industry.
+  Shockley Semiconductor never achieved commercial success.
+
+outcome_label: success
+
+counterfactual_signal: |
+  Members of the founding group and their direct descendants went on to found Intel, AMD and
+  the venture firm Kleiner Perkins, making the decision the origin point of both Silicon Valley's
+  company-formation pattern and its financing model. The concentration of subsequent value in
+  one departing team indicates the binding asset was the group's cohesion rather than any
+  institutional resource they left behind.
+
+era_dependence: high
+
+sources:
+  - type: index_entry
+    title: "Fairchild Semiconductor Founding — Billion Dollar PDFs directory entry"
+    year: 2026
+    url: https://billiondollarpdf.com/entry/fairchild-founding/
+  - type: book
+    title: "The Intel Trinity: How Robert Noyce, Gordon Moore, and Andy Grove Built the World's Most Important Company"
+    author: Michael S. Malone
+    year: 2014
+
+review_status: draft
+reviewed_by: null

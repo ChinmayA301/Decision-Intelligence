@@ -1,0 +1,72 @@
+case_id: deepseek-r1-open-weights-2025
+title: DeepSeek releases a frontier-level reasoning model with open weights and published methods
+decision_maker: Liang Wenfeng
+organization: DeepSeek
+year: 2025
+domain: market_entry
+decision_type: one_way
+
+context_summary: |
+  By late 2024 frontier reasoning models were closed, expensive to train, and controlled by a
+  small number of well-capitalised United States laboratories, with export controls limiting
+  Chinese access to the most advanced accelerators. DeepSeek, funded from a quantitative trading
+  firm, trained a competitive reasoning model under those hardware constraints and chose in
+  January 2025 to release the weights openly along with a paper describing the reinforcement
+  learning method used to elicit reasoning. The decision forfeited direct monetisation of the
+  model and disclosed the technique to competitors.
+
+options_considered:
+  - Keep the model and method proprietary and monetise through an API
+  - Publish the paper describing the method while withholding the weights
+  - Release both open weights and the method publicly (the actual move)
+  - License the model commercially to enterprises without public release
+
+option_taken: Public release of open model weights together with a paper describing the training method
+
+stated_rationale: |
+  The stated framing emphasised open research contribution and demonstrated that strong
+  reasoning capability could be elicited through reinforcement learning at substantially lower
+  training cost than assumed, challenging the prevailing view that frontier capability required
+  the largest available compute budgets.
+
+inferred_heuristics:
+  - open_release_as_distribution
+  - commoditize_the_complement
+  - constraint_driven_efficiency
+  - credibility_through_disclosure
+
+constraints_at_time:
+  - Export controls restricted access to the highest-end accelerators
+  - Open release forfeits direct model monetisation and aids competitors
+  - The organisation lacked the brand recognition of established frontier laboratories
+
+outcome_12mo: |
+  The release drew immediate global attention and triggered a sharp sell-off in United States
+  artificial intelligence infrastructure equities in late January 2025 as investors reassessed
+  assumed training-cost requirements. The model was widely downloaded, adapted and served by
+  third parties, and prompted competing laboratories to accelerate their own reasoning model
+  releases and reconsider open-weight strategies.
+
+outcome_label: success
+
+counterfactual_signal: |
+  Forfeiting direct monetisation purchased something the organisation could not otherwise buy —
+  immediate global distribution, credibility, and agenda-setting influence over the field's
+  cost assumptions. Whether that converts to durable enterprise value remains unresolved at the
+  time of writing, so this case should be treated as strong on immediate impact and unproven on
+  long-run capture.
+
+era_dependence: high
+
+sources:
+  - type: index_entry
+    title: "DeepSeek-R1: Incentivizing Reasoning Capability via RL — Billion Dollar PDFs directory entry"
+    year: 2026
+    url: https://billiondollarpdf.com/entry/deepseek-r1/
+  - type: paper
+    title: "DeepSeek-R1: Incentivizing Reasoning Capability in LLMs via Reinforcement Learning"
+    author: DeepSeek-AI
+    year: 2025
+
+review_status: draft
+reviewed_by: null

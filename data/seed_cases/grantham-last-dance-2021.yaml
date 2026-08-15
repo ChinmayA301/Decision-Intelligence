@@ -1,0 +1,73 @@
+case_id: grantham-last-dance-2021
+title: Jeremy Grantham calls a late-stage bubble in January 2021, a year before the drawdown
+decision_maker: Jeremy Grantham
+organization: GMO
+year: 2021
+domain: capital_allocation
+decision_type: reversible
+
+context_summary: |
+  In January 2021 Jeremy Grantham published a letter arguing that US equities were in a
+  late-stage epic bubble displaying the classic markers — extreme retail participation,
+  speculative behaviour in unprofitable companies, record issuance, and blank-check vehicles —
+  and advised investors to reduce exposure to US equities. The call was made after an extended
+  advance and identified conditions accurately, but required a judgement about timing in an
+  environment where policy support remained unusually strong.
+
+options_considered:
+  - Remain invested and manage risk through diversification rather than a directional call
+  - Reduce exposure gradually based on valuation triggers rather than a public timing call
+  - Publicly call the top and advise substantial reduction in US equity exposure (the actual move)
+  - Wait for monetary policy to tighten before repositioning
+
+option_taken: Published a public late-stage bubble call and advised reducing US equity exposure
+
+stated_rationale: |
+  Grantham argued that the behavioural markers of terminal bubble phases were present at
+  historically extreme levels, and that while timing tops is impossible, the expected return
+  from remaining exposed had become unattractive relative to the risk of a severe drawdown.
+
+inferred_heuristics:
+  - regime_recognition
+  - valuation_reversion_bet
+  - behavioral_markers_as_signal
+  - accept_early_over_late
+
+constraints_at_time:
+  - Extraordinary monetary and fiscal support was still actively suppressing risk premia
+  - Bubble conditions can persist and intensify for extended periods after identification
+  - Reducing exposure early carries large opportunity cost if the advance continues
+
+outcome_12mo: |
+  US equities continued rising through 2021, delivering a strong positive year after the call.
+  Investors who reduced exposure at publication forfeited substantial gains over the following
+  twelve months while the identified speculative conditions intensified.
+
+outcome_36mo: |
+  Equities declined significantly in 2022, with the most speculative segments — unprofitable
+  growth companies and blank-check vehicles — falling far more than the index, substantially
+  validating the composition of the thesis. Markets subsequently recovered to new highs, so the
+  broad-index reduction produced a weaker result than the specific speculative-segment warning.
+
+outcome_label: mixed
+
+counterfactual_signal: |
+  The structural diagnosis was accurate and the specific speculative segments behaved as
+  predicted, but the broad directional call was early enough that acting on it immediately
+  produced worse results over a full cycle than holding. The distinction between identifying a
+  fragile regime and being able to trade it is the operative lesson.
+
+era_dependence: high
+
+sources:
+  - type: index_entry
+    title: "Waiting for the Last Dance — Billion Dollar PDFs directory entry"
+    year: 2026
+    url: https://billiondollarpdf.com/entry/grantham-last-dance/
+  - type: document
+    title: "Waiting for the Last Dance (GMO special client letter, January 2021)"
+    author: Jeremy Grantham
+    year: 2021
+
+review_status: draft
+reviewed_by: null

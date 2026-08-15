@@ -1,0 +1,73 @@
+case_id: einhorn-allied-capital-2002
+title: David Einhorn shorts Allied Capital and is proven right only after six years of attrition
+decision_maker: David Einhorn
+organization: Greenlight Capital
+year: 2002
+domain: capital_allocation
+decision_type: one_way
+
+context_summary: |
+  In May 2002 David Einhorn publicly questioned Allied Capital's valuation of its illiquid
+  private loan portfolio at an investment conference, arguing the company was marking
+  non-performing assets at implausible values. The stock fell sharply on the speech. What
+  followed was not resolution but a six-year confrontation involving public disputes, an SEC
+  investigation of Einhorn himself, and allegations that Allied's agents had obtained his
+  personal phone records. The decision to press the thesis publicly committed Greenlight to a
+  prolonged adversarial process with uncertain payoff.
+
+options_considered:
+  - Raise valuation concerns privately with the company and its auditors
+  - Publish the analysis and exit the position regardless of the response
+  - Maintain the short and press the case publicly for as long as required (the actual move)
+  - Abandon the position once the personal and legal costs became apparent
+
+option_taken: Maintained the short and pursued the argument publicly over roughly six years
+
+stated_rationale: |
+  Einhorn argued that Allied's fair-value marks on distressed private loans were unsupportable,
+  that the dividend was being funded in ways that obscured deterioration, and that continued
+  public pressure was necessary because private channels and regulators had not acted.
+
+inferred_heuristics:
+  - valuation_opacity_as_signal
+  - public_commitment_to_thesis
+  - persistence_through_adversarial_response
+  - regulatory_catalyst_dependence
+
+constraints_at_time:
+  - Illiquid Level 3 assets are inherently difficult to disprove from outside the company
+  - The company and its supporters responded adversarially rather than substantively
+  - Capital was locked in a low-conviction-payoff position for years of opportunity cost
+
+outcome_12mo: |
+  Allied Capital disputed the analysis and its stock recovered much of the initial decline. The
+  SEC opened an inquiry into Einhorn's conduct rather than the company's accounting, and the
+  dispute became personal and protracted.
+
+outcome_36mo: |
+  In 2007 the SEC settled with Allied Capital over the valuation of its loan portfolio without
+  penalties. Allied's business deteriorated substantially through the financial crisis and the
+  company was acquired by Ares Capital in 2010 at a small fraction of its former value.
+
+outcome_label: mixed
+
+counterfactual_signal: |
+  The analytical claim was ultimately vindicated, but the holding period consumed roughly six
+  years, invited a regulatory investigation of the analyst rather than the target, and produced
+  a return that was poor relative to the capital, attention, and legal exposure committed.
+  Correct-but-slow is economically distinguishable from correct.
+
+era_dependence: medium
+
+sources:
+  - type: index_entry
+    title: "Fooling Some of the People All of the Time (Allied Capital Short) — Billion Dollar PDFs directory entry"
+    year: 2026
+    url: https://billiondollarpdf.com/entry/einhorn-allied-capital/
+  - type: book
+    title: "Fooling Some of the People All of the Time: A Long Short Story"
+    author: David Einhorn
+    year: 2008
+
+review_status: draft
+reviewed_by: null

@@ -1,0 +1,76 @@
+case_id: chamath-spac-ipo2-2020
+title: Chamath Palihapitiya scales serial SPACs as a replacement for the traditional IPO
+decision_maker: Chamath Palihapitiya
+organization: Social Capital Hedosophia
+year: 2020
+domain: capital_allocation
+decision_type: sequential
+
+context_summary: |
+  Following the Virgin Galactic listing, Chamath Palihapitiya argued publicly that blank-check
+  acquisition companies were a superior mechanism to the traditional IPO because they allowed
+  companies to present forward projections and gave retail investors earlier access to growth
+  assets. He launched a rapid sequence of SPAC vehicles and took companies public through them
+  during a period of very high retail enthusiasm and low interest rates. The decision was to
+  scale a mechanism repeatedly and publicly, using personal brand as the distribution channel
+  for the offerings.
+
+options_considered:
+  - Complete a single vehicle and evaluate its outcome before raising more
+  - Use the structure selectively for companies with proven, auditable financials
+  - Raise a rapid series of vehicles and market them broadly to retail investors (the actual move)
+  - Pursue traditional growth investing without the public listing mechanism
+
+option_taken: Launched and marketed a rapid sequence of SPAC vehicles targeting retail participation
+
+stated_rationale: |
+  Palihapitiya argued the traditional IPO process underpriced offerings to institutional
+  allocators and excluded retail investors from early gains, and that SPACs democratised access
+  while permitting companies to communicate forward-looking projections that IPO rules
+  discouraged.
+
+inferred_heuristics:
+  - mechanism_arbitrage
+  - brand_as_distribution
+  - retail_access_framing
+  - speed_of_replication
+
+constraints_at_time:
+  - The favourable structure depended on continued low rates and high retail risk appetite
+  - Forward projections for pre-revenue companies carried weak accountability
+  - Sponsor economics rewarded completing deals irrespective of subsequent performance
+
+outcome_12mo: |
+  Several of the listed companies fell sharply from their post-merger highs as projections were
+  missed. The SEC signalled increased scrutiny of SPAC projections and sponsor disclosure, and
+  investor sentiment toward the structure deteriorated markedly through 2021.
+
+outcome_36mo: |
+  Multiple associated companies traded at small fractions of their listing prices, with at
+  least one facing significant regulatory and reputational problems. Two remaining vehicles were
+  wound down in late 2022 with capital returned to investors, and the SPAC market contracted
+  sharply. Retail investors who bought after the merger announcements absorbed the majority of
+  the losses.
+
+outcome_label: failure
+
+counterfactual_signal: |
+  The sponsor economics of the structure produced positive outcomes for the sponsor across
+  vehicles that produced heavy losses for the retail investors the mechanism was publicly
+  justified as serving — an alignment failure visible in the incentive design before any
+  outcome data existed.
+
+era_dependence: high
+
+sources:
+  - type: index_entry
+    title: "IPO 2.0 / SPAC Investor Letters — Billion Dollar PDFs directory entry"
+    year: 2026
+    url: https://billiondollarpdf.com/entry/chamath-spac-letter/
+  - type: report
+    title: "Special Purpose Acquisition Companies: Investor Bulletin and subsequent rulemaking"
+    author: United States Securities and Exchange Commission
+    year: 2022
+
+review_status: draft
+reviewed_by: null

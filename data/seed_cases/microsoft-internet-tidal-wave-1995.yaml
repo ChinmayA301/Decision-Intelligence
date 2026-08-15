@@ -1,0 +1,78 @@
+case_id: microsoft-internet-tidal-wave-1995
+title: Bill Gates reorients all of Microsoft around the Internet in a single internal memo
+decision_maker: Bill Gates
+organization: Microsoft
+year: 1995
+domain: market_entry
+decision_type: sequential
+
+context_summary: |
+  In May 1995 Microsoft was preparing the launch of Windows 95 and had been investing in a
+  proprietary online service, MSN, on the assumption that consumer online access would be
+  delivered through walled-garden networks. Netscape's browser was spreading rapidly and the
+  open Internet was emerging as an alternative platform that could make the operating system
+  less central. Gates circulated a memo assigning the Internet "the highest level of
+  importance" and directing every product group to reorient around it. The decision meant
+  devaluing an in-flight strategic investment and entering a category where a well-funded
+  competitor already led.
+
+options_considered:
+  - Continue prioritising the proprietary MSN online service as the consumer gateway
+  - Treat the Internet as a complementary feature layered onto existing products
+  - Reorient every product group around Internet support as the top priority (the actual move)
+  - Acquire or partner with an established Internet player rather than build internally
+
+option_taken: Company-wide reprioritisation around the Internet, with browser development bundled into Windows
+
+stated_rationale: |
+  Gates argued the Internet was the most important single development since the IBM PC, that
+  its open standards and network effects would make it the dominant platform regardless of
+  Microsoft's preferences, and that a proprietary alternative could not win against it — so
+  Microsoft had to embrace and extend the open standards rather than compete with them.
+
+inferred_heuristics:
+  - cannibalize_own_investment
+  - platform_shift_recognition
+  - decisive_under_uncertainty
+  - bundle_distribution_advantage
+
+constraints_at_time:
+  - Netscape held a commanding browser share lead with strong developer mindshare
+  - Substantial resources were already committed to the proprietary MSN strategy
+  - The Internet had no established monetisation model for an operating system vendor
+
+outcome_12mo: |
+  Microsoft shipped successive Internet Explorer releases, bundled the browser with Windows and
+  licensed it without charge, and repositioned its developer tooling around Internet standards.
+  Netscape's share began eroding materially.
+
+outcome_36mo: |
+  Internet Explorer overtook Netscape to become the dominant browser, and Netscape was
+  ultimately sold to AOL. The bundling strategy that achieved this also triggered the United
+  States Department of Justice antitrust action filed in 1998, which consumed years of
+  management attention and resulted in findings that Microsoft had maintained an unlawful
+  monopoly.
+
+outcome_label: success
+
+counterfactual_signal: |
+  The strategic objective was achieved decisively, but the mechanism that achieved it — bundling
+  a free browser with a dominant operating system — produced the antitrust liability that
+  constrained the company throughout the following decade. Winning the category and incurring
+  the regulatory cost were consequences of the same choice, which is visible in the decision
+  structure rather than only in hindsight.
+
+era_dependence: medium
+
+sources:
+  - type: index_entry
+    title: "The Internet Tidal Wave — Billion Dollar PDFs directory entry"
+    year: 2026
+    url: https://billiondollarpdf.com/entry/internet-tidal-wave/
+  - type: filing
+    title: "United States v. Microsoft Corp. — Findings of Fact"
+    author: United States District Court for the District of Columbia
+    year: 1999
+
+review_status: draft
+reviewed_by: null

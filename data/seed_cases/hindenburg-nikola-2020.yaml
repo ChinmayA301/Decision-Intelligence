@@ -1,0 +1,72 @@
+case_id: hindenburg-nikola-2020
+title: Hindenburg alleges Nikola's technology demonstrations were staged, days after a GM partnership
+decision_maker: Nate Anderson
+organization: Hindenburg Research
+year: 2020
+domain: capital_allocation
+decision_type: one_way
+
+context_summary: |
+  Nikola, an electric and hydrogen truck company that had gone public via SPAC, briefly reached
+  a market capitalisation exceeding established automakers despite negligible revenue. Days
+  after Nikola announced a major partnership with General Motors, Hindenburg published research
+  alleging the founder had made a series of false statements about the company's technology,
+  including that a promotional video of a truck appearing to drive under its own power had in
+  fact been filmed rolling down a hill. The decision was to publish immediately after a
+  credibility-conferring partnership announcement, while short.
+
+options_considered:
+  - Delay publication until after the GM partnership closed and sentiment cooled
+  - Publish only the verifiable technical claims and omit the founder conduct allegations
+  - Publish the full report immediately while short (the actual move)
+  - Refer the findings to regulators privately without publishing
+
+option_taken: Published the full report publicly days after the GM partnership announcement
+
+stated_rationale: |
+  Anderson argued that the company's valuation rested on claimed proprietary technology that
+  could not be substantiated, that specific public demonstrations had been misrepresented, and
+  that the newly announced partnership would further entrench a valuation built on those claims.
+
+inferred_heuristics:
+  - demonstration_verification
+  - founder_credibility_as_signal
+  - catalyst_timing
+  - public_commitment_to_thesis
+
+constraints_at_time:
+  - A major automaker had just validated the company through a partnership announcement
+  - SPAC-listed companies had made forward-looking projections with lighter liability exposure
+  - Publishing immediately after the announcement invited manipulation accusations
+
+outcome_12mo: |
+  Nikola's founder resigned as executive chairman within about two weeks. The GM partnership was
+  substantially scaled back. The SEC and Department of Justice opened investigations and the
+  stock declined sharply.
+
+outcome_36mo: |
+  The founder was convicted of fraud in October 2022 and later sentenced to prison. Nikola
+  settled with the SEC. The company's valuation never recovered and it subsequently filed for
+  Chapter 11 bankruptcy protection in 2025.
+
+outcome_label: success
+
+counterfactual_signal: |
+  General Motors had conducted partnership diligence and still entered the arrangement days
+  before publication, indicating that a large corporate counterparty's validation is not
+  equivalent to verification of specific technical claims.
+
+era_dependence: medium
+
+sources:
+  - type: index_entry
+    title: "Nikola: How to Parlay an Ocean of Lies — Billion Dollar PDFs directory entry"
+    year: 2026
+    url: https://billiondollarpdf.com/entry/hindenburg-nikola/
+  - type: filing
+    title: "SEC v. Trevor Milton — Complaint and related enforcement actions"
+    author: United States Securities and Exchange Commission
+    year: 2021
+
+review_status: draft
+reviewed_by: null

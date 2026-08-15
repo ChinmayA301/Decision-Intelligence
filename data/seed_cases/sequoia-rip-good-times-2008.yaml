@@ -1,0 +1,73 @@
+case_id: sequoia-rip-good-times-2008
+title: Sequoia tells its portfolio to cut burn immediately as the 2008 crisis begins
+decision_maker: Michael Moritz and Sequoia partners
+organization: Sequoia Capital
+year: 2008
+domain: capital_allocation
+decision_type: reversible
+
+context_summary: |
+  In October 2008, days after the acute phase of the financial crisis began, Sequoia Capital
+  convened its portfolio founders and presented a stark deck arguing the downturn was
+  structural rather than cyclical, that funding would become scarce for an extended period, and
+  that companies should cut spending immediately to reach cash-flow breakeven. The decision was
+  to issue a firm-wide directive advocating deep pre-emptive cuts across a whole portfolio,
+  accepting that if the downturn proved shallow the guidance would have destroyed growth in
+  companies that did not need to retrench.
+
+options_considered:
+  - Advise companies individually based on their specific runway and market position
+  - Wait for the severity of the downturn to become clearer before issuing guidance
+  - Issue a blanket directive to cut burn immediately and prioritise survival (the actual move)
+  - Signal confidence and commit to bridging portfolio companies through the downturn
+
+option_taken: Issued a firm-wide directive to cut costs aggressively and target cash-flow positive operations
+
+stated_rationale: |
+  The argument was that access to capital would contract sharply and stay contracted, that
+  companies dependent on future financing rounds faced existential risk, and that the
+  asymmetry favoured cutting too early — survivable — over cutting too late, which is not.
+
+inferred_heuristics:
+  - survival_over_growth_under_uncertainty
+  - asymmetric_downside_protection
+  - act_before_confirmation
+  - portfolio_level_coordination
+
+constraints_at_time:
+  - The depth and duration of the downturn were genuinely unknown in October 2008
+  - Deep cuts impair growth and morale and are difficult to reverse quickly
+  - Blanket guidance necessarily mismatches the situation of some individual companies
+
+outcome_12mo: |
+  Venture funding contracted sharply through 2009 and many startups without runway failed.
+  Portfolio companies that reduced burn generally survived the funding window, and the
+  presentation became widely circulated as the defining crisis-response artifact of the period.
+
+outcome_36mo: |
+  Capital markets reopened faster than the deck implied and a strong technology cycle followed
+  from roughly 2010. Some companies that cut most aggressively ceded ground to competitors who
+  continued investing, though the firm-level outcome for the portfolio was broadly favourable.
+
+outcome_label: success
+
+counterfactual_signal: |
+  The macro forecast was directionally right about the immediate funding window but overstated
+  its duration; recovery was faster than the guidance assumed. The advice was nevertheless sound
+  because the payoff was asymmetric — the cost of unnecessary caution was recoverable growth,
+  while the cost of insufficient caution was insolvency.
+
+era_dependence: medium
+
+sources:
+  - type: index_entry
+    title: "RIP Good Times — Billion Dollar PDFs directory entry"
+    year: 2026
+    url: https://billiondollarpdf.com/entry/rip-good-times/
+  - type: document
+    title: "R.I.P. Good Times (presentation to portfolio company founders)"
+    author: Sequoia Capital
+    year: 2008
+
+review_status: draft
+reviewed_by: null

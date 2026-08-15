@@ -1,0 +1,73 @@
+case_id: sequoia-adapting-to-endure-2022
+title: Sequoia repeats its crisis playbook in 2022 as rates rise and growth multiples compress
+decision_maker: Sequoia partners
+organization: Sequoia Capital
+year: 2022
+domain: capital_allocation
+decision_type: reversible
+
+context_summary: |
+  In May 2022, as interest rates rose and high-growth technology valuations compressed sharply,
+  Sequoia issued guidance to its portfolio echoing its 2008 message: that cheap capital was
+  ending, that the correction was not a short cyclical dip, and that companies should extend
+  runway and prioritise profitability over growth. The decision was to re-run a playbook that
+  had worked in a structurally different crisis, applying it to a rate-driven repricing rather
+  than a credit-driven liquidity freeze.
+
+options_considered:
+  - Treat the repricing as a normal cyclical correction requiring no special guidance
+  - Give differentiated advice by sector and stage rather than portfolio-wide direction
+  - Reissue the crisis playbook advocating runway extension and profitability focus (the actual move)
+  - Encourage companies to invest counter-cyclically while competitors retrenched
+
+option_taken: Issued portfolio-wide guidance to extend runway and shift from growth to profitability
+
+stated_rationale: |
+  The argument was that the era of near-zero rates had inflated valuations and normalised
+  unprofitable growth, that capital would be materially more expensive for a sustained period,
+  and that companies should not expect to raise on prior terms.
+
+inferred_heuristics:
+  - survival_over_growth_under_uncertainty
+  - regime_recognition
+  - playbook_reuse
+  - act_before_confirmation
+
+constraints_at_time:
+  - The 2022 repricing was driven by rates rather than by a credit market freeze
+  - Widespread simultaneous retrenchment can deepen a downturn across a portfolio
+  - Reusing a prior playbook risks pattern-matching to a superficially similar situation
+
+outcome_12mo: |
+  Late-stage funding contracted sharply and down rounds and layoffs became widespread through
+  2022 and 2023, broadly consistent with the guidance. Companies that had extended runway
+  avoided raising at trough valuations.
+
+outcome_36mo: |
+  The correction proved uneven rather than uniform: artificial intelligence attracted
+  exceptional capital inflows from 2023 onward even as other sectors stayed constrained, so
+  portfolio-wide caution was well-calibrated for some companies and costly for those that
+  underinvested in the sector that subsequently attracted the most capital.
+
+outcome_label: mixed
+
+counterfactual_signal: |
+  The same firm issuing structurally similar guidance in 2008 and 2022 produced clearly
+  favourable results in the first instance and mixed results in the second, because the second
+  downturn was sector-selective rather than general. The playbook's transferability was limited
+  by a difference in mechanism that surface-level similarity concealed.
+
+era_dependence: high
+
+sources:
+  - type: index_entry
+    title: "Adapting to Endure — Billion Dollar PDFs directory entry"
+    year: 2026
+    url: https://billiondollarpdf.com/entry/adapting-to-endure/
+  - type: document
+    title: "Adapting to Endure (presentation to portfolio company founders)"
+    author: Sequoia Capital
+    year: 2022
+
+review_status: draft
+reviewed_by: null

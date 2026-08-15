@@ -1,0 +1,73 @@
+case_id: buffett-buy-american-2008
+title: Warren Buffett publicly commits to buying US equities mid-crisis, before the bottom
+decision_maker: Warren Buffett
+organization: Berkshire Hathaway
+year: 2008
+domain: capital_allocation
+decision_type: reversible
+
+context_summary: |
+  In October 2008, with credit markets frozen, major financial institutions failing and equity
+  indices in steep decline, Warren Buffett published a newspaper op-ed stating that he was
+  buying American equities in his personal account and explaining why. The decision was to make
+  a public, attributed commitment during maximum uncertainty, with no ability to know whether
+  the decline was near its end, and with the reputational consequence of being publicly early
+  if markets continued to fall.
+
+options_considered:
+  - Continue accumulating quietly without public commentary
+  - Wait for credit markets to normalise before deploying capital
+  - Publicly state the buying position and the reasoning while the crisis was unresolved (the actual move)
+  - Hold cash and preserve optionality until the recovery was visible
+
+option_taken: Published an attributed public commitment to buying US equities during the crisis
+
+stated_rationale: |
+  Buffett argued that fear was driving prices below business value irrespective of long-term
+  earning power, that holding cash was a guaranteed loss in real terms over long horizons, and
+  that waiting for visible good news guaranteed paying materially higher prices, since markets
+  reprice before economic conditions improve.
+
+inferred_heuristics:
+  - contrarian_timing
+  - price_versus_value_separation
+  - long_horizon_capital
+  - public_commitment_to_thesis
+
+constraints_at_time:
+  - The financial system's stability was genuinely in question at the time of writing
+  - Markets continued falling substantially after publication before recovering
+  - A public call carried reputational risk if the decline continued for years
+
+outcome_12mo: |
+  US equity indices declined roughly a further twenty to twenty-five percent into March 2009
+  before reversing sharply. By late 2009 the market had recovered well above the level at which
+  the op-ed was published, making the call profitable within roughly a year despite being early.
+
+outcome_36mo: |
+  US equities continued a sustained multi-year advance. Berkshire's crisis-period capital
+  deployments, including structured investments in major financial institutions negotiated on
+  favourable terms, produced very large realised gains.
+
+outcome_label: success
+
+counterfactual_signal: |
+  The call was wrong on timing for roughly five months and right on substance over three years.
+  Investors who required confirmation before acting bought materially higher; investors who
+  matched the public commitment but used leverage or short horizons could have been forced out
+  during the intervening decline despite holding the correct view.
+
+era_dependence: medium
+
+sources:
+  - type: index_entry
+    title: "Buy American. I Am. — Billion Dollar PDFs directory entry"
+    year: 2026
+    url: https://billiondollarpdf.com/entry/buffett-buy-american/
+  - type: article
+    title: "Buy American. I Am."
+    author: Warren E. Buffett, The New York Times op-ed
+    year: 2008
+
+review_status: draft
+reviewed_by: null

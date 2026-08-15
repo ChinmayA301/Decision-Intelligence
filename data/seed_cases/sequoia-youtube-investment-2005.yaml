@@ -1,0 +1,74 @@
+case_id: sequoia-youtube-investment-2005
+title: Sequoia invests in YouTube despite unresolved copyright liability and no revenue model
+decision_maker: Roelof Botha
+organization: Sequoia Capital
+year: 2005
+domain: capital_allocation
+decision_type: one_way
+
+context_summary: |
+  In 2005 YouTube was a months-old consumer video site with explosive usage growth, no revenue
+  model, escalating bandwidth costs, and substantial unresolved copyright exposure from
+  user-uploaded material owned by major media companies. Competing services existed and
+  incumbents including Google had their own video efforts. Sequoia's investment memo argued for
+  funding the company on the strength of engagement and viral distribution mechanics rather
+  than on monetisation, explicitly accepting legal and cost risk that had no clear resolution
+  at the time of the decision.
+
+options_considered:
+  - Decline given unresolved copyright liability and no monetisation path
+  - Wait for the company to establish licensing agreements with rights holders first
+  - Invest at the current stage on engagement metrics alone (the actual move)
+  - Invest a smaller amount as an option, sized for total loss
+
+option_taken: Led early venture financing on the basis of engagement and distribution mechanics
+
+stated_rationale: |
+  The memo emphasised extraordinary organic growth in uploads and views, the network effect of
+  embeddable video across the web, and low friction relative to competing services — arguing
+  that owning consumer attention in a new medium was the scarce asset and that monetisation and
+  rights arrangements would follow scale.
+
+inferred_heuristics:
+  - engagement_before_monetization
+  - distribution_as_moat
+  - accept_legal_ambiguity_for_speed
+  - network_effect_bet
+
+constraints_at_time:
+  - Copyright liability from user uploads was unresolved and potentially existential
+  - Bandwidth costs scaled directly with usage and had no offsetting revenue
+  - Well-capitalised incumbents including Google were building competing video products
+
+outcome_12mo: |
+  Usage continued to compound rapidly. In October 2006, roughly a year after the investment,
+  Google acquired YouTube for $1.65B in stock, producing a very large multiple on the invested
+  capital in an unusually short period.
+
+outcome_36mo: |
+  Under Google, YouTube resolved rights exposure through the Content ID system and licensing
+  agreements, and built the advertising model that had been absent at the time of investment,
+  ultimately becoming one of the largest media businesses in the world.
+
+outcome_label: success
+
+counterfactual_signal: |
+  Google Video, run by a far better capitalised organisation with superior infrastructure and
+  no copyright exposure, lost the category and was ultimately replaced by the acquisition —
+  indicating that in this instance distribution mechanics and community dominated resources
+  and legal caution.
+
+era_dependence: medium
+
+sources:
+  - type: index_entry
+    title: "YouTube Investment Memo — Billion Dollar PDFs directory entry"
+    year: 2026
+    url: https://billiondollarpdf.com/entry/sequoia-youtube-memo/
+  - type: article
+    title: "Google to acquire YouTube for $1.65 billion"
+    author: Google Press Center announcement
+    year: 2006
+
+review_status: draft
+reviewed_by: null

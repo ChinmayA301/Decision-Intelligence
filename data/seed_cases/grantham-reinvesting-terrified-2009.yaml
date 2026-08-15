@@ -1,0 +1,70 @@
+case_id: grantham-reinvesting-terrified-2009
+title: Jeremy Grantham tells clients to reinvest into the crash, publishing within days of the bottom
+decision_maker: Jeremy Grantham
+organization: GMO
+year: 2009
+domain: capital_allocation
+decision_type: reversible
+
+context_summary: |
+  Having been publicly bearish through the preceding bubble, Jeremy Grantham published a client
+  letter in March 2009 arguing that equities had moved below fair value and that investors must
+  reinvest on a predetermined schedule rather than waiting for confidence to return. The letter
+  addressed a specific behavioural failure he anticipated: that investors who had correctly
+  avoided the decline would be psychologically unable to buy at the bottom, and would therefore
+  convert a correct bearish call into a permanently impaired outcome by missing the recovery.
+
+options_considered:
+  - Maintain the bearish posture until economic data confirmed recovery
+  - Reinvest gradually only after markets showed sustained upward movement
+  - Commit to a predetermined reinvestment schedule regardless of sentiment (the actual move)
+  - Hold cash and accept missing the early recovery in exchange for certainty
+
+option_taken: Advised committing to a pre-set reinvestment schedule executed irrespective of fear
+
+stated_rationale: |
+  Grantham argued that value, not comfort, should govern deployment; that no one reliably
+  identifies bottoms; and that the practical solution to the emotional barrier is a mechanical
+  schedule decided in advance, precisely because judgement degrades under stress.
+
+inferred_heuristics:
+  - precommitment_over_judgment
+  - price_versus_value_separation
+  - behavioral_constraint_management
+  - contrarian_timing
+
+constraints_at_time:
+  - Economic indicators were still deteriorating and the banking system remained fragile
+  - Clients had just absorbed severe losses and were strongly disinclined to add risk
+  - A reversal after reinvestment would have compounded client losses and damaged credibility
+
+outcome_12mo: |
+  The letter was published within days of the March 2009 market low. Equities rose sharply
+  through the following year, making the reinvestment advice close to optimally timed.
+
+outcome_36mo: |
+  The recovery extended into a sustained bull market. The letter is widely cited as an unusually
+  well-timed public call, and its central argument — that the hardest part of a correct bearish
+  call is knowing when to stop being bearish — became a reference framing.
+
+outcome_label: success
+
+counterfactual_signal: |
+  Many investors who had correctly predicted the crash remained in cash for years afterward and
+  underperformed those who had simply held throughout. The scarce skill was not the bearish
+  forecast, which was widely shared by then, but the pre-committed mechanism for reversing it.
+
+era_dependence: medium
+
+sources:
+  - type: index_entry
+    title: "Reinvesting When Terrified — Billion Dollar PDFs directory entry"
+    year: 2026
+    url: https://billiondollarpdf.com/entry/grantham-reinvesting-when-terrified/
+  - type: document
+    title: "Reinvesting When Terrified (GMO quarterly client letter, March 2009)"
+    author: Jeremy Grantham
+    year: 2009
+
+review_status: draft
+reviewed_by: null

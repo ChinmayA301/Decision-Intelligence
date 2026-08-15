@@ -1,0 +1,74 @@
+case_id: burry-scion-subprime-2005
+title: Michael Burry buys CDS on subprime mortgage bonds, locking his fund into an illiquid bet years early
+decision_maker: Michael Burry
+organization: Scion Capital
+year: 2005
+domain: capital_allocation
+decision_type: sequential
+
+context_summary: |
+  In 2005 Michael Burry read the underlying loan-level prospectuses for subprime
+  mortgage-backed securities and concluded that adjustable-rate loans written on weak
+  underwriting would default in large numbers once teaser rates reset. No instrument existed
+  to express the view at scale, so he persuaded investment banks to write him credit default
+  swaps on specific subprime tranches. The decision committed his equity-focused fund to an
+  illiquid derivative position, with ongoing premium payments, on a timeline he could not
+  control, in a market where housing prices were still rising and his investors could redeem.
+
+options_considered:
+  - Stay within the fund's stated value-equity mandate and avoid derivatives entirely
+  - Short homebuilder or mortgage-originator equities as a liquid proxy for the same view
+  - Buy credit default swaps on specific subprime tranches (the actual move)
+  - Wait for defaults to begin appearing in the data before committing capital
+
+option_taken: Purchased credit default swaps on hand-selected subprime mortgage-backed tranches
+
+stated_rationale: |
+  Burry argued that the loan-level data showed underwriting quality deteriorating while the
+  bonds retained investment-grade ratings, and that CDS let him express the view with defined
+  downside (the premium stream) and asymmetric upside, unlike shorting equities where timing
+  and short-squeeze risk could destroy the position.
+
+inferred_heuristics:
+  - read_the_primary_source
+  - asymmetric_payoff_seeking
+  - structural_mispricing_over_sentiment
+  - defined_downside_sizing
+
+constraints_at_time:
+  - Housing prices were still rising and the thesis was carrying negative for a prolonged period
+  - Investors had redemption rights and were increasingly hostile to the position
+  - The instruments were illiquid and depended on dealer willingness to mark them fairly
+
+outcome_12mo: |
+  The position bled premium through 2006 while housing held up. Burry faced sustained investor
+  pressure, disputes over marks with counterparties, and redemption demands; he ultimately
+  restricted withdrawals, straining relationships with his limited partners.
+
+outcome_36mo: |
+  Subprime defaults accelerated through 2007 and the CDS positions repriced sharply in Scion's
+  favor. The fund produced very large gains for remaining investors before Burry wound it down
+  in 2008, having alienated much of his investor base in the process of being right.
+
+outcome_label: success
+
+counterfactual_signal: |
+  Investors who redeemed before the thesis paid off captured the losses without the gains — the
+  same analysis, held by the same fund, produced opposite outcomes depending purely on whether
+  the holder could tolerate the drawdown period. Being directionally right was not sufficient;
+  surviving the interval was the binding constraint.
+
+era_dependence: medium
+
+sources:
+  - type: index_entry
+    title: "Scion Capital Letters (Subprime Short) — Billion Dollar PDFs directory entry"
+    year: 2026
+    url: https://billiondollarpdf.com/entry/burry-scion-subprime/
+  - type: book
+    title: "The Big Short: Inside the Doomsday Machine"
+    author: Michael Lewis
+    year: 2010
+
+review_status: draft
+reviewed_by: null

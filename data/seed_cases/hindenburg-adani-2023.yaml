@@ -1,0 +1,75 @@
+case_id: hindenburg-adani-2023
+title: Hindenburg publishes against the Adani Group days before a large follow-on share offering
+decision_maker: Nate Anderson
+organization: Hindenburg Research
+year: 2023
+domain: capital_allocation
+decision_type: one_way
+
+context_summary: |
+  The Adani Group was among India's largest and most politically prominent conglomerates, and
+  its chairman was ranked among the wealthiest people in the world. In January 2023, days
+  before Adani Enterprises was due to complete a large follow-on public offering, Hindenburg
+  published research alleging stock manipulation and accounting irregularities involving
+  offshore entities. The decision involved publishing against a nationally significant
+  conglomerate in a jurisdiction where the firm had limited legal protection, timed
+  deliberately to coincide with a capital raise.
+
+options_considered:
+  - Avoid the target entirely given jurisdictional and political exposure
+  - Publish after the follow-on offering completed to reduce accusations of interference
+  - Publish immediately before the offering while short via offshore instruments (the actual move)
+  - Submit the findings to Indian regulators without publication
+
+option_taken: Published the report days before the follow-on offering, holding a short via offshore instruments
+
+stated_rationale: |
+  Anderson argued that a network of offshore entities was being used in ways that affected
+  reported control and share price formation, that group leverage was elevated relative to
+  disclosed cash generation, and that an imminent capital raise made timely publication
+  material to investors being asked to subscribe.
+
+inferred_heuristics:
+  - catalyst_timing
+  - related_party_opacity_as_signal
+  - leverage_stress_analysis
+  - jurisdictional_risk_acceptance
+
+constraints_at_time:
+  - The target was politically connected in a jurisdiction with limited protection for short sellers
+  - The short had to be expressed indirectly through offshore instruments
+  - Adani denied all allegations and framed the report as an attack on India
+
+outcome_12mo: |
+  Adani group companies lost well over one hundred billion dollars in combined market value at
+  the trough and the follow-on offering was withdrawn despite being fully subscribed. India's
+  securities regulator and Supreme Court initiated review processes. A large sovereign-linked
+  investor took a stake, stabilising sentiment.
+
+outcome_36mo: |
+  Most Adani group companies recovered a substantial portion of their losses over the following
+  period, and Indian regulatory findings did not fully substantiate the central manipulation
+  allegations. Hindenburg Research announced it was winding down operations in January 2025.
+
+outcome_label: mixed
+
+counterfactual_signal: |
+  The report inflicted immediate, very large mark-to-market damage and forced withdrawal of the
+  offering, yet the durable outcome fell well short of the thesis: prices recovered, regulatory
+  vindication was partial, and the publishing firm subsequently wound down. Immediate market
+  impact and eventual validation are separable outcomes.
+
+era_dependence: high
+
+sources:
+  - type: index_entry
+    title: "Adani Group: How the World's 3rd Richest Man Is Pulling the Largest Con — Billion Dollar PDFs directory entry"
+    year: 2026
+    url: https://billiondollarpdf.com/entry/hindenburg-adani/
+  - type: report
+    title: "Expert Committee Report on Adani-Hindenburg matter, constituted by the Supreme Court of India"
+    author: Supreme Court of India expert committee
+    year: 2023
+
+review_status: draft
+reviewed_by: null
