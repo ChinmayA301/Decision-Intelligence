@@ -53,3 +53,6 @@ pgdata/
 
 # Local demo artifacts
 data/briefs/
+
+# TypeScript incremental build artifact
+web/tsconfig.tsbuildinfo

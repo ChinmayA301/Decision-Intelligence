@@ -77,15 +77,35 @@ class JinaEmbedder:
         return embeddings[0]
 
 
+_EMBEDDERS = {
+    "jina": (JinaEmbedder, "JINA_API_KEY"),
+    "voyage": (VoyageEmbedder, "VOYAGE_API_KEY"),
+    "openai": (OpenAIEmbedder, "OPENAI_API_KEY"),
+}
+
+
 def get_embedder() -> EmbeddingProvider:
-    provider = os.environ.get("EMBEDDING_PROVIDER", "voyage").lower()
-    if provider == "voyage":
-        return VoyageEmbedder()
-    elif provider == "jina":
-        return JinaEmbedder()
-    elif provider == "openai":
-        return OpenAIEmbedder()
-    else:
+    """Build the configured embedding provider.
+
+    Defaults to Jina because the bundled ``data/case_store.json`` is embedded
+    with jina-embeddings-v3. Query vectors must come from the same model as the
+    stored ones — a different provider produces vectors in an unrelated space,
+    so similarity scores would be meaningless even when the dimensions happen to
+    match. Rebuild the store with ``scripts/build_local_store.py`` if you change
+    this.
+    """
+    provider = os.environ.get("EMBEDDING_PROVIDER", "jina").lower().strip()
+    entry = _EMBEDDERS.get(provider)
+    if entry is None:
         raise ValueError(
-            f"Unknown EMBEDDING_PROVIDER: {provider!r}. Choose 'voyage', 'jina', or 'openai'."
+            f"Unknown EMBEDDING_PROVIDER: {provider!r}. Choose one of: "
+            f"{', '.join(sorted(_EMBEDDERS))}."
         )
+    cls, key_env = entry
+    if not os.environ.get(key_env):
+        raise RuntimeError(
+            f"EMBEDDING_PROVIDER={provider} requires {key_env}. Retrieval embeds "
+            "the user's decision text on every request, so this key is required "
+            "even when callers bring their own LLM key."
+        )
+    return cls()

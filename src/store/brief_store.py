@@ -3,6 +3,7 @@ from __future__ import annotations
 
 import json
 import re
+from collections import OrderedDict
 from pathlib import Path
 from typing import Any, Protocol
 
@@ -45,6 +46,30 @@ class PgBriefStore:
         if row is None:
             return None
         return DecisionBrief.model_validate_json(row["final_brief"])
+
+
+class MemoryBriefStore:
+    """In-process brief storage, bounded so a long-lived instance cannot grow
+    without limit. Used on read-only filesystems (serverless platforms mount the
+    deployment read-only), where writing a brief file is impossible.
+
+    Briefs do not survive a restart and are not shared between instances, so a
+    shared link may 404 if it lands on a different instance. That is acceptable
+    for a demo deployment; set DATABASE_URL for durable multi-instance storage.
+    """
+
+    def __init__(self, max_entries: int = 200) -> None:
+        self._briefs: OrderedDict[str, DecisionBrief] = OrderedDict()
+        self._max = max_entries
+
+    async def save(self, brief: DecisionBrief, user_input: str) -> None:
+        self._briefs[brief.brief_id] = brief
+        self._briefs.move_to_end(brief.brief_id)
+        while len(self._briefs) > self._max:
+            self._briefs.popitem(last=False)
+
+    async def get(self, brief_id: str) -> DecisionBrief | None:
+        return self._briefs.get(brief_id)
 
 
 class LocalBriefStore:

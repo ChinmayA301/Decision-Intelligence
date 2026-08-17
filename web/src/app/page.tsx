@@ -1,10 +1,15 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { BriefResponse, isClarification } from "@/types/api";
 import BriefViewer from "@/components/BriefViewer";
 import ClarificationView from "@/components/ClarificationView";
 import Composer from "@/components/Composer";
+import ModelSettings, {
+  ModelConfig,
+  loadModelConfig,
+  modelHeaders,
+} from "@/components/ModelSettings";
 
 type AppState =
   | { phase: "compose" }
@@ -15,15 +20,30 @@ type AppState =
 export default function Home() {
   const [appState, setAppState] = useState<AppState>({ phase: "compose" });
   const [error, setError] = useState<string | null>(null);
+  const [modelConfig, setModelConfig] = useState<ModelConfig | null>(null);
+  const [serverModelConfigured, setServerModelConfigured] = useState(true);
+  const [lastInput, setLastInput] = useState("");
+
+  useEffect(() => {
+    setModelConfig(loadModelConfig());
+    fetch("/api/health")
+      .then((r) => (r.ok ? r.json() : null))
+      .then((d) => d && setServerModelConfigured(Boolean(d.server_model_configured)))
+      .catch(() => undefined);
+  }, []);
 
   async function handleSubmit(userInput: string) {
     setError(null);
+    setLastInput(userInput);
     setAppState({ phase: "loading" });
 
     try {
       const res = await fetch("/api/briefs", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: {
+          "Content-Type": "application/json",
+          ...modelHeaders(modelConfig),
+        },
         body: JSON.stringify({ user_input: userInput }),
       });
 
@@ -48,6 +68,7 @@ export default function Home() {
   function handleReset() {
     setAppState({ phase: "compose" });
     setError(null);
+    setLastInput("");
   }
 
   return (
@@ -61,12 +82,17 @@ export default function Home() {
               the better the reference class match. We return a brief in 20–40 seconds.
             </p>
           </div>
+          <ModelSettings
+            config={modelConfig}
+            onChange={setModelConfig}
+            serverModelConfigured={serverModelConfigured}
+          />
           {error && (
             <div className="mb-4 p-3 bg-red-50 border border-red-200 rounded text-sm text-red-700">
               {error}
             </div>
           )}
-          <Composer onSubmit={handleSubmit} />
+          <Composer onSubmit={handleSubmit} initialValue={lastInput} />
         </>
       )}
 

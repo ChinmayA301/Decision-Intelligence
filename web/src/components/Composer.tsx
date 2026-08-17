@@ -4,14 +4,17 @@ import { useState } from "react";
 
 interface Props {
   onSubmit: (userInput: string) => void;
+  /** Seeds the box so a failed request (bad key, rate limit) doesn't discard
+   *  everything the user typed. */
+  initialValue?: string;
 }
 
 const PLACEHOLDER = `Example: We're a Series B SaaS doing $14M ARR. We've had 3 customers ask about an enterprise tier with SOC 2, SSO, audit logs. Sales thinks we should build it. Engineering says it'll cost a quarter of roadmap. CEO is leaning yes. We have 14 months of runway.
 
 What's the decision, what are the realistic alternatives, and what would success look like in 12–18 months?`;
 
-export default function Composer({ onSubmit }: Props) {
-  const [value, setValue] = useState("");
+export default function Composer({ onSubmit, initialValue = "" }: Props) {
+  const [value, setValue] = useState(initialValue);
   const wordCount = value.trim().split(/\s+/).filter(Boolean).length;
   const isReady = wordCount >= 30;
 

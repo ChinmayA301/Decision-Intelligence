@@ -17,8 +17,23 @@ jobs:
       - uses: astral-sh/setup-uv@v5
       - name: Install dependencies
         run: uv sync --extra dev
+      - name: Lint
+        run: uv run ruff check src scripts tests api
       - name: Run tests (keyless subset; LLM-dependent tests skip)
         run: uv run pytest tests -q
+      # No .env and no secrets in CI, so this is exactly a bring-your-own-key
+      # deployment: the app must still boot and report that a key is required.
+      - name: Serverless entrypoint boots with no credentials configured
+        run: |
+          uv run python - <<'PY'
+          from fastapi.testclient import TestClient
+          from api.index import app
+          with TestClient(app) as c:
+              body = c.get("/health").json()
+          assert body["status"] == "ok", body
+          assert body["byo_key_required"] is True, body
+          print("BYO-only boot OK:", body)
+          PY
 
   web:
     runs-on: ubuntu-latest

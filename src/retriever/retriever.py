@@ -4,8 +4,6 @@ from __future__ import annotations
 
 import os
 
-import asyncpg
-
 from src.contracts import (
     BaseRate,
     Domain,
@@ -30,11 +28,30 @@ class Retriever:
         embedder: EmbeddingProvider | None = None,
     ) -> None:
         self._store = store
-        self._embedder = embedder or get_embedder()
+        # Built on first use rather than at construction: a missing embedding key
+        # should surface as a clear error on the request that needs it, not as a
+        # crash during app startup (which turns into a health-check crash loop on
+        # hosted platforms and hides the reason).
+        self._embedder = embedder
+        self._embedder_error: Exception | None = None
+
+    @property
+    def embedder(self) -> EmbeddingProvider:
+        if self._embedder is None:
+            self._embedder = get_embedder()
+        return self._embedder
+
+    def embedder_ready(self) -> bool:
+        """Whether embeddings are usable, for diagnostics. Never raises."""
+        try:
+            _ = self.embedder
+            return True
+        except Exception:  # noqa: BLE001 - reported, not raised
+            return False
 
     async def retrieve(self, decision: FramedDecision) -> ReferenceClass:
         embed_text = f"{decision.context_summary} {decision.choice_being_made}"
-        embedding = await self._embedder.embed_one(embed_text)
+        embedding = await self.embedder.embed_one(embed_text)
 
         rows = await self._fetch_candidates(embedding, decision)
         cases = [_row_to_retrieved_case(r) for r in rows]
@@ -110,5 +127,10 @@ def _compute_base_rate(cases: list[RetrievedCase]) -> BaseRate:
     )
 
 
-async def create_pool(dsn: str | None = None) -> asyncpg.Pool:
+async def create_pool(dsn: str | None = None):
+    """Postgres connection pool. asyncpg is imported here rather than at module
+    scope so the local-store path — and serverless bundles built for it — do not
+    need the driver installed at all."""
+    import asyncpg
+
     return await asyncpg.create_pool(dsn or os.environ["DATABASE_URL"])

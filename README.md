@@ -119,11 +119,27 @@ web/                     Next.js frontend
 docs/                    Technical documentation
 ```
 
-## Deployment Notes
+## Bring your own model
 
-The frontend can be deployed on Vercel from the `web/` directory.
+The app can run on the visitor's own LLM account instead of the server's. Click
+**Use your own model**, pick a provider (Groq, Anthropic, OpenAI, OpenRouter, or a
+local Ollama), and paste a key — it is stored in that browser only and sent with
+the request so the model calls bill to that account.
 
-The backend needs only a Python web host in local-store mode (Render, Railway, Fly.io) — briefs persist to the instance's disk, which is fine for a demo. For durable multi-instance deployments, add a Postgres database with pgvector enabled (Supabase and Neon both work) and set `DATABASE_URL`.
+This is what makes a public demo viable: with no `LLM_PROVIDER` key set on the
+server, traffic cannot exhaust your own quota. The server still needs an embedding
+key (`JINA_API_KEY`) for retrieval — one small call per brief.
+
+Keys are never written to disk, never logged, and never included in a generated
+brief. Provider base URLs come from a fixed registry and are never taken from
+caller input.
+
+## Deployment
+
+See [DEPLOYMENT.md](./DEPLOYMENT.md). Both halves deploy to Vercel as two projects
+over the same repo (root directory for the API, `web/` for the frontend); the
+backend also runs as a plain container on Render, Railway or Fly.io. No database
+is required — retrieval reads the bundled case store.
 
 For a split deployment:
 
