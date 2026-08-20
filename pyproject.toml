@@ -29,6 +29,13 @@ dev = [
     "ruff>=0.4.0",
 ]
 
+[tool.vercel]
+# Vercel's Python runtime auto-detects FastAPI and routes every request to this
+# app, so no rewrites and no per-function `runtime` pin are needed. The runtime
+# only auto-discovers entrypoints named app/index/server/main/wsgi/asgi, and
+# ours is src/api.py, so it is named explicitly here.
+entrypoint = "src.api:app"
+
 [tool.hatch.build.targets.wheel]
 packages = ["src"]
 

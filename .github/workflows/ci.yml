@@ -18,21 +18,28 @@ jobs:
       - name: Install dependencies
         run: uv sync --extra dev
       - name: Lint
-        run: uv run ruff check src scripts tests api
+        run: uv run ruff check src scripts tests
       - name: Run tests (keyless subset; LLM-dependent tests skip)
         run: uv run pytest tests -q
       # No .env and no secrets in CI, so this is exactly a bring-your-own-key
       # deployment: the app must still boot and report that a key is required.
-      - name: Serverless entrypoint boots with no credentials configured
+      # Loads via the same module:variable Vercel uses (tool.vercel.entrypoint).
+      - name: Deployment entrypoint boots with no credentials configured
         run: |
           uv run python - <<'PY'
+          import tomllib
           from fastapi.testclient import TestClient
-          from api.index import app
+
+          with open("pyproject.toml", "rb") as fh:
+              entrypoint = tomllib.load(fh)["tool"]["vercel"]["entrypoint"]
+          module, _, attr = entrypoint.partition(":")
+          app = getattr(__import__(module, fromlist=[attr]), attr)
+
           with TestClient(app) as c:
               body = c.get("/health").json()
           assert body["status"] == "ok", body
           assert body["byo_key_required"] is True, body
-          print("BYO-only boot OK:", body)
+          print(f"BYO-only boot OK via {entrypoint}:", body)
           PY
 
   web:

@@ -22,8 +22,26 @@ only configuration where traffic cannot exhaust your own quota.
 
 ## 1. Backend
 
-Create a Vercel project with **root directory = repository root**. `vercel.json`
-routes every path to `api/index.py`, which serves the FastAPI app.
+Create a Vercel project with **root directory = repository root**.
+
+No routing configuration is needed. Vercel's Python runtime detects FastAPI from
+the dependencies and routes every request to the app, so the service behaves the
+same as it does locally. The app is named explicitly in `pyproject.toml` because
+auto-discovery only looks for entrypoints called `app`/`index`/`server`/`main`/
+`wsgi`/`asgi`, and ours is `src/api.py`:
+
+```toml
+[tool.vercel]
+entrypoint = "src.api:app"
+```
+
+`vercel.json` sets only memory, duration, and which files to leave out of the
+bundle. Do **not** add a `runtime` field pinning `@vercel/python@x.y.z` — that
+field is for community runtimes, and pinning it against the official Python
+runtime fails the build with `pin-version-mismatch`. Likewise, a catch-all
+rewrite to a function path is unnecessary here and actively harmful: rewrites now
+pass the *rewritten* path to the function, so every route would arrive as the
+destination path and 404.
 
 Environment variables:
 
@@ -49,8 +67,13 @@ Notes on the serverless environment:
 - **`maxDuration` is 60s** in `vercel.json`. A brief normally completes in about
   7 seconds; the headroom covers provider rate-limit retries. Free Vercel plans
   cap function duration lower than this — check your plan if briefs time out.
-- `asyncpg`, `pgvector` and `voyageai` are excluded from `requirements.txt` to keep
-  the bundle small. Add them back if you enable Postgres or Voyage embeddings.
+- **Dependencies come from `pyproject.toml`**, which Vercel reads directly (with
+  `uv.lock`). `requirements.txt` is kept for container hosts that expect it and
+  lists a leaner runtime set.
+- **`excludeFiles`** trims tests, evals, migrations, scripts, the web app and the
+  raw `data/seed_cases/` YAML from the bundle. The two runtime data dependencies —
+  `prompts/` and `data/case_store.json` — are deliberately kept; removing either
+  breaks the app at request time rather than at build time.
 
 ## 2. Frontend
 
